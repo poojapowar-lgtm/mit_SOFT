@@ -1,0 +1,125 @@
+/* SECTION */
+.global-section {
+  padding: clamp(30px, 5vw, 60px);
+  text-align: center;
+  /* background: linear-gradient(135deg, #f8f9fb, #eef2f7); */
+}
+
+/* CONTAINER */
+.global-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+/* CARD */
+.global-card {
+  max-width: clamp(180px, 15vw, 260px);
+  flex: 1 1 clamp(160px, 25%, 220px);
+
+  padding: 20px;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.4s ease;
+  cursor: pointer;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* HOVER EFFECT */
+.global-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* GLOW BORDER EFFECT */
+.global-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 2px;
+  background: linear-gradient(120deg, #722327, #ff6a00, #ffd700);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.global-card:hover::before {
+  opacity: 1;
+}
+
+/* ICON */
+.global-icon img {
+  width: clamp(55px, 6vw, 85px);
+  height: auto;
+  object-fit: contain;
+
+  transition: transform 0.4s ease;
+}
+
+/* ICON ANIMATION */
+.global-card:hover .global-icon img {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* TITLE */
+.global-title {
+  font-size: clamp(14px, 1.5vw, 20px);
+  font-weight: 600;
+  color: #722327;
+  margin-top: clamp(10px, 1.5vw, 14px);
+  transition: color 0.3s ease;
+}
+
+/* TITLE HOVER */
+.global-card:hover .global-title {
+  color: #004d00;
+}
+
+/* ENTRY ANIMATION */
+.global-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* STAGGER EFFECT */
+.global-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.global-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.global-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.global-card:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.global-card:nth-child(5) {
+  animation-delay: 1s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

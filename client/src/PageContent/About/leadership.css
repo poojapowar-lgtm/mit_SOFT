@@ -1,0 +1,49 @@
+/* Leader Section */
+.leader-section {
+  display: flex;
+  gap: clamp(20px, 3vw, 40px);
+  align-items: flex-start;
+}
+
+.leader-image img {
+  width: clamp(200px, 20vw, 350px);
+  height: auto;
+  border-radius: clamp(8px, 2vw, 14px);
+}
+
+.leader-content {
+  flex: 1;
+}
+
+
+.leader-designation {
+  color: rgb(124, 89, 1);
+  font-style: italic;
+  font-size: clamp(12px, 3vw, 20px);
+}
+
+.leader-message {
+  line-height: 1.7;
+}
+
+/* Bottom gallery */
+.leadership-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.leadership-gallery img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+
+/* Mobile View */
+@media (max-width: 1440px) {
+  .leader-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+}

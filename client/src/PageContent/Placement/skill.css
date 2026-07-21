@@ -1,0 +1,53 @@
+
+/* GRID */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 45%, 500px), 1fr));
+  gap: clamp(20px, 3vw, 40px);
+}
+
+/* CARD */
+.skill-card {
+  background: #fff;
+  padding: clamp(18px, 2vw, 28px);
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  position: relative;
+}
+
+/* LEFT ACCENT BORDER */
+.skill-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, #761b89, #00a86b);
+  border-radius: 14px 0 0 14px;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+}
+
+
+.card-subtitle {
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+/* IMAGES */
+.image-wrapper {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: clamp(120px, 15vw, 180px);
+  object-fit: cover;
+  border-radius: 10px;
+}

@@ -1,0 +1,109 @@
+/* Container */
+.alumni-container {
+  width: 100%;
+  padding: clamp(10px, 3vw, 40px);
+}
+
+/* Wrapper */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 20px);
+  margin-top: clamp(15px, 2vw, 30px);
+}
+
+/* Buttons */
+.nav-btn {
+  flex-shrink: 0;
+  width: clamp(32px, 3vw, 42px);
+  height: clamp(32px, 3vw, 42px);
+  border-radius: 50%;
+  border: none;
+  background-color: #722327;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(12px, 1.5vw, 16px);
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: #004d00;
+}
+
+.nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Carousel */
+.carousel {
+  overflow: hidden;
+  flex: 1;
+}
+
+/* Track */
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Card (3 per row desktop) */
+.alumni-card {
+  flex: 0 0 calc(100% / 3);
+  box-sizing: border-box;
+  padding: clamp(8px, 1.5vw, 16px);
+  text-align: center;
+}
+
+/* Image */
+.alumni-card img {
+  width: 100%;
+  height: clamp(140px, 18vw, 220px);
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+/* Text */
+.alumni-card h3 {
+  font-size: clamp(14px, 1.2vw, 18px);
+  color: #722327;
+  margin-bottom: 6px;
+}
+
+.alumni-card p {
+  font-size: clamp(12px, 1vw, 15px);
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Tablet (2 cards) */
+@media (max-width: 992px) {
+  .alumni-card {
+    flex: 0 0 50%;
+  }
+}
+
+/* Mobile (1 card) */
+@media (max-width: 768px) {
+  .alumni-card {
+    flex: 0 0 100%;
+  }
+}
+
+/* Placed Students photo */
+.student-img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #722327;
+}
+
+.no-img {
+  font-size: 12px;
+  color: #999;
+}

@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Block admin routes
+Disallow: /admin/
+Disallow: /admin/login
+Disallow: /admin/dashboard
+Disallow: /admin/news
+Disallow: /admin/events
+Disallow: /admin/enquiry
+Disallow: /admin/members
+Disallow: /admin/student-speak
+Disallow: /admin/recruiters
+Disallow: /admin/faculty
+Disallow: /admin/research
+Disallow: /admin/mou
+Disallow: /admin/placed-students
+Disallow: /admin/alumni-startup
+
+Sitemap: https://www.mitsoft.edu.in/sitemap.xml

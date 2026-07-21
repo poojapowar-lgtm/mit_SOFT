@@ -1,0 +1,57 @@
+ 
+/* Grid Layout */
+.recruiters-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 per row */
+  gap: clamp(10px, 1.5vw, 20px);
+  align-items: center;
+}
+
+/* Card */
+.recruiter-card {
+  background: #ffffff;
+  padding: clamp(10px, 1vw, 16px);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s ease;
+}
+
+.recruiter-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(30, 58, 138, 0.15);
+}
+
+/* Logo */
+.recruiter-card img {
+  width: 100%;
+  height: clamp(40px, 5vw, 70px);
+  object-fit: contain;
+  transition: 0.3s;
+}
+
+.recruiter-card:hover img {
+  transform: scale(1.05);
+}
+
+/* 📱 Responsive Breakpoints */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .recruiters-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .recruiters-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .recruiters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

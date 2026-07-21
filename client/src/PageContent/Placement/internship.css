@@ -1,0 +1,126 @@
+/* TIMELINE CENTER ALIGN */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(10px, 2vw, 30px);
+}
+
+/* EACH STEP */
+.timeline-item {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  max-width: 850px;
+  text-align: center;
+}
+
+
+/* CARD */
+.internship-card {
+    width: clamp(250px, 40vw, 700px);
+  background: #fff;
+  padding:clamp(5px, 1.2vw, 10px) clamp(18px, 2vw, 28px);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  position: relative;
+}
+
+/* ACCENT TOP BORDER */
+.internship-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, #761b89, #00a86b);
+  border-radius: 12px 0 0 12px;
+}
+
+/* HOVER */
+.internship-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* TITLE */
+.internship-card h4 {
+  font-size: clamp(16px, 1.3vw, 20px);
+  margin: 0px;
+  color: #722327;
+}
+
+/* LIST */
+.internship-card li {
+  font-size: clamp(14px, 1vw, 16px);
+  color: #444;
+  margin-bottom: 6px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* ARROW */
+.arrow {
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  transform: translate(-50%, 10px);
+  font-size: 24px;
+  color: rgb(85, 131, 15);
+  z-index: 2;
+}
+
+/* ARROW ANIMATION */
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* ZIGZAG SHIFT */
+.timeline-item:nth-child(odd) .internship-card {
+  transform: translateX(-40px);
+}
+
+.timeline-item:nth-child(even) .internship-card {
+  transform: translateX(40px);
+}
+
+/* Preserve hover */
+.timeline-item:nth-child(odd) .internship-card:hover {
+  transform: translateX(-40px) translateY(-5px);
+}
+
+.timeline-item:nth-child(even) .internship-card:hover {
+  transform: translateX(40px) translateY(-5px);
+}
+
+/* SWITCH BORDER SIDE FOR RIGHT CARDS */
+.timeline-item:nth-child(even) .internship-card::before {
+  left: auto;
+  right: 0;
+  border-radius: 0 12px 12px 0;
+}
+
+
+@media (max-width: 768px) {
+
+  .timeline-item:nth-child(odd) .internship-card,
+  .timeline-item:nth-child(even) .internship-card {
+    transform: translateX(0);
+  }
+
+  .timeline-item:nth-child(odd) .internship-card:hover,
+  .timeline-item:nth-child(even) .internship-card:hover {
+    transform: translateY(-5px);
+  }
+}

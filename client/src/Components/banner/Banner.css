@@ -1,0 +1,152 @@
+.banner-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-image {
+  position: relative;
+  background: url("/public/assets/images/home/banner.jpg") center / cover no-repeat;
+  width: 100%;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  /* max-width: 1800px; */
+  height: 75vh;
+  /* border-radius: 12px; */
+}
+
+.banner-card {
+  position: absolute;
+  bottom: clamp(10px, 4vw, 30px);
+  left: clamp(10px, 4vw, 30px);
+  padding: clamp(10px, 2vw, 20px) clamp(15px, 2vw, 30px);
+  max-width: clamp(250px, 80vw, 400px);
+  border-bottom-left-radius: clamp(15px, 4vw, 30px);
+  background: #97c600;
+}
+
+.banner-title {
+  font-family: system-ui;
+  color: #002B47;
+  margin: 0;
+  font-size: clamp(16px, 2vw, 28px);
+  font-weight: 600;
+}
+
+/* Vertical Button */
+.enquiry-btn {
+  position: fixed;
+  font-size: clamp(12px, 3vw, 16px);
+  padding: clamp(8px, 2.5vw, 15px);
+  right: 0;
+  top: 50%;
+  transform: rotate(-90deg) translateY(-50%);
+  transform-origin: right center;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  border-radius: 5px 5px 0 0;
+}
+
+/* Modal Background */
+.enquiry-modal {
+  position: fixed;
+  border: 1px solid #97c600;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Add this fix */
+.enquiry-modal:empty {
+  display: none;
+}
+
+/* Modal Box */
+.enquiry-content {
+  background: #fff;
+  border-radius: 15px 0 0 15px;
+  position: relative;
+  width: clamp(260px, 85vw, 380px);
+}
+
+
+/* enquiry */
+.enquiry-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.enquiry-top {
+  background: #97c600;
+  border-top-left-radius: 15px;
+  padding: 20px;
+}
+
+.enquiry-title {
+  font-family: system-ui;
+  text-align: center;
+  margin: 0px;
+
+}
+
+.enquiry-form {
+  padding: 20px;
+}
+
+.enquiry-form input,
+.enquiry-form select {
+  width: 95%;
+  padding: clamp(8px, 2.5vw, 12px);
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.enquiry-form select {
+  width: 100%;
+}
+
+.enquiry-form button {
+  display: block;
+  margin: 0 auto;
+  width: clamp(120px, 50%, 200px);
+  padding: clamp(8px, 2.5vw, 12px);
+  font-size: clamp(13px, 3.5vw, 16px);
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.enquiry-form button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .banner-image {
+    width: 90%;
+    height: 40vh;
+  }
+
+  .banner-card {
+    max-width: 90%;
+  }
+
+  .enquiry-modal {
+    justify-content: center;
+    /* center on small screens */
+  }
+
+  .enquiry-content {
+    border-radius: 15px;
+  }
+
+}

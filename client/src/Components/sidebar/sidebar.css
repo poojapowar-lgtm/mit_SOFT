@@ -1,0 +1,100 @@
+.sidebar {
+  width: clamp(200px, 25vw, 300px);
+  margin-left: auto;
+  padding: clamp(5px, 1.5vw, 25px) clamp(5px, 1vw, 15px);
+  background: #f3ecd3;
+  position: relative;
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Menu Items */
+.sidebar li {
+  margin-bottom: clamp(4px, 1vw, 10px);
+}
+
+/* link */
+.sidebar li a {
+  font-family: system-ui;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: clamp(12px, 1vw, 20px);
+  padding: clamp(6px, 1vw, 12px) clamp(12px, 1.5vw, 18px);
+  color: #722327;
+  position: relative;
+}
+
+/* triangle arrow */
+.menu-arrow {
+  position: absolute;
+  left: -38px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-right: 25px solid #004d00;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+/* show arrow when active */
+.sidebar li.active a,
+.sidebar li:hover a {
+  font-weight: 600;
+  color: #004d00;
+}
+
+.sidebar li.active .menu-arrow,
+.sidebar li:hover .menu-arrow {
+  opacity: 1;
+  color: #004d00;
+}
+
+/* when hovering other items remove active bold */
+.sidebar ul:hover li.active:not(:hover) a {
+  font-weight: normal;
+}
+
+/* hide active arrow when hovering other items */
+.sidebar ul:hover li.active:not(:hover) .menu-arrow {
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* Make UL grid (2 columns) */
+  .sidebar ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+
+  /* Remove bottom spacing (grid handles it) */
+  .sidebar li {
+    margin-bottom: 0;
+  }
+
+  
+  .sidebar li a:hover,
+  .sidebar li.active a {
+    border-bottom: 1px solid #722327;
+    color: #004d00;
+    font-weight: 600;
+  }
+
+  .menu-arrow {
+    display: none;
+  }
+}

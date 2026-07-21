@@ -1,0 +1,109 @@
+/*  Buttons */
+.tab-buttons {
+  display: flex;
+  gap: clamp(10px, 2vw, 20px);
+  margin-bottom: clamp(15px, 3vw, 30px);
+  flex-wrap: wrap;
+}
+
+
+/* Mobile */
+@media (max-width: 576px) {
+  .tab-buttons {
+    flex-direction: column;
+  }
+
+  .tab-buttons button {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+/*  Top Bar Layout */
+.top-bar {
+  display: flex;
+flex-direction: column;
+  align-items: center;
+  gap: clamp(10px, 2vw, 20px);
+  flex-wrap: wrap;
+}
+
+/* Scrollable Tabs (like table row) */
+.tab-buttons {
+  display: flex;
+  gap: clamp(6px, 1vw, 12px);
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar (optional) */
+.tab-buttons::-webkit-scrollbar {
+  height: 6px;
+}
+
+.tab-buttons::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+
+/*  File Button */
+.file-btn {
+  font-size: clamp(12px, 1.3vw, 16px);
+  padding: clamp(6px, 0.8vw, 10px) clamp(16px, 2vw, 24px);
+  background: linear-gradient(135deg, #722327, #9b3a3f);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.file-btn:hover {
+  background: linear-gradient(135deg, #218838, #28a745);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(33, 136, 56, 0.4);
+}
+
+/* Wrapper */
+.file-btn-wrapper {
+  flex-shrink: 0;
+}
+
+/* 📱 Mobile (Important Adjustment) */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tab-buttons {
+    width: 100%;
+  }
+
+  .file-btn-wrapper {
+    width: 100%;
+  }
+
+  .file-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* 📱 Small Mobile */
+@media (max-width: 480px) {
+  .innerpage-title {
+    text-align: center;
+  }
+
+  .btn {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,222 @@
+/* Container */
+.news-container {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    gap: clamp(15px, 2.5vw, 40px);
+    padding: clamp(10px, 2vw, 20px);
+}
+
+/* Equal sections */
+.notices,
+.happenings {
+    flex: 1;
+    min-width: 0;
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 10px;
+    border-top: 5px solid #722327;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.news-btn {
+    display: flex;
+    gap: clamp(14px, 2vw, 22px);
+}
+
+.news-btn button {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(135deg, #722327, #a83232);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.news-btn button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Notices List */
+.notices-list {
+    height: clamp(250px, 35vw, 400px);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    padding-right: 5px;
+}
+
+/* Scrollbar */
+.notices-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notices-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(whitesmoke, gray);
+    border-radius: 10px;
+}
+
+/* Notice Card */
+.notice-card {
+    background: whitesmoke;
+    display: flex;
+    gap: clamp(12px, 2vw, 18px);
+    padding: clamp(5px, 1.2vw, 10px);
+    margin: clamp(10px, 1.2vw, 15px) clamp(10px, 1.2vw, 15px) clamp(10px, 1.2vw, 15px) 0;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.notice-card:hover {
+    background: white;
+    border-color: #008A00;
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Content */
+.notice-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.notice-text {
+    margin: 0;
+    flex: 1;
+     font-size: clamp(12px, 1.2vw, 18px);
+    color: #333;
+}
+
+/* Link */
+.notice-link {
+    white-space: nowrap;
+    color: #0066ff;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 4px 10px;
+}
+
+.notice-link:hover {
+    text-decoration: underline;
+}
+
+/* Date Card */
+.date-card {
+    display: flex;
+    flex-direction: column;
+    color: #722327;
+    min-width: 65px;
+    text-align: center;
+    border-right: 2px solid #97c600;
+    padding-right: 8px;
+}
+
+.day {
+    font-size: clamp(18px, 2vw, 28px);
+    font-weight: bold;
+}
+
+.month {
+    font-size: clamp(14px, 1vw, 20px);
+}
+
+/* View All */
+.view-all-container {
+    text-align: center;
+    /* margin-top: clamp(10px, 2vw, 20px); */
+}
+
+
+/* Happenings Section */
+.happenings-scroll {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* Scroll Track */
+.happenings-track {
+    display: flex;
+    gap: clamp(14px, 2vw, 22px);
+    animation: scrollX 20s linear infinite;
+}
+
+/* Card */
+.happening-card {
+    position: relative;
+    min-width: max-content;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+/* Image */
+.happening-card img {
+    width: 100%;
+    height: clamp(250px, 80vh, 400px);
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Zoom on hover */
+.happening-card:hover img {
+    transform: scale(1.08);
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: clamp(10px, 1vw, 14px);
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0)
+    );
+
+    color: #fff;
+}
+
+/* Text */
+.happening-text {
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Animation */
+@keyframes scrollX {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .news-container {
+        flex-direction: column;
+    }
+
+    .happenings-track {
+        animation-duration: 25s;
+    }
+}

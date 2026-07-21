@@ -1,0 +1,92 @@
+.skilldev-container {
+  padding: clamp(16px, 3vw, 40px);
+}
+
+/* Image Section */
+.image-wrapper {
+  display: flex;
+  gap: clamp(10px, 2vw, 20px);
+  margin: clamp(20px, 3vw, 40px) 0;
+}
+
+.image-wrapper img {
+  width: 100%;
+  max-width: 50%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .image-wrapper {
+    flex-direction: column;
+  }
+
+  .image-wrapper img {
+    max-width: 100%;
+  }
+}
+
+
+
+/* Grid Layout */
+.placement-grid {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  gap: clamp(20px, 2.5vw, 35px);
+}
+
+/* Card Design */
+.placement-card {
+  background: #ffffff;
+  padding: 0 clamp(8px, 2vw, 18px);
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  border-left: 5px solid #722327;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+}
+
+/* Subtle gradient overlay */
+.placement-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(0, 77, 0, 0.05), transparent);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.placement-card:hover::before {
+  opacity: 1;
+}
+
+/* Hover Animation */
+.placement-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Title */
+.placement-grid h3 {
+  font-size: clamp(16px, 1.8vw, 21px);
+  margin: 0;
+  color: #004d00;
+  font-weight: 600;
+}
+
+
+/* Intro Card Highlight */
+.placement-intro {
+  background: linear-gradient(135deg, #004d00, #007a00);
+  color: #fff;
+  padding: clamp(18px, 2vw, 28px);
+  border-radius: 14px;
+  margin-bottom: clamp(20px, 3vw, 40px);
+}
+
+.placement-intro li {
+  color: #fff;
+}

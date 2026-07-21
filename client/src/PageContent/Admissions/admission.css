@@ -1,0 +1,60 @@
+.fees-container {
+  padding: clamp(12px, 3vw, 20px);
+}
+
+
+/* How Apply Section */
+.howapply-container {
+  padding: clamp(20px, 4vw, 36px);
+}
+
+/* Grid: auto responsive without heavy media queries */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(220px, 30vw, 280px), 1fr));
+  gap: clamp(12px, 2vw, 20px);
+}
+
+/* Card styling */
+.apply-card {
+  background: #fff;
+  border-radius: clamp(12px, 2vw, 16px);
+  padding: clamp(16px, 2.5vw, 20px);
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.apply-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Logo */
+.card-logo {
+  width: clamp(45px, 6vw, 60px);
+  height: clamp(45px, 6vw, 60px);
+  object-fit: contain;
+  margin-bottom: clamp(10px, 2vw, 15px);
+}
+
+/* Title */
+.card-title {
+  font-size: clamp(14px, 1.8vw, 20px);
+  font-weight: 600;
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+

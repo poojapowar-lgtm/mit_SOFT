@@ -1,0 +1,56 @@
+.vap-gallery {
+  overflow: hidden;
+  position: relative;
+  max-width: clamp(320px, 90vw, 1400px);
+  margin: auto;
+}
+
+/* slider */
+.vap-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* images */
+.vap-slider img {
+  flex: 0 0 calc(95% / 3); 
+  height: clamp(200px, 30vw, 320px);
+  object-fit: cover;
+  border-radius: 12px;
+  padding: 5px;
+}
+
+/* Dots */
+.vap-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.vap-dot {
+  height: clamp(6px, 1vw, 10px);
+  width: clamp(6px, 1vw, 10px);
+  margin: 5px;
+  display: inline-block;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.vap-dot.active {
+  background: green;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .vap-slider img {
+    flex: 0 0 calc(100% / 2);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .vap-slider img {
+    flex: 0 0 100%;
+  }
+}
+

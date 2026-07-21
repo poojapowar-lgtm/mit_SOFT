@@ -1,0 +1,596 @@
+/* =================LOGIN ================= */
+.page-title {
+  font-size: 25px;
+  font-weight: 600;
+  color: navyblue;
+  margin-right: auto;
+}
+
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f9;
+}
+
+.login-card {
+  display: flex;
+  width: 750px;
+  height: 400px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.login-left {
+  flex: 1;
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-left h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.login-left p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: white;
+}
+
+/* RIGHT SIDE */
+.login-right {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-right h2 {
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.login-right input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Button */
+.login-right button {
+  padding: 10px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-right button:hover {
+  background: #4338ca;
+}
+
+
+/* ================= ADMIN PANEL================= */
+.admin-container {
+  display: flex;
+  /* height: 100vh; */
+  font-family: Arial, sans-serif;
+}
+
+
+/* ================= SIDEBAR ================= */
+.admin-sidebar {
+  width: 220px;
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  color: white;
+  padding: 20px;
+}
+
+.admin-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.admin-logo svg {
+  font-size: 34px;
+  color: white;
+}
+
+.admin-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin-sidebar ul li {
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.admin-sidebar ul li:hover {
+  background: white;
+  color: #002B47;
+}
+
+
+/* =================ADMIN-MAIN ================= */
+.admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Bar */
+.admin-topbar {
+  width: 100%;
+  background: #ffffff;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #eee;
+}
+
+.admin-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f4f6f9;
+  padding: 12px;
+  margin-right: 50px;
+  border-radius: 30px;
+}
+
+.admin-info svg {
+  font-size: 30px;
+  color: #3b82f6;
+}
+
+.admin-info span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.logout-btn {
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: translateY(-1px);
+}
+
+.logout-btn:active {
+  transform: scale(0.95);
+}
+
+/* =================ADMIN-PAGE ================= */
+.admin-page {
+  padding: 20px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 20px;
+}
+
+.admin-card {
+  background: #fff;
+  height: max-content;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #444;
+}
+
+form input,
+form textarea {
+  width: 90%;
+  padding: 8px 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+/* Button */
+.form-btn {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-btn :hover {
+  background: linear-gradient(135deg, #014b7a, #026aa7);
+}
+
+
+/* =================NEWS ================= */
+.image-preview {
+  position: relative;
+  width: 150px;
+  margin-top: 10px;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Close Icon */
+.remove-icon {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.remove-icon:hover {
+  background: darkred;
+}
+
+.image-preview-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+
+/* ================= TABLE CONTAINER ================= */
+/* Wrapper for scroll */
+.admin-table-wrapper {
+  max-height: 700px;  
+  overflow-y: auto;  
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Table */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+
+.admin-table thead {
+  background: linear-gradient(135deg, #014b7a, #026aa7);
+  color: #fff;
+}
+
+.admin-table th {
+  padding: 12px 0 12px 12px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.admin-table td {
+  padding: 12px;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.admin-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.admin-table tbody tr:hover {
+  background-color: #f1f7ff;
+  transition: 0.2s ease;
+}
+
+.admin-table a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.admin-table a:hover {
+  text-decoration: underline;
+}
+
+.admin-table button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* Edit button */
+.admin-table button:first-child {
+  background: #28a745;
+  color: #fff;
+}
+
+/* Delete button */
+.admin-table button:last-child {
+  background: rgb(241, 79, 20);
+  color: #fff;
+}
+
+.admin-table button:hover {
+  opacity: 0.85;
+}
+
+/* no data*/
+.admin-table td[colspan] {
+  padding: 20px;
+  text-align: center;
+  font-weight: 500;
+  color: #777;
+}
+
+.admin-alert {
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.admin-alert.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+
+/* ================= ENQUIRY ================= */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-bottom: 15px;
+}
+    
+.export-btn {
+  display: inline-flex;
+  margin-left: auto;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.export-btn :hover {
+  background: linear-gradient(135deg, #014b7a, #026aa7);
+  transform: translateY(-2px);
+}
+
+.export-btn svg {
+  font-size: 20px;
+}
+
+
+/* =================SWITCH BUTTONS ================= */
+.switch-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.switch-btn {
+  background: linear-gradient(135deg, #014b7a, #026aa7);
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.switch-btn:hover,
+.switch-btn.active {
+  background: none;
+  border: 1px solid #002B47;
+  color: #002B47;
+}
+
+
+
+/* ===== DASHBOARD ===== */
+.dashboard-container {
+  display: grid;
+  width: 85%;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.dashboard-grid {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.dashboard-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 14px;
+  transition: 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.dcard-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 0 auto;
+}
+
+
+.dcard-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 60px;
+  flex-shrink: 0;
+}
+
+.dcard-title {
+  font-size: 20px;
+  text-align: center;
+  color: whitesmoke;
+}
+
+.dcard-count {
+  margin: 5px 0 0;
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.dcard-btn {
+  align-self: flex-end;
+  margin: 10px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.dcard-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.1);
+}
+
+.dashboard-card:nth-child(1) {
+  background: linear-gradient(135deg, #e96ee3, #ac1dd8);
+  /* blue */
+}
+
+.dashboard-card:nth-child(2) {
+  background: linear-gradient(135deg, #22c55e, #15803d);
+  /* green */
+}
+
+.dashboard-card:nth-child(3) {
+  background: linear-gradient(135deg, #f59e0b, #b45309);
+  /* orange */
+}
+
+.dashboard-card:nth-child(4) {
+  background: linear-gradient(135deg, #ef4444, #991b1b);
+  /* red */
+}
+
+.dashboard-card:nth-child(5) {
+  background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+  /* blue-indigo */
+}
+
+.dashboard-card:nth-child(6) {
+  background: linear-gradient(135deg, #14b8a6, #0f766e);
+  /* teal */
+}
+
+.table-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.preview-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  padding: 10px 0;
+  display: block;
+}

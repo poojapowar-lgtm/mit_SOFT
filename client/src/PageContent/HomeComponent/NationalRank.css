@@ -1,0 +1,44 @@
+.national-rank {
+  padding: clamp(20px, 4vw, 60px);
+}
+
+/* Content Layout */
+.rank-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(10px, 1.5vw, 40px);
+}
+
+/* Left Text */
+.rank-text {
+  flex: 1;
+}
+
+.rank-text p {
+  text-align: left;
+}
+
+/* Right Logos */
+.rank-logos {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap:clamp(15px, 2vw, 30px);
+    justify-content: center;
+}
+
+/* Logos */
+.RLogo {
+  width: clamp(130px, 20vw, 210px);
+  height: auto;
+  object-fit: contain;
+}
+
+/* Tablet */
+@media (max-width: 576px) {
+  .rank-content {
+    flex-direction: column-reverse;
+  }
+
+}
