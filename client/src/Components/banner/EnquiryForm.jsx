@@ -80,10 +80,12 @@ const EnquiryForm = ({ onClose }) => {
           required
         >
           <option value="">Select Course *</option>
-          <option value="B.Tech">B.Tech</option>
-          <option value="MBA">MBA</option>
-          <option value="BBA">BBA</option>
-          <option value="MCA">MCA</option>
+          <option value="B.Tech">B. Tech. (Food Technology)</option>
+          <option value="Direct.2nd.year">Direct 2nd Year B. Tech.</option>
+          <option value="M.Tech"> M. Tech. (Food Technology)</option>
+          <option value="Food_Safety"> M. Tech. (Food Safety)</option>
+          <option value="Working_Professional">M. Tech. Working Professional</option>
+          <option value="Ph.D">Ph. D. (Food Technology)</option>
         </select>
 
         <button type="submit">Submit</button>
