@@ -31,8 +31,6 @@ const Banner = () => {
       {showForm && (
         <div className="enquiry-modal">
           <div className="enquiry-content">
-            {/* ❌ REMOVED CLOSE BUTTON FROM HERE */}
-
             <EnquiryForm onClose={() => setShowForm(false)} />
           </div>
         </div>

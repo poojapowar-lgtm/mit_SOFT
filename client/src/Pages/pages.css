@@ -144,6 +144,27 @@
 }
 
 
+/* CLOSE BUTTON - TOP RIGHT PERFECT */
+.close-btn {
+  position: absolute;
+  top: clamp(8px, 1vw, 12px);
+  right: clamp(8px, 1vw, 12px);
+  font-size: clamp(24px, 3vw, 28px);
+  color:#722327;
+  background: none;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  color: green !important;
+  background:white;
+  transform: scale(1.1);
+}
+
 
 @media (max-width: 768px) {
   .page-layout {

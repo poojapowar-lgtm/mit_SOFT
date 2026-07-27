@@ -53,6 +53,7 @@ import ResearchAdmin from "./admin/pages/ResearchAdmin";
 import MOUAdmin from "./admin/pages/MOUAdmin";
 import PlacedStudentsAdmin from "./admin/pages/PlacedStudentsAdmin";
 import AlumniStartupAdmin from "./admin/pages/AlumniStartupAdmin";
+import ContactTable from "./admin/pages/ContactTable";
 
 function App() {
   return (
@@ -95,6 +96,7 @@ function App() {
           <Route path="mou" element={<MOUAdmin />} />
           <Route path="placed-students" element={<PlacedStudentsAdmin />} />
           <Route path="alumni-startup" element={<AlumniStartupAdmin />} />
+          <Route path="contact" element={<ContactTable />} />
         </Route>
 
       </Routes>

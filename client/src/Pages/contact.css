@@ -81,6 +81,7 @@
 
 .submit-btn {
   display: block;
+  width: 50%;
   margin: clamp(10px, 2vw, 20px) auto 0;
 }
 

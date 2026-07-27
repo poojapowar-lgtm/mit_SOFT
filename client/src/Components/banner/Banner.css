@@ -8,10 +8,8 @@
   position: relative;
   background: url("/public/assets/images/home/banner.jpg") center / cover no-repeat;
   width: 100%;
-   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  /* max-width: 1800px; */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   height: 75vh;
-  /* border-radius: 12px; */
 }
 
 .banner-card {
@@ -73,7 +71,7 @@
   background: #fff;
   border-radius: 15px 0 0 15px;
   position: relative;
-  width: clamp(260px, 85vw, 380px);
+  width: clamp(240px, 85vw, 340px);
 }
 
 
@@ -84,20 +82,31 @@
 }
 
 .enquiry-top {
-  background: #97c600;
+  background: #722327;
   border-top-left-radius: 15px;
-  padding: 20px;
+  padding: clamp(8px, 2.5vw, 20px);
 }
 
-.enquiry-title {
+.enquiry-title,
+.enquiry-subtitle {
   font-family: system-ui;
   text-align: center;
   margin: 0px;
-
+  color: white;
 }
+
+.enquiry-subtitle{
+  font-weight: 500;
+} 
 
 .enquiry-form {
   padding: 20px;
+}
+
+.enquiry-form label {
+  margin: 0px;
+  color: rgb(92, 90, 90);
+  font-weight: 600;
 }
 
 .enquiry-form input,
@@ -105,30 +114,14 @@
   width: 95%;
   padding: clamp(8px, 2.5vw, 12px);
   margin: 10px auto;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 2px solid rgb(236, 234, 234);
+  border-radius: 6px;
 }
 
 .enquiry-form select {
   width: 100%;
 }
 
-.enquiry-form button {
-  display: block;
-  margin: 0 auto;
-  width: clamp(120px, 50%, 200px);
-  padding: clamp(8px, 2.5vw, 12px);
-  font-size: clamp(13px, 3.5vw, 16px);
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.enquiry-form button:hover {
-  background-color: #0056b3;
-}
 
 @media (max-width: 768px) {
   .banner-image {

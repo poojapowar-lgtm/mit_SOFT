@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const PHD_Admissions = () => {
+const PHDAdmissions = () => {
     const [research, setResearch] = useState([]);
 
     useEffect(() => {
@@ -53,4 +53,4 @@ const PHD_Admissions = () => {
     );
 };
 
-export default PHD_Admissions;
+export default PHDAdmissions;

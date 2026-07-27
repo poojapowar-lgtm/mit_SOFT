@@ -1,29 +1,30 @@
 import React, { useState } from "react";
 import InnerBanner from "../Components/inner_banner/InnerBanner";
+import axios from "axios";
 import "./contact.css";
-
 
 const ContactUs = () => {
     const boardData = [
         {
             title: "Address",
-            desgination: "School of Food Technology, MANET hostel, <br/> Rajbaug Campus, Loni Kalbhor, Maharashtra 412201",
+            desc:
+                "School of Food Technology, MANET hostel,\nRajbaug Campus, Loni Kalbhor, Maharashtra 412201",
         },
         {
             title: "MIT-SoFT Virtual Number",
-            desgination: "+91 9021080141",
+            desc: "+91 9021080141",
         },
         {
             title: "Admission Email",
-            desgination: "admissions.mitsoft@mituniversity.edu.in",
+            desc: "admissions.mitsoft@mituniversity.edu.in",
         },
         {
             title: "MIT-ADT Official Website",
-            desgination: "www.mituniversity.ac.in",
+            desc: "www.mituniversity.ac.in",
         },
         {
             title: "MIT-ADT Virtual Number",
-            desgination: "+91 9595124234",
+            desc: "+91 9595124234",
         },
     ];
 
@@ -34,6 +35,8 @@ const ContactUs = () => {
         course: "",
     });
 
+    const [loading, setLoading] = useState(false);
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -41,10 +44,33 @@ const ContactUs = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
-        alert("Submitted Successfully!");
+
+        setLoading(true);
+
+        try {
+            const res = await axios.post(
+                "http://localhost:5000/api/contact",
+                formData
+            );
+
+            alert(res.data);
+
+            // Reset form
+            setFormData({
+                name: "",
+                email: "",
+                mobile: "",
+                course: "",
+            });
+
+        } catch (err) {
+            console.error(err);
+            alert("Submission failed ❌");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -61,60 +87,113 @@ const ContactUs = () => {
 
                     <div className="contact-wrapper">
 
+                        {/* Left Info Cards */}
                         <div className="board-body-container">
                             {boardData.map((item, index) => (
                                 <div className="board-card" key={index}>
                                     <h3 className="board-name">{item.title}</h3>
                                     <p
                                         className="board-desg"
-                                        dangerouslySetInnerHTML={{ __html: item.desgination }}
+                                        dangerouslySetInnerHTML={{ __html: item.desc }}
                                     ></p>
                                 </div>
                             ))}
                         </div>
 
+                        {/* Contact Form */}
+                        <form className="contact-form" onSubmit={handleSubmit}>
 
-                        <form className="contact-form" >
-                            
-                            <h3 className="contact-title" style={{textAlign:"center"}}>Contact With US</h3>
+                            <h3 className="contact-title" style={{ textAlign: "center" }}>
+                                Contact With Us
+                            </h3>
+
                             <div className="form-grid">
 
+                                {/* Name */}
                                 <div className="form-group">
-                                    <label>Name</label>
-                                    <input type="text" name="name" value={formData.name} onChange={handleChange} />
+                                    <label>Name *</label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        placeholder="Enter your name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required
+                                    />
                                 </div>
 
+                                {/* Email */}
                                 <div className="form-group">
-                                    <label>Email ID</label>
-                                    <input type="email" name="email" value={formData.email} onChange={handleChange} />
+                                    <label>Email ID *</label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Enter your email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
+                                    />
                                 </div>
 
+                                {/* Mobile */}
                                 <div className="form-group">
-                                    <label>Mobile Number</label>
-                                    <input type="tel" name="mobile" value={formData.mobile} onChange={handleChange} />
+                                    <label>Mobile Number *</label>
+                                    <input
+                                        type="tel"
+                                        name="mobile"
+                                        placeholder="Enter 10-digit mobile"
+                                        value={formData.mobile}
+                                        onChange={handleChange}
+                                        pattern="[0-9]{10}"
+                                        required
+                                    />
                                 </div>
 
+                                {/* Course */}
                                 <div className="form-group">
-                                    <label>Select Course</label>
-                                    <select name="course" value={formData.course} onChange={handleChange}>
-                                        <option value="" style={{color:"lightgray"}}>Select Course</option>
-                                        <option>B.Tech Marine</option>
-                                        <option>B.Sc Nautical</option>
-                                        <option>Diploma Marine</option>
+                                    <label>Select Course *</label>
+                                    <select
+                                        name="course"
+                                        value={formData.course}
+                                        onChange={handleChange}
+                                        required
+                                    >
+                                        <option value="">Select Course</option>
+                                        <option value="B. Tech. (Food Technology)">
+                                            B. Tech. (Food Technology)
+                                        </option>
+                                        <option value="Direct 2nd Year B. Tech">
+                                            Direct 2nd Year B. Tech.
+                                        </option>
+                                        <option value="M. Tech. (Food Technology)">
+                                            M. Tech. (Food Technology)
+                                        </option>
+                                        <option value="M. Tech. (Food Safety)">
+                                            M. Tech. (Food Safety)
+                                        </option>
+                                        <option value="M. Tech. Working Professional">
+                                            M. Tech. Working Professional
+                                        </option>
+                                        <option value="Ph. D. (Food Technology)">
+                                            Ph. D. (Food Technology)
+                                        </option>
                                     </select>
                                 </div>
 
                             </div>
 
-                            <button className="btn submit-btn" type="submit" onSubmit={handleSubmit}>
-                                Submit
+                            {/* Submit Button */}
+                            <button
+                                className="btn submit-btn"
+                                type="submit"
+                                disabled={loading}
+                            >
+                                {loading ? "Submitting..." : "Submit"}
                             </button>
 
                         </form>
 
                     </div>
-
-
                 </div>
             </div>
         </>

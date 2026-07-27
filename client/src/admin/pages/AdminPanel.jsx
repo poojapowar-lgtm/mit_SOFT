@@ -23,7 +23,8 @@ const AdminPanel = () => {
     research: 0,
     mou: 0,
     placedStudents: 0,
-    alumniStartup: 0
+    alumniStartup: 0,
+    contact: 0
   });
 
   useEffect(() => {
@@ -58,6 +59,7 @@ const AdminPanel = () => {
     { title: "MOU Data", count: counts.mou, icon: <FaUsers />, path: "/admin/mou" },
     { title: "Placed Students", count: counts.placedStudents, icon: <FaUsers />, path: "/admin/placed-students" },
     { title: "Alumni Startup", count: counts.alumniStartup, icon: <FaUsers />, path: "/admin/alumni-startup" },
+    { title: "Contact Form", count: counts.alumniStartup, icon: <FaUsers />, path: "/admin/contact" },
   ];
 
   return (

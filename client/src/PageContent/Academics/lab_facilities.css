@@ -72,18 +72,6 @@
   position: relative;
 }
 
-.close-btn {
-  position: absolute;
-  top: clamp(10px, 1.5vw, 18px);
-  right: clamp(10px, 1.5vw, 18px);
-  font-size: clamp(20px, 2vw, 30px);
-  color: #722327;
-  background: #fff;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-}
-
 .img-wrapper {
   display: flex;
   justify-content: center;

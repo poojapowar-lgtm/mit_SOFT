@@ -1,6 +1,6 @@
 import React from "react";
 
-const Funded_Projects = () => {
+const FundedProjects = () => {
 
     const projectData1 = [
         {
@@ -91,4 +91,4 @@ const Funded_Projects = () => {
     );
 };
 
-export default Funded_Projects;
+export default FundedProjects;

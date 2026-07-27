@@ -8,10 +8,6 @@ import Scholarship from "../PageContent/Admissions/Scholarship";
 import FAQ from "../PageContent/Admissions/FAQ";
 import Annoucement from "../PageContent/Admissions/Annoucement";
 import Schedule from "../PageContent/Admissions/Schedule";
-import Entrance from "../PageContent/Admissions/Entrance";
-import MeritList from "../PageContent/Admissions/MeritList";
-import Counselling from "../PageContent/Admissions/Counselling";
-import Withdrawal from "../PageContent/Admissions/Withdrawal";
 import Vacancy from "../PageContent/Admissions/Vacancy";
 import Eligibility from "../PageContent/Admissions/Eligibility";
 

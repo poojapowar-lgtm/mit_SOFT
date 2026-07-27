@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./faculty.css";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-import { IoIosCloseCircleOutline } from "react-icons/io";
+import { IoMdCloseCircle } from "react-icons/io";
 
 const Faculty = () => {
   const [faculty, setFaculty] = useState([]);
@@ -34,14 +34,17 @@ const Faculty = () => {
             </div>
 
             <div className="faculty-content">
-              <h4 className="names">{item.name}</h4>
-              <p><strong>{item.designation}</strong></p>
+              <h4 className="faculty-name">{item.name}</h4>
+              <div className="designation-row">
+                <p><strong>{item.designation}</strong></p>
+
+                <div className="hover-icon">
+                  <MdOutlineKeyboardDoubleArrowRight />
+                </div>
+              </div>
             </div>
 
-            {/* ALWAYS VISIBLE ARROW */}
-            <div className="hover-icon">
-              <MdOutlineKeyboardDoubleArrowRight />
-            </div>
+
           </div>
         ))}
       </div>
@@ -52,7 +55,7 @@ const Faculty = () => {
           <div className="modal-content">
 
             <div className="close-btn" onClick={() => setSelectedFaculty(null)}>
-              <IoIosCloseCircleOutline />
+              <IoMdCloseCircle />
             </div>
             <img
               src={`http://localhost:5000/uploads/${selectedFaculty.image}`}

@@ -19,6 +19,7 @@ const Sidebar = () => {
     { name: "MOU Data", path: "/admin/mou" },
     { name: "Placed Students", path: "/admin/placed-students" },
     { name: "Alumni Startup", path: "/admin/alumni-startup" },
+    { name: "Contact Form", path: "/admin/contact" },
   ];
 
   return (

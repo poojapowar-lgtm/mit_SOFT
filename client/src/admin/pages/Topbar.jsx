@@ -27,6 +27,8 @@ const Topbar = () => {
         return "Recruiters";
       case "/admin/faculty":
         return "Faculty Infromation";
+      case "/admin/contact":
+        return "Contact Form";
       default:
         return "Admin Panel";
     }

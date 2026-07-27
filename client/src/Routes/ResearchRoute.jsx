@@ -6,8 +6,8 @@ import MOU from "../PageContent/Research/MOU";
 import Consultancy from "../PageContent/Research/Consultancy";
 import ResearchPaper from "../PageContent/Research/ResearchPaper";
 import Pentant from "../PageContent/Research/Pentant";
-import Funded_Projects from "../PageContent/Research/Funded_Projects";
-import PHD_Admissions from "../PageContent/Research/PHD_Admissions";
+import FundedProjects from "../PageContent/Research/FundedProjects";
+import PHDAdmissions from "../PageContent/Research/PHDAdmissions";
 
 
 export const ResearchRoute = (
@@ -16,8 +16,8 @@ export const ResearchRoute = (
     <Route path="board-of-research" element={<BoardResearch />} />
     <Route path="research-paper-publication" element={<ResearchPaper />} />
     <Route path="pentant-publications" element={<Pentant />} />
-    <Route path="funded-projects" element={<Funded_Projects />} />
-    <Route path="phd-admissions" element={<PHD_Admissions />} />
+    <Route path="funded-projects" element={<FundedProjects />} />
+    <Route path="phd-admissions" element={<PHDAdmissions />} />
     <Route path="mou" element={<MOU />} />
     <Route path="consultancy-training" element={<Consultancy />} />
     {/* <Route path="student-research" element={<StudentResearch />} /> */}

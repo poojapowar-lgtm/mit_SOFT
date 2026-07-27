@@ -20,28 +20,29 @@
     font-size: clamp(14px, 1.5vw, 20px);
     font-weight: 600;
     margin-bottom: 0px;
-      color: #722327;
+    color: #722327;
 }
 
 
 /* Hover effect */
 .board-card:hover {
     transform: translateY(-4px);
-    background:#f3ecd3;
+    background: #f7f1de;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 /* Change text when card is hovered */
 .board-card:hover .board-name {
-    color:#004d00;
+    color: #004d00;
 }
 
 .board-card:hover .board-desg {
-    color: rgb(6, 6, 51);
+    color: rgb(55, 55, 107);
 }
 
-.board-desg{
+.board-desg {
     margin: 5px 0;
+    color: rgb(99, 98, 98);
 }
 
 /* Mobile: 1 card per row */
