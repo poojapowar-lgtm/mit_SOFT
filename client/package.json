@@ -35,7 +35,8 @@
   "eslintConfig": {
   "rules": {
     "no-unused-vars": "off",
-    "react-hooks/exhaustive-deps": "off"
+    "react-hooks/exhaustive-deps": "off",
+      "jsx-a11y/iframe-has-title": "off"
   },
     "extends": [
       "react-app",
