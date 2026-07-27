@@ -8,7 +8,7 @@ const LifeAtCampus = () => {
   const location = useLocation();
 
   const menu = [
-    { name: "Events", path: "events" }, ,
+    { name: "Events", path: "events" }, 
     { name: "Facilities", path: "facilities" },
     { name: "Sports", path: "sports" },
   ];

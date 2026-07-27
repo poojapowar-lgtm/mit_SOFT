@@ -1,6 +1,6 @@
 import React from "react";
 
-const Principal_MSG = () => {
+const PrincipalMSG = () => {
   return (
     <div className="leadership-container">
       <h2 className="innerpage-title">Principal Message</h2>
@@ -56,4 +56,4 @@ const Principal_MSG = () => {
   );
 };
 
-export default Principal_MSG;
+export default PrincipalMSG;

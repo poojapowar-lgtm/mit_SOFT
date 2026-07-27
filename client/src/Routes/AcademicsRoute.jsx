@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Academics from "../Pages/Academics";
-import Pg_Outcomes from "../PageContent/Academics/Pg_Outcomes";
+import PgOutcomes from "../PageContent/Academics/PgOutcomes";
 import MOU from "../PageContent/Academics/MOU";
 import NEP from "../PageContent/Academics/NEP";
 import VAP from "../PageContent/Academics/VAP";
@@ -15,8 +15,8 @@ import Achievements from "../PageContent/Academics/Achievements";
 
 export const AcademicsRoute = (
     <Route path="academics" element={<Academics />}>
-        <Route index element={<Pg_Outcomes />} />
-        <Route path="programme-outcomes" element={<Pg_Outcomes />} />
+        <Route index element={<PgOutcomes />} />
+        <Route path="programme-outcomes" element={<PgOutcomes />} />
         <Route path="mou" element={<MOU />} />
         <Route path="nep-2020" element={<NEP />} />
         <Route path="vap-2022" element={<VAP />} />

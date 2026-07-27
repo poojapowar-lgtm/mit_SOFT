@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./pg_outcomes.css";
 
-const Pg_Outcomes = () => {
+const PgOutcomes = () => {
     const [activeTab, setActiveTab] = useState("outcomes");
 
     // Outcomes Data (ARRAY)
@@ -236,4 +236,4 @@ const Pg_Outcomes = () => {
     );
 };
 
-export default Pg_Outcomes;
+export default PgOutcomes;

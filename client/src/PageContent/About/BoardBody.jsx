@@ -91,7 +91,7 @@ const boardData = [
   },
 ];
 
-const Board_Body = () => {
+const BoardBody = () => {
   return (
     <>
       <h2 className="innerpage-title">Board of Management</h2>
@@ -110,4 +110,4 @@ const Board_Body = () => {
   );
 };
 
-export default Board_Body;
+export default BoardBody;
