@@ -1,13 +1,17 @@
-
 import React, { useEffect, useState } from "react";
 import CountUp from "./CountUp";
 import axios from "axios";
-import { FaNewspaper, FaUsers } from "react-icons/fa";
-import { PiCalendarCheckFill } from "react-icons/pi";
-import { TbMailFilled } from "react-icons/tb";
+
+// Icons (more meaningful)
+import { FaNewspaper, FaUsers, FaUserTie } from "react-icons/fa";
+import { PiCalendarCheckFill, PiStudentFill } from "react-icons/pi";
+import { TbMailFilled, TbMessageCircle } from "react-icons/tb";
+import { MdSchool, MdScience, MdHandshake } from "react-icons/md";
+import { GiGraduateCap } from "react-icons/gi";
+import { BsBuildingFillCheck } from "react-icons/bs";
+
 import { useNavigate } from "react-router-dom";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
-
 
 const AdminPanel = () => {
   const navigate = useNavigate();
@@ -47,25 +51,24 @@ const AdminPanel = () => {
     fetchData();
   }, []);
 
+  // Updated icons mapping
   const dashboardData = [
     { title: "Total News", count: counts.news, icon: <FaNewspaper />, path: "/admin/news" },
     { title: "Total Events", count: counts.events, icon: <PiCalendarCheckFill />, path: "/admin/events" },
     { title: "Total Enquiries", count: counts.enquiries, icon: <TbMailFilled />, path: "/admin/enquiry" },
     { title: "Total Members", count: counts.members, icon: <FaUsers />, path: "/admin/members" },
-    { title: "Student Speak", count: counts.studentSpeak, icon: <FaUsers />, path: "/admin/student-speak" },
-    { title: "Recruiters", count: counts.recruiters, icon: <FaUsers />, path: "/admin/recruiters" },
-    { title: "Faculty Information", count: counts.faculty, icon: <FaUsers />, path: "/admin/faculty" },
-    { title: "Research Data", count: counts.research, icon: <FaUsers />, path: "/admin/research" },
-    { title: "MOU Data", count: counts.mou, icon: <FaUsers />, path: "/admin/mou" },
-    { title: "Placed Students", count: counts.placedStudents, icon: <FaUsers />, path: "/admin/placed-students" },
-    { title: "Alumni Startup", count: counts.alumniStartup, icon: <FaUsers />, path: "/admin/alumni-startup" },
-    { title: "Contact Form", count: counts.alumniStartup, icon: <FaUsers />, path: "/admin/contact" },
+    { title: "Student Speak", count: counts.studentSpeak, icon: <TbMessageCircle />, path: "/admin/student-speak" },
+    { title: "Recruiters", count: counts.recruiters, icon: <BsBuildingFillCheck />, path: "/admin/recruiters" },
+    { title: "Faculty Information", count: counts.faculty, icon: <FaUserTie />, path: "/admin/faculty" },
+    { title: "Research Data", count: counts.research, icon: <MdScience />, path: "/admin/research" },
+    { title: "MOU Data", count: counts.mou, icon: <MdHandshake />, path: "/admin/mou" },
+    { title: "Placed Students", count: counts.placedStudents, icon: <GiGraduateCap />, path: "/admin/placed-students" },
+    { title: "Alumni Startup", count: counts.alumniStartup, icon: <MdSchool />, path: "/admin/alumni-startup" },
+    { title: "Contact Form", count: counts.contact, icon: <TbMailFilled />, path: "/admin/contact" },
   ];
 
   return (
     <div className="admin-page">
-      {/* <h2 className="dashboard-title">Dashboard</h2> */}
-
       <div className="dashboard-container">
         {dashboardData.map((item, index) => (
           <div className="dashboard-card" key={index}>

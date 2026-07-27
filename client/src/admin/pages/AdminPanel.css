@@ -467,116 +467,122 @@ form textarea {
 
 
 /* ===== DASHBOARD ===== */
+
+/* GRID */
 .dashboard-container {
   display: grid;
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:30px;
 }
 
-.dashboard-grid {
-  margin-top: 25px;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 20px;
-}
-
+/* CARD */
 .dashboard-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 14px;
-  transition: 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .dashboard-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
 }
 
+/* CONTENT */
 .dcard-content {
   display: flex;
   align-items: center;
-  gap: 30px;
-  margin: 0 auto;
+  gap: 16px;
 }
 
-
+/* ICON BADGE */
 .dcard-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 26px;
   color: #fff;
-  font-size: 60px;
-  flex-shrink: 0;
 }
 
+/* Different colors per icon */
+.dashboard-card:nth-child(1) .dcard-icon { background: #8b5cf6; }
+.dashboard-card:nth-child(2) .dcard-icon { background: #22c55e; }
+.dashboard-card:nth-child(3) .dcard-icon { background: #f59e0b; }
+.dashboard-card:nth-child(4) .dcard-icon { background: #ef4444; }
+.dashboard-card:nth-child(5) .dcard-icon { background: #3b82f6; }
+.dashboard-card:nth-child(6) .dcard-icon { background: #14b8a6; }
+.dashboard-card:nth-child(7) .dcard-icon { background: #6366f1; }
+.dashboard-card:nth-child(8) .dcard-icon { background: #ec4899; }
+.dashboard-card:nth-child(9) .dcard-icon { background: #10b981; }
+.dashboard-card:nth-child(10) .dcard-icon { background: #f97316; }
+.dashboard-card:nth-child(11) .dcard-icon { background: #0ea5e9; }
+.dashboard-card:nth-child(12) .dcard-icon { background: #64748b; }
+
+/* TEXT */
 .dcard-title {
-  font-size: 20px;
-  text-align: center;
-  color: whitesmoke;
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 0;
 }
 
 .dcard-count {
-  margin: 5px 0 0;
-  font-size: 45px;
-  font-weight: bold;
-  text-align: center;
-  color: white;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 4px;
 }
 
+/* BUTTON */
 .dcard-btn {
-  align-self: flex-end;
-  margin: 10px;
-  width: 36px;
-  height: 36px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-radius: 50%;
   border: none;
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  font-size: 20px;
+  background: #f1f5f9;
+  color: #536379;
+  font-size: 18px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
-/* Hover effect */
 .dcard-btn:hover {
-  background: rgba(255, 255, 255, 0.35);
+  background: #e2e8f0;
+  color: #111827;
   transform: scale(1.1);
 }
 
-.dashboard-card:nth-child(1) {
-  background: linear-gradient(135deg, #e96ee3, #ac1dd8);
-  /* blue */
-}
-
-.dashboard-card:nth-child(2) {
-  background: linear-gradient(135deg, #22c55e, #15803d);
-  /* green */
-}
-
-.dashboard-card:nth-child(3) {
-  background: linear-gradient(135deg, #f59e0b, #b45309);
-  /* orange */
-}
-
-.dashboard-card:nth-child(4) {
-  background: linear-gradient(135deg, #ef4444, #991b1b);
-  /* red */
-}
-
-.dashboard-card:nth-child(5) {
-  background: linear-gradient(135deg, #3b82f6, #1e3a8a);
-  /* blue-indigo */
-}
-
-.dashboard-card:nth-child(6) {
-  background: linear-gradient(135deg, #14b8a6, #0f766e);
-  /* teal */
+/* OPTIONAL subtle gradient border effect */
+.dashboard-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(120deg, #e0e7ff, #f1f5f9);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 
 .table-img {

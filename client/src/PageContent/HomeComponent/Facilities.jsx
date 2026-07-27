@@ -15,7 +15,7 @@ const Facilities = () => {
       text: "As a part of degree program and an exposure towards the industrial world students at MIT SoFT visits to food.",
     },
     {
-      src: "/assets/images/facilites/Seminars.jpg",
+      src: "/assets/images/facilites/Seminars.JPG",
       title: "Seminars & Group Discussion",
       text: "It is not enough to be knowledge along with that students should have abilities to express it out. Seminars and discussions are organized keeping the same objective in mind.",
     },
