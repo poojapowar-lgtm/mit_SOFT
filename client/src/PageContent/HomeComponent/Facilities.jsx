@@ -10,12 +10,12 @@ const Facilities = () => {
       text: "World Food Day celebration is one of the remarkable activities of MIT SoFT to contribute in nation building with organization of seminar and competitions.",
     },
     {
-      src: "/assets/images/facilites/Industrial_Visit.JPG",
+      src: "/assets/images/facilites/Industrial_Visit.jpg",
       title: "Industrial Visit",
       text: "As a part of degree program and an exposure towards the industrial world students at MIT SoFT visits to food.",
     },
     {
-      src: "/assets/images/facilites/Seminars.JPG",
+      src: "/assets/images/facilites/Seminars.jpg",
       title: "Seminars & Group Discussion",
       text: "It is not enough to be knowledge along with that students should have abilities to express it out. Seminars and discussions are organized keeping the same objective in mind.",
     },
@@ -25,7 +25,7 @@ const Facilities = () => {
       text: "MIT School of Food Technology is a effectual partial applied aspect for third year B. Tech (Food Technology) Students. It is a real-world challenges and problems through application of laboratory learned practical's.",
     },
     {
-      src: "/assets/images/facilites/fac3.jpg",
+      src: "/assets/images/facilites/placement.jpg",
       title: "Placement",
       text: "placement cell",
     },
