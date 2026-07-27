@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import AboutUs from "../Pages/AboutUs";
-import AboutMIT from "../PageContent/About/About_MIT";
+import AboutMIT from "../PageContent/About/AboutMIT";
 import Leadership from "../PageContent/About/Leadership";
 import SOFT from "../PageContent/About/SOFT";
 import PrincipalMSG from "../PageContent/About/PrincipalMSG";
