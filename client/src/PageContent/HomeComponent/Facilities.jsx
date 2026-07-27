@@ -10,7 +10,7 @@ const Facilities = () => {
       text: "World Food Day celebration is one of the remarkable activities of MIT SoFT to contribute in nation building with organization of seminar and competitions.",
     },
     {
-      src: "/assets/images/facilites/Industrial_Visit.jpg",
+      src: "/assets/images/facilites/Industrial_Visit.JPG",
       title: "Industrial Visit",
       text: "As a part of degree program and an exposure towards the industrial world students at MIT SoFT visits to food.",
     },
