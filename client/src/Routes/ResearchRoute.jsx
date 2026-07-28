@@ -2,7 +2,6 @@ import React from "react";
 import { Route } from "react-router-dom";
 import Research from "../Pages/Research";
 import BoardResearch from "../PageContent/Research/BoardResearch";
-import MOU from "../PageContent/Research/MOU";
 import Consultancy from "../PageContent/Research/Consultancy";
 import ResearchPaper from "../PageContent/Research/ResearchPaper";
 import Pentant from "../PageContent/Research/Pentant";
@@ -18,7 +17,6 @@ export const ResearchRoute = (
     <Route path="pentant-publications" element={<Pentant />} />
     <Route path="funded-projects" element={<FundedProjects />} />
     <Route path="phd-admissions" element={<PHDAdmissions />} />
-    <Route path="mou" element={<MOU />} />
     <Route path="consultancy-training" element={<Consultancy />} />
     {/* <Route path="student-research" element={<StudentResearch />} /> */}
   </Route>

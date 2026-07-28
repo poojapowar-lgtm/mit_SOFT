@@ -15,7 +15,6 @@ const Research = () => {
     { name: "Funded Projects", path: "funded-projects" },
     { name: "Consultancy & Training", path: "consultancy-training" },
     // { name: "Student Research", path: "student-research" },
-    { name: "MOU’s", path: "mou" },
   ];
 
   // Title mapping
@@ -27,7 +26,6 @@ const Research = () => {
     "funded-projects": "Funded Projects",
     "consultancy-training": "Consultancy & Training",
     // "student-research": "Student Research",
-    "mou": "MOU’s",
   };
 
   // Get dynamic title based on route

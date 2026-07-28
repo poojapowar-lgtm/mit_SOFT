@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+// import "./placedstudents.css";
 
 const PlacedStudents = () => {
   const [students, setStudents] = useState([]);

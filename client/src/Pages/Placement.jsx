@@ -13,7 +13,6 @@ const Placement = () => {
         { name: "Placed Students", path: "placed-students" },
         { name: "Placement Statistics", path: "placement-statistics" },
         { name: "Skill Development Programs", path: "skill-development" },
-        { name: "MOU's", path: "mou" },
         { name: "Internship Policy", path: "internship-policy" },
     ];
 
@@ -24,7 +23,6 @@ const Placement = () => {
         "placed-students": "Placed Students",
         "placement-statistics": "Placement Statistics",
         "skill-development": "Skill Development Programs",
-        "mou": "MOU's",
         "internship-policy": "Internship Policy",
     };
 

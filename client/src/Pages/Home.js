@@ -10,6 +10,7 @@ import Facilities from "../PageContent/HomeComponent/Facilities";
 import Department from "../PageContent/HomeComponent/Department";
 import StudentSpeak from "../PageContent/HomeComponent/StudentSpeak";
 import Recruiters from "../PageContent/HomeComponent/Recruiters";
+import PlacedStd from "../PageContent/HomeComponent/PlacedStd";
 
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
       <Global/>
       <News/>
       <Programs/>
+      <PlacedStd/>
       <Facilities/>
       <Department/>
       <Recruiters/>

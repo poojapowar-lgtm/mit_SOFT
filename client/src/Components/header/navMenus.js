@@ -107,7 +107,6 @@ export const navMenus = [
       { name: "Pentant & Publications", to: "/research/pentant-publications" },
       { name: "Funded Projects", to: "/research/funded-projects" },
       { name: "Consultancy & Training", to: "/research/consultancy-training" },
-      { name: "MOU’s", to: "/research/mou" },
       // { name: "Student Research", to: "/research/student-research" },
     ],
   },
@@ -160,7 +159,6 @@ export const subMenus = [
       { name: "Placed Students", to: "/placement/placed-students" },
       { name: "Placement Statistics", to: "/placement/placement-statistics" },
       { name: "Skill Development Programs", to: "/placement/skill-development" },
-      { name: "MOU's", to: "/placement/mou" },
       { name: "Internship Policy", to: "/placement/internship-policy" },
     ]
   },
