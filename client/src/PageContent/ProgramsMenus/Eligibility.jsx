@@ -2,11 +2,26 @@ import React from "react";
 import "./programs.css";
 
 const Eligibility = ({ title, description, duration, requirement, exam }) => {
+  const infoData = [
+    {
+      title: "Duration",
+      data: duration,
+    },
+    {
+      title: "Specific Requirement",
+      data: requirement,
+    },
+    {
+      title: "Entrance Exam",
+      data: exam,
+    },
+  ];
+
   return (
     <div>
       <h2 className="innerpage-title">{title}</h2>
 
-      <div className="eligibility-container">
+      <div>
         <h3 className="innerpage-subtitle">Eligibility Criteria:</h3>
         {Array.isArray(description) ? (
           description.map((desc, index) => (
@@ -16,9 +31,16 @@ const Eligibility = ({ title, description, duration, requirement, exam }) => {
           <p>{description}</p>
         )}
 
-        <div className="row-lists">
+        <div className="download-row">
+          <h4 className="names">Download PDF (AY 2026-27)</h4>
 
-          {/* duration*/}
+          <div className="eligibility-btns">
+            <button className="btn">Admission Handbook</button>
+            <button className="btn2">Brochure</button>
+          </div>
+        </div>
+
+        {/* <div className="row-lists">
           {duration && (
             <div>
               <h4 className="names">Duration</h4>
@@ -28,7 +50,6 @@ const Eligibility = ({ title, description, duration, requirement, exam }) => {
             </div>
           )}
 
-          {/* Specific Requirement */}
           {requirement && (
             <div>
               <h4 className="names">Specific Requirement</h4>
@@ -38,7 +59,7 @@ const Eligibility = ({ title, description, duration, requirement, exam }) => {
             </div>
           )}
 
-          {/* Entrance Exam */}
+
           {exam && (
             <div>
               <h3 className="names">Entrance Exam</h3>
@@ -47,17 +68,26 @@ const Eligibility = ({ title, description, duration, requirement, exam }) => {
               ))}
             </div>
           )}
+        </div> */}
+        <div className="board-body-container">
+          {infoData.map((section, index) => (
+            section.data && (
+              <div className="board-card" key={index} style={{ padding: "10px" }}>
 
+                <h3 className="board-name">{section.title}</h3>
 
+                <div className="syllabus-row" style={{ flexDirection: "column", alignItems: "flex-start",margin:"5px 0" }}>
+                  {section.data.map((item, i) => (
+                    <p key={i}>{item}</p>
+                  ))}
+                </div>
+
+              </div>
+            )
+          ))}
         </div>
-        <div className="download-row">
-          <h4 className="names">Download PDF (AY 2026-27)</h4>
 
-          <div className="eligibility-btns">
-            <button className="btn">Admission Handbook</button>
-            <button className="btn2">Brochure</button>
-          </div>
-        </div>
+
       </div>
     </div >
   );

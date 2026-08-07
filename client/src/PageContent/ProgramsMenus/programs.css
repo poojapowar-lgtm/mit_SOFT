@@ -46,6 +46,17 @@
   gap: clamp(10px, 2vw, 20px);
 }
 
+.syllabus-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.syllabus-row .board-name {
+  margin: 0;
+  flex: 1;
+}
 
 
 /* Image on right */
@@ -59,9 +70,11 @@
 
 .download-row {
   display: flex;
+  justify-content: center;
+  text-align: center;
   align-items: center;
+  margin: 0 auto;
   gap: 15px;
-  /* controls space between title & buttons */
 }
 
 .eligibility-btns {

@@ -23,6 +23,7 @@ app.use("/api/mou", require("./routes/mou"));
 app.use("/api/placed-students", require("./routes/placedStudents"));
 app.use("/api/alumni-startup", require("./routes/alumniStartup"));
 app.use("/api/contact", require("./routes/contact"));
+app.use("/api/testimonials", require("./routes/testimonials"));
 
 app.listen(5000, () => console.log("Server running on port 5000"));
 

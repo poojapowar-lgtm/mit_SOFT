@@ -133,7 +133,7 @@ export const subMenus = [
     title: "Alumni",
     columns: [
       { name: "Alumni Report", to: "/alumni/alumni-report" },
-      { name: "Alumni Success Stories", to: "/alumni/alumni-stories" },
+      { name: "Alumni Success Stories", to: "/alumni/alumni-testimonials" },
       { name: "Alumni Startup", to: "/alumni/alumni-startup" },
     ],
   },

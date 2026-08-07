@@ -37,8 +37,26 @@ const Events = () => {
 
   const handleFileChange = (e) => {
     const selected = Array.from(e.target.files);
-    setForm((prev) => ({ ...prev, files: [...prev.files, ...selected] }));
-    setImgPreviews((prev) => [...prev, ...selected.map((f) => URL.createObjectURL(f))]);
+
+    const maxSize = 250 * 1024; // 250KB in bytes
+
+    const validFiles = selected.filter((file) => {
+      if (file.size > maxSize) {
+        alert(`${file.name} exceeds the 250KB size limit.`);
+        return false;
+      }
+      return true;
+    });
+
+    setForm((prev) => ({
+      ...prev,
+      files: [...prev.files, ...validFiles],
+    }));
+
+    setImgPreviews((prev) => [
+      ...prev,
+      ...validFiles.map((file) => URL.createObjectURL(file)),
+    ]);
   };
 
   const handleDocChange = (e) => setForm((prev) => ({ ...prev, doc: e.target.files[0] || null }));

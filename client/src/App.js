@@ -54,6 +54,8 @@ import MOUAdmin from "./admin/pages/MOUAdmin";
 import PlacedStudentsAdmin from "./admin/pages/PlacedStudentsAdmin";
 import AlumniStartupAdmin from "./admin/pages/AlumniStartupAdmin";
 import ContactTable from "./admin/pages/ContactTable";
+import Testimonials from "./admin/pages/TestimonialsAdmin";
+import TestimonialsAdmin from "./admin/pages/TestimonialsAdmin";
 
 function App() {
   return (
@@ -90,6 +92,7 @@ function App() {
           <Route path="enquiry" element={<EnquiryTable />} />
           <Route path="members" element={<Members />} />
           <Route path="student-speak" element={<StudentSpeakAdmin />} />
+          <Route path="testimonials" element={<TestimonialsAdmin />} />
           <Route path="recruiters" element={<RecruitersAdmin />} />
           <Route path="faculty" element={<FacultyAdmin />} />
           <Route path="research" element={<ResearchAdmin />} />

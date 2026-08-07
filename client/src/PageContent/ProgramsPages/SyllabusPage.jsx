@@ -33,13 +33,13 @@ const SyllabusPage = () => {
     "mtech-food-technology-working-professional": {
       title: "M. Tech (Food Technology) (Working Professionals)",
       description: "AY 2026-27 : View PDF",
-      file: "/assets/docs/mtech_wp.pdf",
+      file: "/assets/docs/MTFT_Working Profetional Course Layout.docx",
     },
 
     "phd-food-technology": {
       title: "Ph.D. (Food Technology)",
       description: "AY 2026-27 : View PDF",
-      file: "/assets/docs/phd_ft.pdf",
+      file: "/assets/docs/Ph.D syllabus updated_2025.docx",
     },
   };
 

@@ -34,7 +34,7 @@
 }
 
 .news-btn button {
-    padding: 6px 14px;
+    padding: clamp(2px, 0.5vw, 6px) clamp(6px, 1.2vw, 14px);
     border-radius: 20px;
     border: none;
     background: linear-gradient(135deg, #722327, #a83232);
@@ -104,6 +104,7 @@
 
 /* Link */
 .notice-link {
+    font-size: clamp(12px, 1.2vw, 16px);
     white-space: nowrap;
     color: #0066ff;
     font-weight: 600;

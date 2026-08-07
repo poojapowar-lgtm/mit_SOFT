@@ -16,14 +16,14 @@ const Programs = () => {
       title: "M. Tech. (Food Technology)",
     },
     {
-      image:"/assets/images/programs/food_safety.webp",
+      image: "/assets/images/programs/food_safety.webp",
       title: "M. Tech. (Food Safety & Quality Management)",
     },
     {
       image: "/assets/images/programs/Working_Professionals.jpg",
       title: "M. Tech. (Food Technology) (Working Professionals)",
     },
-        {
+    {
       image: "/assets/images/programs/P.hd.jpg",
       title: "Ph. D. (Food Technology)",
     }

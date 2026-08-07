@@ -13,6 +13,7 @@ const Sidebar = () => {
     { name: "Enquiry Form", path: "/admin/enquiry" },
     { name: "Board Members", path: "/admin/members" },
     { name: "Student Speak", path: "/admin/student-speak" },
+    { name: "Testimonials", path: "/admin/testimonials" },
     { name: "Recruiters", path: "/admin/recruiters" },
     { name: "Faculty Information", path: "/admin/faculty" },
     { name: "Research Data", path: "/admin/research" },

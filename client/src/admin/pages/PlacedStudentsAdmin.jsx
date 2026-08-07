@@ -36,9 +36,9 @@ const PlacedStudentsAdmin = () => {
 
     if (!file) return;
 
-    // size check (500KB)
-    if (file.size > 500 * 1024) {
-      alert("Image must be less than 500KB ❌");
+    // size check (100KB)
+    if (file.size > 100 * 1024) {
+      alert("Image must be less than 100KB ❌");
       return;
     }
 

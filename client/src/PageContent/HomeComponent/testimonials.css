@@ -1,0 +1,124 @@
+.testimonials-wrapper {
+  padding: clamp(20px, 4vw, 60px);
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Slider */
+.testimonials-slider {
+  display: flex;
+  gap: clamp(15px, 3vw, 40px);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.testimonials-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* TRACK */
+.testimonials-track {
+  display: flex;
+  width: max-content;
+  gap: clamp(15px, 3vw, 30px);
+  animation: scroll 25s linear infinite;
+}
+
+/* SCROLL ANIMATION */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* PAUSE ON HOVER */
+.testimonials-slider:hover .testimonials-track {
+  animation-play-state: paused;
+}
+
+
+/* Card */
+.testimonials-card {
+  min-width: clamp(220px, 55vw, 400px);
+  background: black;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonials-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Video */
+.video-box iframe,
+.video-box video {
+  width: 100%;
+  height: clamp(180px, 25vw, 260px);
+  border: none;
+  object-fit: cover;
+}
+
+/* Info */
+.testimonials-info {
+  text-align: center;
+}
+
+
+/* NAV BUTTONS (Bottom Right) */
+.nav-buttons {
+  position: absolute;
+  bottom: clamp(-45px, -4vw, -50px); 
+  right: clamp(5px, 2vw, 10px);    
+  display: flex;
+  gap: clamp(6px, 1vw, 10px);      
+  margin-bottom: clamp(10px, 2vw, 20px);
+}
+
+/* Buttons */
+.nav-buttons button {
+  background: linear-gradient(135deg, #008a00, #00b300);
+  color: white;
+  border: none;
+  width: clamp(28px, 4vw, 38px);     
+  height: clamp(28px, 4vw, 38px);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(12px, 1.5vw, 16px); 
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-buttons button:hover {
+  background: linear-gradient(135deg, #722327, #a83232);
+  transform: scale(1.1);
+}
+
+/* Active Click */
+.nav-buttons button:active {
+  transform: scale(0.95);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .testimonials-card {
+    min-width: 80%;
+  }
+
+  .nav-buttons {
+    bottom: -45px;
+    right: 5px;
+  }
+}

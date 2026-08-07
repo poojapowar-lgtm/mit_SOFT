@@ -5,7 +5,10 @@ const StudentSpeakAdmin = () => {
   const [studentList, setStudentList] = useState([]);
   const [form, setForm] = useState({
     name: "",
-    year: "",
+    degree_specialization: "",
+    year_of_passing: "",
+    designation: "",
+    company: "",
     message: "",
     image: null,
   });
@@ -15,7 +18,7 @@ const StudentSpeakAdmin = () => {
 
   const token = localStorage.getItem("token");
 
-  //  Fetch Data
+  // FETCH
   const fetchStudents = async () => {
     try {
       const res = await axios.get("http://localhost:5000/api/student-speak");
@@ -29,28 +32,43 @@ const StudentSpeakAdmin = () => {
     fetchStudents();
   }, []);
 
-  //  Handle Input
+  // INPUT CHANGE
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  //  File Upload
+  // FILE
   const handleFileChange = (e) => {
-    setForm({ ...form, image: e.target.files[0] });
+    const file = e.target.files[0];
+
+    if (!file) return;
+
+    const maxSize = 100 * 1024; // 100KB
+
+    if (file.size > maxSize) {
+      alert("Image must be less than 100KB ❌");
+      e.target.value = null; // reset file input
+      return;
+    }
+
+    setForm({ ...form, image: file });
   };
 
-  //  Reset
+  // RESET
   const resetForm = () => {
     setForm({
       name: "",
-      year: "",
+      degree_specialization: "",
+      year_of_passing: "",
+      designation: "",
+      company: "",
       message: "",
       image: null,
     });
     setEditingId(null);
   };
 
-  //  Submit
+  // SUBMIT
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -59,13 +77,9 @@ const StudentSpeakAdmin = () => {
     }
 
     const formData = new FormData();
-    formData.append("name", form.name);
-    formData.append("year", form.year);
-    formData.append("message", form.message);
-
-    if (form.image) {
-      formData.append("image", form.image);
-    }
+    Object.keys(form).forEach((key) => {
+      if (form[key]) formData.append(key, form[key]);
+    });
 
     try {
       if (editingId) {
@@ -91,18 +105,21 @@ const StudentSpeakAdmin = () => {
     }
   };
 
-  //  Edit
+  // EDIT
   const handleEdit = (item) => {
     setForm({
       name: item.name,
-      year: item.year,
+      degree_specialization: item.degree_specialization,
+      year_of_passing: item.year_of_passing,
+      designation: item.designation,
+      company: item.company,
       message: item.message,
       image: null,
     });
     setEditingId(item.id);
   };
 
-  //  Delete
+  // DELETE
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this record?")) return;
 
@@ -115,7 +132,6 @@ const StudentSpeakAdmin = () => {
 
   return (
     <div className="admin-page">
-
       {msg && <div className="admin-alert">{msg}</div>}
 
       <div className="admin-grid">
@@ -124,6 +140,7 @@ const StudentSpeakAdmin = () => {
           <h3>{editingId ? "Edit Student" : "Add Student"}</h3>
 
           <form onSubmit={handleSubmit}>
+
             <label>
               Name *
               <input
@@ -135,18 +152,44 @@ const StudentSpeakAdmin = () => {
             </label>
 
             <label>
-              Year *
+              Degree & Specialization
               <input
-                name="year"
-                placeholder="Year (e.g. TY BTech)"
-                value={form.year}
+                name="degree_specialization"
+                value={form.degree_specialization}
+                onChange={handleChange}
+              />
+            </label>
+
+            <label>
+              Year of Passing
+              <input
+                name="year_of_passing"
+                value={form.year_of_passing}
+                onChange={handleChange}
+              />
+            </label>
+
+            <label>
+              Current Designation
+              <input
+                name="designation"
+                value={form.designation}
+                onChange={handleChange}
+              />
+            </label>
+
+            <label>
+              Company
+              <input
+                name="company"
+                value={form.company}
                 onChange={handleChange}
               />
             </label>
 
             <label>
               Message *
-              <input
+              <textarea
                 name="message"
                 value={form.message}
                 onChange={handleChange}
@@ -154,12 +197,18 @@ const StudentSpeakAdmin = () => {
               />
             </label>
 
-
-            <input type="file" onChange={handleFileChange} />
+            <label>
+              Upload Image / Video
+              <input
+                type="file"
+                onChange={handleFileChange}
+              />
+            </label>
 
             <button className="form-btn" type="submit">
               {editingId ? "Update" : "Add"}
             </button>
+
           </form>
         </div>
 
@@ -170,13 +219,16 @@ const StudentSpeakAdmin = () => {
           {studentList.length === 0 ? (
             <p>No records found</p>
           ) : (
-            <div className="admin-table-wrapper ">
+            <div className="admin-table-wrapper">
               <table className="admin-table">
                 <thead>
                   <tr>
                     <th>Image</th>
                     <th>Name</th>
+                    <th>Degree</th>
                     <th>Year</th>
+                    <th>Designation</th>
+                    <th>Company</th>
                     <th>Message</th>
                     <th>Action</th>
                   </tr>
@@ -190,13 +242,19 @@ const StudentSpeakAdmin = () => {
                           <img
                             src={`http://localhost:5000/uploads/${item.image}`}
                             width="50"
-                            alt=""
+                            alt={item.image_alt || item.name}
+                            title={item.image_title || item.name}
                           />
                         )}
                       </td>
+
                       <td>{item.name}</td>
-                      <td>{item.year}</td>
+                      <td>{item.degree_specialization}</td>
+                      <td>{item.year_of_passing}</td>
+                      <td>{item.designation}</td>
+                      <td>{item.company}</td>
                       <td>{item.message?.slice(0, 40)}</td>
+
                       <td>
                         <button onClick={() => handleEdit(item)}>Edit</button>
                         <button onClick={() => handleDelete(item.id)}>

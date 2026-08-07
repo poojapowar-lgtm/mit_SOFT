@@ -5,15 +5,15 @@ const Sports = () => {
     // sportsData
     const sportsData = {
         images: [
-            "/assets/images/facilites/Badminton.jpg",
-            "/assets/images/facilites/Basketball.jpg",
-            "/assets/images/facilites/Boxing.jpg",
-            "/assets/images/facilites/Football.jpg",
-            "/assets/images/facilites/Kabbadi.jpg",
-            "/assets/images/facilites/KhoKho.jpg",
-            "/assets/images/facilites/Swimming.jpg",
-            "/assets/images/facilites/Tenis.jpg",
-            "/assets/images/facilites/Vollyball.jpg",
+            { src: "/assets/images/facilites/Badminton.jpg", name: "Badminton Court" },
+            { src: "/assets/images/facilites/Basketball.jpg", name: "Basketball" },
+            { src: "/assets/images/facilites/Boxing.jpg", name: "Boxing" },
+            { src: "/assets/images/facilites/Football.jpg", name: "Football" },
+            { src: "/assets/images/facilites/Kabbadi.jpg", name: "Kabbadi" },
+            { src: "/assets/images/facilites/KhoKho.jpg", name: "KhoKho" },
+            { src: "/assets/images/facilites/Swimming.jpg", name: "Swimming Pool" },
+            { src: "/assets/images/facilites/Tenis.jpg", name: "Table Tenis" },
+            { src: "/assets/images/facilites/Vollyball.jpg", name: "Vollyball" }
         ],
         paragraphs: [
             "MIT Art, Design and Technology University provides a vibrant campus environment where sports and fitness play a vital role in overall student development. The university offers a wide range of modern sports facilities that cater to both recreational and competitive needs, encouraging students to maintain an active and healthy lifestyle.",
@@ -33,10 +33,15 @@ const Sports = () => {
             <div>
                 <div className="facility-images">
                     {sportsData.images.map((img, i) => (
-                        <img key={i} src={img} alt="sports" />
+                        <div className="image-card" key={i}>
+                            <img src={img.src} alt={img.name} />
+                            <div className="image-text">
+                                {img.name}
+                            </div>
+                        </div>
                     ))}
                 </div>
-                
+
                 {sportsData.paragraphs.map((para, i) => (
                     <p key={i}>{para}</p>
                 ))}

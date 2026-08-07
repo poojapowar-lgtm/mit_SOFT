@@ -71,54 +71,45 @@ const Footer = () => {
           <h4> Quick Links</h4>
           <ul>
             <li>Download Brochure</li>
-            <li>Admission co-ordinators</li>
-            <li>Fee Structure</li>
+            <li><a href="/admissions/annoucement">Admission Annoucement</a></li>
+            <li><a href="/admissions/fee-structure">Fee Structure</a></li>
           </ul>
           <h4> Latest Happenings</h4>
           <ul>
-            <li>Events & Activities</li>
+            <li><a href="/campus-life/events">Events & Activities</a></li>
+
           </ul>
 
-          <h4> Alumni</h4>
-          <ul>
-            <li>Alumni Committee</li>
-            <li>Achievements</li>
-          </ul>
+
         </div>
 
         <div className="footer-links">
           <h4> Student Centric</h4>
           <ul>
-            <li>Bus Routes</li>
-            <li>Hostel</li>
-            <li>Cafeteria</li>
-            <li>Alumni</li>
-            <li>Student Grievance</li>
+            <li><a href="/campus-life/facilities">Facilities</a></li>
+            <li><a href="Laboratory Facilities">Laboratories</a></li>
+            <li><a href="/academics/student-grievance">Student Grievance</a></li>
           </ul>
 
           <h4> Exams</h4>
           <ul>
-            <li> Exam Schedule </li>
-            <li> Result Login </li>
-            <li>Convocations</li>
-            <li>Student Services</li>
+            <li><a href="/examinations/examinations-schedule"> Exam Schedule </a></li>
+            <li><a href="/campus-life/events"> Result Login </a></li>
           </ul>
         </div>
 
         <div className="footer-links">
-          <h4> Contact Us</h4>
+          <h4> Alumni</h4>
           <ul>
-            <li>Admission Enquiry</li>
-            <li>Admin Office</li>
-            <li>Enquire Now</li>
-            <li>Plan your Campus Visit</li>
+            <li><a href="/alumni/alumni-report">Alumni Report</a></li>
+            <li><a href="/placement/placed-students">Placed Students</a></li>
+            <li><a href="/academics/achievements">Achievements</a></li>
           </ul>
 
           <h4> Other Links</h4>
           <ul>
-            <li>Academic Calendar</li>
-            <li>Download Brochure</li>
-            <li>Student ERP Connect</li>
+            <li><a href="/campus-life/events">Academic Calendar</a></li>
+            <li><a href="/contacts">Connect with Us</a></li>
           </ul>
         </div>
 

@@ -1,0 +1,137 @@
+.student-speak {
+  text-align: center;
+}
+
+/* Wrapper */
+.speak-slider-wrapper {
+  margin-bottom: clamp(20px, 4vw, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+}
+
+/* Slider */
+.speak-slider {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(15px, 4vw, 40px);
+}
+
+/* CARD */
+.speak-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex-shrink: 0;
+  background: whitesmoke;
+  border-radius: clamp(6px, 1vw, 12px);
+  transition: 0.3s ease;
+}
+
+/* HOVER */
+.speak-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(100, 2, 2, 0.18);
+}
+
+/* TOP ROW */
+.speak-top {
+  background-color: white;
+  display: flex;
+  border-radius: clamp(6px, 1vw, 12px) clamp(6px, 1vw, 12px) 0 0;
+  margin: clamp(6px, 1vw, 12px);
+  gap: 15px;
+  align-items: flex-start;
+}
+
+
+/* LEFT IMAGE */
+.speak-left img {
+  padding: clamp(6px, 1vw, 12px);
+  width: clamp(120px, 15vw, 200px);
+  height: clamp(120px, 15vw, 200px);
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+}
+
+/* RIGHT CONTENT */
+.speak-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* LIST */
+.speak-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* LIST ITEMS */
+.speak-list li {
+  font-size: clamp(12px, 1.2vw, 16px);
+  color: #722327;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.speak-message {
+  padding: 0 clamp(10px, 4vw, 20px);
+  margin-top: 0;
+}
+
+
+/* QUOTE STYLE */
+.speak-message::before {
+  content: "“ ";
+  color: #722327;
+  font-size: clamp(22px, 1.2vw, 26px);
+  font-weight: bold;
+}
+
+.speak-message::after {
+  content: " ”";
+  color: #722327;
+  font-size: clamp(22px, 1.2vw, 26px);
+  font-weight: bold;
+}
+
+
+/* DOTS */
+.dots {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 6px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background-color: #003153;
+  transform: scale(1.2);
+}
+
+.dot:hover {
+  background-color: #555;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .speak-slider {
+    grid-template-columns: 1fr;
+  }
+
+}

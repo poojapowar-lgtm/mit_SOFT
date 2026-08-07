@@ -1,0 +1,141 @@
+import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
+import {
+    TbPlayerTrackPrevFilled,
+    TbPlayerTrackNextFilled,
+} from "react-icons/tb";
+import "./StudentSpeak.css";
+
+const StudentSpeak = () => {
+    const [data, setData] = useState([]);
+    const [index, setIndex] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
+
+    const sliderRef = useRef(null); //  FIX
+
+    useEffect(() => {
+        axios
+            .get("http://localhost:5000/api/student-speak")
+            .then((res) => setData(res.data))
+            .catch((err) => console.error(err));
+    }, []);
+
+const getItemsPerView = () => (window.innerWidth <= 768 ? 1 : 2);
+
+    const nextSlide = () => {
+        if (index + getItemsPerView() < data.length) {
+            setIndex((prev) => prev + 1);
+        }
+    };
+
+    const prevSlide = () => {
+        if (index > 0) {
+            setIndex((prev) => prev - 1);
+        }
+    };
+
+    //  SCROLL FUNCTIONS (FIX)
+    const scrollLeft = () => {
+        sliderRef.current.scrollBy({ left: -320, behavior: "smooth" });
+    };
+
+    const scrollRight = () => {
+        sliderRef.current.scrollBy({ left: 320, behavior: "smooth" });
+    };
+
+    const visibleData = data.slice(index, index + getItemsPerView());
+
+    useEffect(() => {
+        if (isPaused || data.length === 0) return;
+
+        const interval = setInterval(() => {
+            const items = getItemsPerView();
+            setIndex((prev) =>
+                prev + items >= data.length ? 0 : prev + 1
+            );
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, [isPaused, data]);
+
+    return (
+        <div>
+            <h2 className="innerpage-title">Alumni Success Stories</h2>
+
+            <div className="speak-slider-wrapper">
+
+                <div
+                    className="speak-slider"
+                    ref={sliderRef}
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                >
+                    {visibleData.length > 0 ? (
+                        visibleData.map((item) => (
+                            <div className="speak-card" key={item.id}>
+
+                                {/* TOP ROW */}
+                                <div className="speak-top">
+
+                                    {/* IMAGE */}
+                                    <div className="speak-left">
+                                        <img
+                                            src={
+                                                item.image
+                                                    ? `http://localhost:5000/uploads/${item.image}`
+                                                    : "/default-user.png"
+                                            }
+                                            alt={item.image_alt || item.name}
+                                            title={item.image_title || item.name}
+                                        />
+                                    </div>
+
+                                    {/* CONTENT */}
+                                    <div className="speak-right">
+                                        <h3 className="dep-name">{item.name}</h3>
+                                        <ul className="speak-list">
+                                            <li>{item.degree_specialization || ""}</li>
+                                            <li>{item.year_of_passing || ""}</li>
+                                            <li><b>Designation:</b> {item.designation || ""}</li>
+                                            <li><b>Company:</b> {item.company || ""}</li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                {/* MESSAGE */}
+                                <p className="speak-message">{item.message}</p>
+
+                            </div>
+                        ))
+                    ) : (
+                        <p>No data available</p>
+                    )}
+                </div>
+
+                {/* DOTS */}
+                <div className="dots">
+                    {data.map((_, i) => (
+                        <span
+                            key={i}
+                            className={`dot ${index === i ? "active" : ""}`}
+                            onClick={() => setIndex(i)}
+                        ></span>
+                    ))}
+                </div>
+
+                {/* NAV BUTTONS */}
+                <div className="nav-buttons">
+                    <button onClick={scrollLeft}>
+                        <TbPlayerTrackPrevFilled />
+                    </button>
+                    <button onClick={scrollRight}>
+                        <TbPlayerTrackNextFilled />
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default StudentSpeak;

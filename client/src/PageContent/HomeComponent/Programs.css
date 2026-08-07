@@ -18,6 +18,10 @@
   gap: clamp(15px, 3vw, 30px);
 }
 
+.programs-slider:hover .programs-track {
+  animation-play-state: paused;
+}
+
 /* Card */
 .program-cards {
   width: clamp(220px, 30vw, 400px);

@@ -9,14 +9,14 @@ const Alumni = () => {
 
   const menu = [
     { name: "Alumni Report", path: "alumni-report" },
-    // { name: "Alumni Report", path: "alumni-report" },
     { name: "Alumni Startup", path: "alumni-startup" },
+    { name: "Alumni Success Stories", path: "alumni-testimonials" },
   ];
 
   // Title mapping
   const titleMap = {
     "alumni-report": "Alumni Report",
-    // "alumni-stories": "Alumni Success Stories",
+    "alumni-testimonials": "Alumni Success Stories",
     "alumni-startup": "Alumni Startup"
   };
 

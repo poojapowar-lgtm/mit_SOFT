@@ -28,7 +28,8 @@ const AdminPanel = () => {
     mou: 0,
     placedStudents: 0,
     alumniStartup: 0,
-    contact: 0
+    contact: 0,
+    testimonials: 0
   });
 
   useEffect(() => {
@@ -58,6 +59,7 @@ const AdminPanel = () => {
     { title: "Total Enquiries", count: counts.enquiries, icon: <TbMailFilled />, path: "/admin/enquiry" },
     { title: "Total Members", count: counts.members, icon: <FaUsers />, path: "/admin/members" },
     { title: "Student Speak", count: counts.studentSpeak, icon: <TbMessageCircle />, path: "/admin/student-speak" },
+    { title: "Testimonials", count: counts.studentSpeak, icon: <TbMessageCircle />, path: "/admin/testimonials" },
     { title: "Recruiters", count: counts.recruiters, icon: <BsBuildingFillCheck />, path: "/admin/recruiters" },
     { title: "Faculty Information", count: counts.faculty, icon: <FaUserTie />, path: "/admin/faculty" },
     { title: "Research Data", count: counts.research, icon: <MdScience />, path: "/admin/research" },

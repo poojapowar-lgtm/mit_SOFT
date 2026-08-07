@@ -37,14 +37,23 @@ const RecruitersAdmin = () => {
   };
 
   // File Upload + Preview
-  const handleFile = (e) => {
-    const file = e.target.files[0];
-    setForm({ ...form, logo: file });
+const handleFile = (e) => {
+  const file = e.target.files[0];
 
-    if (file) {
-      setPreview(URL.createObjectURL(file));
-    }
-  };
+  if (!file) return;
+
+  const maxSize = 50 * 1024; // 50KB in bytes
+
+  if (file.size > maxSize) {
+    alert("File size should not be more than 50KB.");
+    e.target.value = ""; // reset input
+    return;
+  }
+
+  setForm({ ...form, logo: file });
+
+  setPreview(URL.createObjectURL(file));
+};
 
   // Submit
   const handleSubmit = async (e) => {

@@ -38,13 +38,25 @@ const FacultyAdmin = () => {
   };
 
   //  File Upload
+  // File Upload with 100KB limit
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (!file) return;
+
+    const maxSize = 100 * 1024; // 100KB
+
+    // Size validation
+    if (file.size > maxSize) {
+      alert("Image must be less than 100KB ❌");
+      e.target.value = null; // reset input
+      setPreview(""); // clear preview
+      return;
+    }
+
+    // Valid file
     setForm({ ...form, image: file });
     setPreview(URL.createObjectURL(file));
   };
-
   //  Reset
   const resetForm = () => {
     setForm({

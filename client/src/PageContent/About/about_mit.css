@@ -17,8 +17,8 @@
 
 .vision-text {
     display: flex;
-    flex-direction: column;  
-    align-items: flex-start; 
+    flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
     margin-bottom: clamp(14px, 1.8vw, 24px);
     padding: clamp(10px, 1.2vw, 16px);
@@ -55,6 +55,9 @@
 .v-title {
     margin: 0;
     line-height: 1;
+    color: #722327;
+    font-size: clamp(12px, 5vw, 18px);
+    font-weight: 500;
 }
 
 

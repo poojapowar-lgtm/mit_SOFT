@@ -12,7 +12,7 @@ const AlumniStartup = () => {
   }, []);
 
   return (
-    <div className="research-container">
+    <div>
       <h2 className="innerpage-title">Alumni Startups</h2>
 
       <div className="table-responsive">
