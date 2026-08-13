@@ -57,7 +57,7 @@ const EligibilityPage = () => {
       ],
     },
 
-    "mtech-foodsafet": {
+    "mtech-foodsafety": {
       title: "M. Tech (Food Safety & Quality Management)",
       duration: ["2 Years | Intake Capacity: 6"],
       description: [

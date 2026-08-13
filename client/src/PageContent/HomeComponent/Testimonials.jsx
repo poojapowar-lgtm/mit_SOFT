@@ -41,9 +41,11 @@ const Testimonials = () => {
 
   return (
     <section className="testimonials">
+
       <div className="testimonials-wrapper">
+              <h2 className="title"> Testimonials</h2>
         <div className="testimonials-slider">
-          {/* 🔥 ADD REF HERE */}
+          {/*  ADD REF HERE */}
           <div className="testimonials-track" ref={sliderRef}>
             {[...testimonials, ...testimonials].map((item, index) => (
               <div className="testimonials-card" key={index}>
@@ -69,7 +71,7 @@ const Testimonials = () => {
                 </div>
 
                 <div className="testimonials-info">
-                  <h3 className="dep-name" style={{color:"goldenrod", marginTop:"0"}}>
+                  <h3 className="dep-name" style={{ color: "goldenrod", marginTop: "0" }}>
                     {item.title || "Video Testimonial"}
                   </h3>
                 </div>

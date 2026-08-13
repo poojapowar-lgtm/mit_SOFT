@@ -22,34 +22,6 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
-/* Image container */
-.placed-std-img {
-    width: clamp(120px, 30%, 200px);
-    height: auto;
-    flex-shrink: 0;
-}
-
-/* Image */
-.placed-std-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: clamp(10px, 1.5vw, 16px);
-}
-
-/* No image */
-.no-img {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #eee, #ddd);
-    font-size: clamp(12px, 1.2vw, 14px);
-    color: #777;
-}
-
 /* Content */
 .placed-std-content {
     flex: 1;

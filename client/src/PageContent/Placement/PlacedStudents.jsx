@@ -63,6 +63,14 @@ const PlacedStudents = () => {
                           src={`http://localhost:5000/uploads/${item.photo}`}
                           alt={item.name}
                           className="student-img"
+                          style={{
+                            width: "clamp(60px, 8vw, 100px)",
+                            height: "clamp(60px, 8vw, 100px)",
+                            objectFit: "cover",
+                            display: "block",
+                            margin: "0 auto",
+                            borderRadius: "8px",
+                          }}
                         />
                       ) : (
                         <span className="no-img">N/A</span>

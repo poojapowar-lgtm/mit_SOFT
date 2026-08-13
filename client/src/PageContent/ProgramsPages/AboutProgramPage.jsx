@@ -40,7 +40,7 @@ const AboutProgramPage = () => {
 
     "mtech-foodsafety": {
       title: "M. Tech (Food Safety & Quality Management)",
-      image: "/assets/images/programs/food_safety.webp",
+      image: "/assets/images/programs/food_safety.jpg",
       description: [
         "The M.Tech programme focuses on advanced food technology research.",
         "This specialized two-year postgraduate program is designed to develop experts in food safety systems, quality assurance, regulatory compliance, and risk management. The curriculum integrates food microbiology, toxicology, food laws, HACCP, ISO standards, and global food safety regulations. Students gain practical exposure through laboratory analysis, audits, case studies, and industry-oriented projects, ensuring strong professional competence in quality control and regulatory affairs. The program is multidisciplinary and open to graduates from food, ",

@@ -30,7 +30,20 @@ const SkillDev = () => {
     "Emotional intelligence and positive attitude"
   ];
 
-  const images = ["/images/skill1.jpg", "/images/skill2.jpg"];
+  const images1 = [
+    "/assets/images/skills-1.png",
+    "/assets/images/skills-2.png",
+  ];
+
+  const images2 = [
+    "/assets/images/skills-3.png",
+    "/assets/images/skills-4.png",
+  ];
+
+  const images3 = [
+    "/assets/images/skills-5.png",
+    "/assets/images/skills-6.png",
+  ];
 
   const renderList = (data) => (
     <ul className="page-list">
@@ -40,9 +53,9 @@ const SkillDev = () => {
     </ul>
   );
 
-  const renderImages = () => (
+  const renderImages = (imageList) => (
     <div className="image-wrapper">
-      {images.map((img, i) => (
+      {imageList.map((img, i) => (
         <img key={i} src={img} alt={`Skill ${i + 1}`} />
       ))}
     </div>
@@ -53,17 +66,19 @@ const SkillDev = () => {
       <h2 className="innerpage-title">Skill Development Program</h2>
 
       {renderList(section1)}
-      {renderImages()}
+      {renderImages(images1)}
 
       {renderList(section2)}
-      {renderImages()}
+      {renderImages(images2)}
 
       {renderList(section3)}
 
-      <p className="sub-heading">Key areas covered during the session included:</p>
-      {renderList(keyAreas)}
+      <p className="sub-heading">
+        Key areas covered during the session included:
+      </p>
 
-      {renderImages()}
+      {renderList(keyAreas)}
+      {renderImages(images3)}
     </div>
   );
 };

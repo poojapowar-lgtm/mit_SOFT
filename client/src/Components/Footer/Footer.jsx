@@ -70,7 +70,11 @@ const Footer = () => {
         <div className="footer-links">
           <h4> Quick Links</h4>
           <ul>
-            <li>Download Brochure</li>
+            <li>
+              <a href="/assets/docs/SoFT_3_Fold_Brochure_A_Grade.pdf" target="_blank" rel="noopener noreferrer">
+                Download Brochure
+              </a>
+            </li>
             <li><a href="/admissions/annoucement">Admission Annoucement</a></li>
             <li><a href="/admissions/fee-structure">Fee Structure</a></li>
           </ul>

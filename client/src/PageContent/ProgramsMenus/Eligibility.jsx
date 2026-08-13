@@ -36,7 +36,9 @@ const Eligibility = ({ title, description, duration, requirement, exam }) => {
 
           <div className="eligibility-btns">
             <button className="btn">Admission Handbook</button>
-            <button className="btn2">Brochure</button>
+            <a href="/assets/docs/SoFT_3_Fold_Brochure_A_Grade.pdf" target="_blank" rel="noopener noreferrer">
+              <button className="btn2">Brochure</button>
+            </a>
           </div>
         </div>
 
@@ -76,7 +78,7 @@ const Eligibility = ({ title, description, duration, requirement, exam }) => {
 
                 <h3 className="board-name">{section.title}</h3>
 
-                <div className="syllabus-row" style={{ flexDirection: "column", alignItems: "flex-start",margin:"5px 0" }}>
+                <div className="syllabus-row" style={{ flexDirection: "column", alignItems: "flex-start", margin: "5px 0" }}>
                   {section.data.map((item, i) => (
                     <p key={i}>{item}</p>
                   ))}
