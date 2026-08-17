@@ -10,7 +10,7 @@ const LifeAtCampus = () => {
       <div className="campus-content">
         {/* Left Side */}
         <div className="campus-left">
-          <h2 className="title">MIT-ADT School of Food Technology</h2>
+          <h2 className="title">School of Food Technology </h2>
           <p>
             In 2006 with the vision to build talent and usher India ahead in the crucial food processing sector as per the guidelines of Maharashtra Council of Agricultural Education and Research, Pune (MCAER)
           </p>

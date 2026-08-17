@@ -26,7 +26,7 @@ const Admission = () => {
     // Title mapping
     const titleMap = {
         "annoucement": "Amission Annoucement",
-        "schedule": "Amission Schedule",
+        "schedule": "Admission Schedule",
         "eligibility": "Eligibility",
         "procedure": "Amission Procedure",
         // "entrance": "Entrance Exams Updates",

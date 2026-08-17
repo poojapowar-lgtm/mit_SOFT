@@ -209,9 +209,10 @@ const PlacementCell = () => {
 
     const CoOrdinator = [
         {
-            name: "Mr. Rupesh J. Saindane",
-            title: "Training and Placement Officer",
-            desgination: "School of Food Technology, MIT ADT University, Pune",
+            name: "Dr. Balaji N. Jadhav",
+            desgination: "Placement Incharge",
+            mail: "balaji.jadhav@mituniversity.edu.in",
+            contact: "9420090899"
         },
     ]
     return (
@@ -260,8 +261,9 @@ const PlacementCell = () => {
                 {CoOrdinator.map((item, index) => (
                     <div className="board-card" key={index}>
                         <h3 className="board-name">{item.name}</h3>
-                        <p style={{ margin: "5px 0" }}><strong>{item.title}</strong></p>
-                        <p className="board-desg">{item.desgination}</p>
+                        <p style={{ margin: "5px 0" }}><strong>{item.desgination}</strong></p>
+                        <p className="board-desg">{item.mail}</p>
+                        <p className="board-desg">{item.contact}</p>
                     </div>
                 ))}
             </div>

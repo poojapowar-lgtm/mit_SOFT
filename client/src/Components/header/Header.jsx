@@ -30,8 +30,8 @@ const Header = () => {
         <div className="logo2-section">
           <img src="/assets/images/home/SoFT_Logo.png" alt="Logo 2" className="logo2" />
           <div className="logo-text">
-            <h1 className="logo-title">MIT-SoFT</h1>
-            <p className="logo-subtitle">School of Food Technology</p>
+            <h1 className="logo-title">School of <br/>Food Technology</h1>
+            {/* <p className="logo-subtitle">(SoFT)</p> */}
           </div>
         </div>
       </div>

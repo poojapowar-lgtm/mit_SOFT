@@ -77,6 +77,8 @@ const Footer = () => {
             </li>
             <li><a href="/admissions/annoucement">Admission Annoucement</a></li>
             <li><a href="/admissions/fee-structure">Fee Structure</a></li>
+            <li><a href="/academics/academic-calendar">Academic Calendar</a></li>
+            <li><a href="/contacts">Connect with Us</a></li>
           </ul>
           <h4> Latest Happenings</h4>
           <ul>
@@ -112,8 +114,10 @@ const Footer = () => {
 
           <h4> Other Links</h4>
           <ul>
-            <li><a href="/campus-life/events">Academic Calendar</a></li>
-            <li><a href="/contacts">Connect with Us</a></li>
+            <li><a href="https://sdgs.un.org/">United Nations</a></li>
+            <li><a href="https://www.fssai.gov.in/">Fssai</a></li>
+            <li><a href="https://www.mofpi.gov.in/">mofpi</a></li>
+            <li><a href="https://swayam.gov.in/nc_details/NPTEL">swayam</a></li>
           </ul>
         </div>
 

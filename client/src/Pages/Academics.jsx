@@ -9,28 +9,32 @@ const Academics = () => {
 
     const menu = [
         { name: "Programme Outcomes", path: "programme-outcomes" },
+        { name: "Academic Calendar", path: "academic-calendar" },
         { name: "Faculty Information", path: "faculty-information" },
+        { name: "Value Added Courses", path: "vac" },
         { name: "MOU’s", path: "mou" },
         { name: "NEP-2020", path: "nep-2020" },
         { name: "VAP-2022", path: "vap-2022" },
         { name: "Curriculum Feedback", path: "curriculum-feedback" },
         { name: "Student Grievance", path: "student-grievance" },
         { name: "Laboratory Facilities", path: "lab-facilities" },
-          { name: "Achievements", path: "achievements" },
+        { name: "Achievements", path: "achievements" },
 
     ];
 
     // Title mapping
     const titleMap = {
+        "academic-calendar": "Academic Calendar",
         "programme-outcomes": "Programme Outcomes",
         "faculty-information": "Faculty Information",
+        "vac": "Value Added Courses",
         "mou": "MOU’s",
         "nep-2020": "NEP-2020",
         "vap-2022": "VAP-2022",
         "curriculum-feedback": "Curriculum Feedback",
         "student-grievance": "Student Grievance",
         "lab-facilities": "Laboratory Facilities",
-          "achievements": "Achievements",
+        "achievements": "Achievements",
     };
 
     // Get dynamic title based on route

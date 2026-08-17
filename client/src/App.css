@@ -198,7 +198,19 @@ strong {
   font-size: clamp(12px, 3vw, 24px);
 }
 
+.calendar-table-name {
+  max-width: 300px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
 
+.VAC-header th{
+    max-width: 150px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
 @media (max-width: 600px) {
 
   .common-table th,

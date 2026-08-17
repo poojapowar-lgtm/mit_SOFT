@@ -101,7 +101,7 @@ const ContactUs = () => {
                         </div>
 
                         {/* Contact Form */}
-                        <form className="contact-form" onSubmit={handleSubmit}>
+                        {/* <form className="contact-form" onSubmit={handleSubmit}>
 
                             <h3 className="contact-title" style={{ textAlign: "center" }}>
                                 Contact With Us
@@ -109,7 +109,7 @@ const ContactUs = () => {
 
                             <div className="form-grid">
 
-                                {/* Name */}
+
                                 <div className="form-group">
                                     <label>Name *</label>
                                     <input
@@ -122,7 +122,7 @@ const ContactUs = () => {
                                     />
                                 </div>
 
-                                {/* Email */}
+
                                 <div className="form-group">
                                     <label>Email ID *</label>
                                     <input
@@ -135,7 +135,7 @@ const ContactUs = () => {
                                     />
                                 </div>
 
-                                {/* Mobile */}
+
                                 <div className="form-group">
                                     <label>Mobile Number *</label>
                                     <input
@@ -149,7 +149,7 @@ const ContactUs = () => {
                                     />
                                 </div>
 
-                                {/* Course */}
+
                                 <div className="form-group">
                                     <label>Select Course *</label>
                                     <select
@@ -182,7 +182,7 @@ const ContactUs = () => {
 
                             </div>
 
-                            {/* Submit Button */}
+
                             <button
                                 className="btn submit-btn"
                                 type="submit"
@@ -191,7 +191,7 @@ const ContactUs = () => {
                                 {loading ? "Submitting..." : "Submit"}
                             </button>
 
-                        </form>
+                        </form> */}
 
                     </div>
                 </div>

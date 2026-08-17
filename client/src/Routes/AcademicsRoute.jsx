@@ -10,6 +10,8 @@ import Grievance from "../PageContent/Academics/Grievance";
 import Faculty from "../PageContent/Academics/Faculty";
 import LabFacilities from "../PageContent/Academics/LabFacilities";
 import Achievements from "../PageContent/Academics/Achievements";
+import Calendar from "../PageContent/Academics/Calendar";
+import VAC from "../PageContent/Academics/VAC";
 
 
 
@@ -25,5 +27,7 @@ export const AcademicsRoute = (
         <Route path="faculty-information" element={<Faculty />} />
         <Route path="lab-facilities" element={<LabFacilities />} />
         <Route path="achievements" element={<Achievements />} />
+        <Route path="academic-calendar" element={<Calendar />} />
+         <Route path="vac" element={<VAC />} />
     </Route>
 );

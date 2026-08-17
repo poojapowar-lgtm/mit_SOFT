@@ -1,31 +1,26 @@
 const socialIconsData = [
+  // {
+  //   url: "https://api.whatsapp.com/send/?phone=918308010405&text&type=phone_number&app_absent=0",
+  //   network: "whatsapp",
+  //   bgColor: "#25D366",
+  // },
   {
-    url: "https://api.whatsapp.com/send/?phone=918308010405&text&type=phone_number&app_absent=0",
-    network: "whatsapp",
-    bgColor: "#25D366",
-  },
-  {
-    url: "https://www.facebook.com/mitadtmanet",
+    url: "https://www.facebook.com/share/194GTQf99H/",
     network: "facebook",
     bgColor: "#1877F2",
   },
   {
-    url: "https://www.youtube.com/channel/UCmQiQ_blLqj8TqpazHXm1ow/videos?view_as=subscriber",
+    url: "youtube.com/c/MITADTUniversityPune",
     network: "youtube",
     bgColor: "#FF0000",
   },
-  // {
-  //   url: "https://twitter.com",
-  //   network: "twitter",
-  //   bgColor: "#1DA1F2",
-  // },
   {
-    url: "https://www.instagram.com/manetpune_official?igsh=MTJhdjV0ejZlamwwbg%3D%3D&utm_source=qr",
+    url: "https://www.instagram.com/mitschooloffoodtechnology?igsh=MWVpMGJ6YWdhdWI4OA==",
     network: "instagram",
     bgColor: "#E1306C",
   },
   {
-    url: "https://www.linkedin.com/in/maharashtra-academy-of-naval-education-training-manet-a58351228",
+    url: "https://www.linkedin.com/in/mit-school-of-food-technology-mitsoft-7495861b6?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     network: "linkedin",
     bgColor: "#0077B5",
   },

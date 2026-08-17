@@ -33,7 +33,7 @@ const ContactTable = () => {
         },
       });
 
-      alert("Deleted successfully ✅");
+      alert("Deleted successfully");
       fetchContacts();
     } catch (err) {
       console.error(err);

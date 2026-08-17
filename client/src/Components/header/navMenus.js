@@ -60,6 +60,8 @@ export const navMenus = [
     columns: [
       { name: "Programme Outcomes", to: "/academics/programme-outcomes" },
       { name: "Faculty Information", to: "/academics/faculty-information" },
+      { name: "Academic Calendar", to: "/academics/academic-calendar" },
+      { name: "Value Added Courses", to: "/academics/vac" },
       { name: "MOU’s", to: "/academics/mou" },
       { name: "NEP-2020", to: "/academics/nep-2020" },
       { name: "VAP-2022", to: "/academics/vap-2022" },

@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import "./pg_outcomes.css";
 
 const Curriculum = () => {
-    const [activeTab, setActiveTab] = useState("2019");
+    const [activeTab, setActiveTab] = useState("2024");
 
     //  Tabs with file attached
     const tabs = [
         {
             id: "2024",
             label: "A.Y. 2024-25",
-            file: "/docs/2021.pdf",
+            file: "/assets/docs/Curriculum-feedback-report_MITSoFT_ 2024_25.pdf",
         },
         {
             id: "2025",
             label: "A.Y. 2025-26",
-            file: "/docs/2022.pdf",
+            file: "/assets/docs/Curriculum-feedback-report_MITSOFT_25-26.pdf",
         },
     ];
 
