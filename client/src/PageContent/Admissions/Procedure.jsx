@@ -64,7 +64,7 @@ const Procedure = () => {
           <div key={index} className="timeline-item">
 
             <div className="internship-card">
-              <h4>{step.title}</h4>
+              <h3 className="internship-title">{step.title}</h3>
               <ul>
                 {step.points.map((point, i) => (
                   <li key={i}>{point}</li>

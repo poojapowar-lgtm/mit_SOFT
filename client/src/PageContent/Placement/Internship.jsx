@@ -82,17 +82,13 @@ const stepsData = [
 const Internship = () => {
     return (
         <div className="internship-section">
-            <h2 className="innerpage-title">Internship Policy</h2>
-            <h3 className="table-title">
-                Food Industry Internship Process
-            </h3>
-
+            <h2 className="innerpage-title">Internship Policy (Food Industry Internship Process)</h2>
             <div className="timeline">
                 {stepsData.map((step, index) => (
                     <div key={index} className="timeline-item">
 
                         <div className="internship-card">
-                            <h4>{step.title}</h4>
+                            <h3 className="internship-title">{step.title}</h3>
                             <ul>
                                 {step.points.map((point, i) => (
                                     <li key={i}>{point}</li>

@@ -28,6 +28,7 @@
 
 /* CARD */
 .achievement-card {
+  background: white;
   padding: clamp(12px, 2vw, 24px);
   border-radius: clamp(10px, 1.2vw, 18px);
   margin: clamp(15px, 2vw, 30px) auto;

@@ -1,137 +1,409 @@
+/* =========================================
+   ALUMNI SUCCESS STORIES
+========================================= */
+
 .student-speak {
   text-align: center;
 }
 
-/* Wrapper */
+
+/* =========================================
+   SLIDER WRAPPER
+========================================= */
+
 .speak-slider-wrapper {
-  margin-bottom: clamp(20px, 4vw, 40px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  flex-direction: column;
-}
-
-/* Slider */
-.speak-slider {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(15px, 4vw, 40px);
-}
-
-/* CARD */
-.speak-card {
   width: 100%;
+  margin-bottom: clamp(20px, 3vw, 35px);
+
   display: flex;
   flex-direction: column;
-  text-align: left;
-  flex-shrink: 0;
-  background: whitesmoke;
-  border-radius: clamp(6px, 1vw, 12px);
-  transition: 0.3s ease;
+  align-items: center;
+
+  position: relative;
 }
+
+
+/* =========================================
+   SLIDER
+========================================= */
+
+.speak-slider {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: clamp(20px, 3vw, 35px);
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.speak-card {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border: 1px solid #e9e9e9;
+
+  border-radius: clamp(12px, 1vw, 18px);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.07);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
 
 /* HOVER */
+
 .speak-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 18px 40px rgba(100, 2, 2, 0.18);
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.11);
 }
 
-/* TOP ROW */
+
+/* =========================================
+   TOP PROFILE SECTION
+========================================= */
+
 .speak-top {
-  background-color: white;
   display: flex;
-  border-radius: clamp(6px, 1vw, 12px) clamp(6px, 1vw, 12px) 0 0;
-  margin: clamp(6px, 1vw, 12px);
-  gap: 15px;
-  align-items: flex-start;
+  align-items: center;
+
+  gap: clamp(15px, 2vw, 25px);
+
+  padding:
+    clamp(20px, 2vw, 28px)
+    clamp(18px, 2vw, 28px)
+    clamp(15px, 1.5vw, 22px);
+
+  background: #ffffff;
 }
 
 
-/* LEFT IMAGE */
+/* =========================================
+   IMAGE
+========================================= */
+
+.speak-left {
+  flex-shrink: 0;
+
+  position: relative;
+}
+
 .speak-left img {
-  padding: clamp(6px, 1vw, 12px);
-  width: clamp(120px, 15vw, 200px);
-  height: clamp(120px, 15vw, 200px);
+  width: clamp(105px, 11vw, 145px);
+  height: clamp(105px, 11vw, 145px);
+
+  display: block;
+
+  border-radius: 50%;
+
   object-fit: cover;
   object-position: top;
-  border-radius: 10px;
+
+  border: 4px solid #ffffff;
+
+  outline: 2px solid #e5e5e5;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.12);
+
+  transition: transform 0.3s ease;
 }
 
-/* RIGHT CONTENT */
+
+/* IMAGE HOVER */
+
+.speak-card:hover .speak-left img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================
+   RIGHT PROFILE CONTENT
+========================================= */
+
 .speak-right {
   flex: 1;
+  min-width: 0;
+
   display: flex;
   flex-direction: column;
 }
 
-/* LIST */
+
+/* =========================================
+   LIST
+========================================= */
+
 .speak-list {
   list-style: none;
+
   padding: 0;
   margin: 0;
 }
 
-/* LIST ITEMS */
+
+/* =========================================
+   LIST ITEMS
+========================================= */
+
 .speak-list li {
-  font-size: clamp(12px, 1.2vw, 16px);
+  font-size: clamp(12px, 1vw, 15px);
+
+  line-height: 1.55;
+
   color: #722327;
-  margin-bottom: 5px;
-  position: relative;
+
+  margin-bottom: clamp(3px, 0.4vw, 6px);
 }
+
+
+/* NAME */
+
+.speak-list li:first-child {
+  color: #008000;
+
+  font-size: clamp(15px, 1.25vw, 18px);
+
+  font-weight: 700;
+
+  margin-bottom: clamp(8px, 0.8vw, 12px);
+}
+
+
+/* LABEL */
+
+.speak-list li strong {
+  color: #722327;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   MESSAGE AREA
+========================================= */
 
 .speak-message {
-  padding: 0 clamp(10px, 4vw, 20px);
-  margin-top: 0;
+  position: relative;
+
+  margin: 0;
+
+  padding:
+    clamp(15px, 1.5vw, 22px)
+    clamp(20px, 2.2vw, 30px)
+    clamp(20px, 2vw, 26px);
+
+  border-top: 1px solid #eeeeee;
+
+  color: #333333;
+
+  font-size: clamp(13px, 1vw, 15px);
+
+  line-height: 1.75;
+
+  text-align: left;
+
+  background: #fafafa;
 }
 
 
-/* QUOTE STYLE */
+/* QUOTE MARK */
+
 .speak-message::before {
-  content: "“ ";
-  color: #722327;
-  font-size: clamp(22px, 1.2vw, 26px);
-  font-weight: bold;
+  content: "“";
+
+  position: absolute;
+
+  left: clamp(7px, 1vw, 14px);
+  top: clamp(8px, 0.8vw, 12px);
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(28px, 3vw, 42px);
+
+  line-height: 1;
+
+  color: #008000;
+
+  opacity: 0.35;
 }
 
-.speak-message::after {
-  content: " ”";
+
+/* =========================================
+   READ MORE
+========================================= */
+
+.read-more {
+  display: inline-block;
+
+  margin-left: clamp(5px, 0.5vw, 8px);
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #008000;
+
+  font-size: clamp(11px, 0.9vw, 14px);
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  line-height: inherit;
+
+  transition:
+    color 0.25s ease;
+}
+
+.read-more:hover {
   color: #722327;
-  font-size: clamp(22px, 1.2vw, 26px);
-  font-weight: bold;
+
+  text-decoration: underline;
 }
 
 
-/* DOTS */
+/* =========================================
+   DOTS
+========================================= */
+
 .dots {
-  margin-top: 20px;
-  text-align: center;
+  margin-top: clamp(16px, 2vw, 22px);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
 }
+
 
 .dot {
-  height: 10px;
-  width: 10px;
-  margin: 0 6px;
+  width: clamp(7px, 0.65vw, 10px);
+  height: clamp(7px, 0.65vw, 10px);
+
+  margin: 0 clamp(3px, 0.4vw, 6px);
+
   display: inline-block;
+
   border-radius: 50%;
-  background-color: #ccc;
+
+  background: #d3d3d3;
+
   cursor: pointer;
-  transition: 0.3s;
+
+  transition:
+    all 0.3s ease;
 }
+
 
 .dot.active {
-  background-color: #003153;
-  transform: scale(1.2);
+  width: clamp(8px, 0.75vw, 11px);
+  height: clamp(8px, 0.75vw, 11px);
+
+  background: #722327;
+
+  transform: scale(1.1);
 }
+
 
 .dot:hover {
-  background-color: #555;
+  background: #008000;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
   .speak-slider {
-    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
+  .speak-top {
+    gap: 15px;
+  }
+
+  .speak-left img {
+    width: clamp(90px, 14vw, 120px);
+    height: clamp(90px, 14vw, 120px);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .speak-slider {
+    grid-template-columns: 1fr;
+
+    gap: clamp(15px, 4vw, 25px);
+  }
+
+  .speak-top {
+    padding: clamp(16px, 4vw, 22px);
+
+    gap: clamp(12px, 4vw, 20px);
+  }
+
+  .speak-left img {
+    width: clamp(85px, 22vw, 115px);
+    height: clamp(85px, 22vw, 115px);
+  }
+
+  .speak-message {
+    font-size: clamp(12px, 3.5vw, 15px);
+
+    line-height: 1.65;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .speak-top {
+    align-items: flex-start;
+  }
+
+  .speak-left img {
+    width: clamp(75px, 22vw, 95px);
+    height: clamp(75px, 22vw, 95px);
+  }
+
+  .speak-list li {
+    font-size: clamp(11px, 3.2vw, 14px);
+  }
+
+  .speak-list li:first-child {
+    font-size: clamp(14px, 4vw, 17px);
+  }
 }

@@ -228,7 +228,7 @@ const PlacementCell = () => {
 
 
             <h2 className="innerpage-title">Placement Drive Conduction Process/SOP</h2>
-            <div className="placement-grid">
+            <div className="accordion-container">
 
                 {Placementdata.map((item, index) => (
                     <div key={index} className="accordion-item">

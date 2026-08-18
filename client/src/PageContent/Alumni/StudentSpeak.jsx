@@ -10,6 +10,7 @@ const StudentSpeak = () => {
     const [data, setData] = useState([]);
     const [index, setIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
+    const [expanded, setExpanded] = useState(false);
 
     const sliderRef = useRef(null); //  FIX
 
@@ -20,7 +21,7 @@ const StudentSpeak = () => {
             .catch((err) => console.error(err));
     }, []);
 
-const getItemsPerView = () => (window.innerWidth <= 768 ? 1 : 2);
+    const getItemsPerView = () => (window.innerWidth <= 768 ? 1 : 2);
 
     const nextSlide = () => {
         if (index + getItemsPerView() < data.length) {
@@ -104,7 +105,20 @@ const getItemsPerView = () => (window.innerWidth <= 768 ? 1 : 2);
                                 </div>
 
                                 {/* MESSAGE */}
-                                <p className="speak-message">{item.message}</p>
+                                <p className="speak-message">
+                                    {expanded
+                                        ? item.message
+                                        : `${item.message?.substring(0, 400)}${item.message?.length > 400 ? "..." : ""}`}
+
+                                    {item.message?.length > 400 && (
+                                        <button
+                                            onClick={() => setExpanded(!expanded)}
+                                            className="read-more"
+                                        >
+                                            {expanded ? "Read Less" : "Read More"}
+                                        </button>
+                                    )}
+                                </p>
 
                             </div>
                         ))

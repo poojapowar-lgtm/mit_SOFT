@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
+import { RiArrowDownSLine } from "react-icons/ri";
 
 const FAQ = () => {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -51,6 +52,7 @@ const FAQ = () => {
         <div>
             <h2 className="innerpage-title">FAQ's</h2>
 
+<div className="accordion-container">
             {FAQdata.map((item, index) => (
                 <div key={index} className="accordion-item">
                     <div
@@ -60,7 +62,8 @@ const FAQ = () => {
                     >
                         <h4 className="accordion-title">{item.title}</h4>
                         <span className="faq-icon">
-                            <IoIosArrowDropdownCircle />
+                            {/* <IoIosArrowDropdownCircle /> */}
+                            <RiArrowDownSLine/>
                         </span>
                     </div>
 
@@ -74,6 +77,7 @@ const FAQ = () => {
                     )}
                 </div>
             ))}
+        </div>
         </div>
     );
 };

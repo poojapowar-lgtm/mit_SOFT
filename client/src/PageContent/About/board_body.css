@@ -1,4 +1,6 @@
 .board-body-container {
+    max-width: 90%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     /* 2 cards per row */
@@ -8,13 +10,23 @@
 
 
 .board-card {
-    background: rgb(245, 244, 242);
+    max-width: 500px;
+    background: linear-gradient(90deg,
+            #eef6d8 0%,
+            #f5f9e8 45%,
+            #ffffff 100%);
+    border: 2px solid #ffffff;
     padding: 0 clamp(10px, 1.5vw, 20px);
-    border-left: 4px solid rgba(151, 198, 0, 1);
+    border-left: 4px solid #97c600;
     border-radius: 0 50px 50px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
 }
 
+.board-card:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
 
 .board-name {
     font-size: clamp(14px, 1.5vw, 20px);
@@ -42,7 +54,6 @@
 
 .board-desg {
     margin: 5px 0;
-    color: rgb(99, 98, 98);
 }
 
 /* Mobile: 1 card per row */

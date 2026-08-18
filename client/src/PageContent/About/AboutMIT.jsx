@@ -1,11 +1,51 @@
 import React from "react";
 import "./about_mit.css";
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 const AboutMIT = () => {
+  const visionData = [
+    {
+      title: "Vision",
+      image: "/assets/images/home/vision.jpg",
+      paragraphs: [
+        `MIT Art, Design and Technology University aspires to be the 
+      University of Eminence by amalgamating Art, Design, Science and 
+      Technology. The University aims at having a transformative impact 
+      on society through holistic education, multi-disciplinary research 
+      ethos, innovation and entrepreneurial culture.`,
+      ],
+    },
+    {
+      title: "Mission",
+      image: "/assets/images/home/mission.jpg",
+      paragraphs: [
+        `The mission of MIT Art, Design and Technology University is to 
+      provide impetus to faculty, learners and staff by developing their 
+      innate intellectual capabilities, creative abilities and 
+      entrepreneurial mind-set for the socio-economic development of the 
+      nation.`,
+
+        `We empower learners to become adaptive and agile global 
+      professionals through unique specialized programs building 
+      academia-industrial partnerships. We nurture learners to be 
+      intellectually curious, technologically equipped, mentally sound, 
+      physically fit, spiritually elevated, socio-culturally sensitive, 
+      environmentally conscious through continuous holistic education 
+      for the ever-evolving world.`,
+
+        `We provide technology-enabled learner-driven curriculum, 
+      value-added courses, simulated learning environments, 
+      state-of-the-art infrastructure and opportunities for community 
+      engagement.`,
+      ],
+    },
+  ];
+
   return (
     <div className="aboutmit-container">
-      <h2 className="innerpage-title">About MIT-ADT University</h2>
+      <div className="title-line">
+  <h2 className="innerpage-title">About Us</h2>
+</div>
+      {/* <h2 className="innerpage-title">About MIT-ADT University</h2> */}
 
       <div className="aboutmit-image">
         <img src="/assets/images/home/inner_bnr.jpg" alt="About MIT ADT" />
@@ -44,55 +84,36 @@ const AboutMIT = () => {
 
       <div>
 
-        <div className="vision-text">
-          <div className="v-header">
-            <span className="vision-icon">
-              <MdKeyboardDoubleArrowRight />
-            </span>
-            <h3 className="v-title">Vision</h3></div>
+        <div className="vision-cards">
+          {visionData.map((item, index) => (
+            <div className="vision-text" key={index}>
 
-          <div className="vision-content">
-            <p style={{ marginTop: "0px" }}>
-              MIT Art, Design and Technology University aspires to be the
-              University of Eminence by amalgamating Art, Design, Science and
-              Technology. The University aims at having a transformative impact
-              on society through holistic education, multi-disciplinary research
-              ethos, innovation and entrepreneurial.culture.
-            </p>
-          </div>
-        </div>
+              <div
+                className="vision-bg"
+                style={{
+                  backgroundImage: `url("${item.image}")`,
+                }}
+              ></div>
 
+              <div className="vision-overlay"></div>
 
-        <div className="vision-text">
-          <div className="v-header">
-            <span className="vision-icon">
-              <MdKeyboardDoubleArrowRight />
-            </span>
-            <h3 className="v-title">Mission</h3></div>
-          <div className="vision-content">
-            <p style={{ marginTop: "0px" }}>
-              The mission of MIT Art, Design and Technology University is to
-              provide impetus to faculty, learners and staff by developing their
-              innate intellectual capabilities, creative abilities and
-              entrepreneurial mind-set for the socio-economic development of the
-              nation.
-            </p>
-            <p>
-              We empower learners to become adaptive and agile global
-              professionals through unique specialized programs building
-              academia-industrial partnerships. We nurture learners to be
-              intellectually curious, technologically equipped, mentally sound,
-              physically fit, spiritually elevated, socio-culturally sensitive,
-              environmentally conscious through continuous holistic education
-              for the ever-evolving world.
-            </p>
-            <p>
-              We provide technology-enabled learner-driven curriculum,
-              value-added courses, simulated learning environments,
-              state-of-the-art infrastructure and opportunities for community
-              engagement
-            </p>
-          </div>
+              <div className="vision-inner">
+                <h3 className="v-title">
+                  {item.title}
+                </h3>
+
+                <div className="vision-content">
+                  {item.paragraphs.map((paragraph, i) => (
+                    <p key={i}>
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+
+              </div>
+
+            </div>
+          ))}
         </div>
       </div>
     </div>

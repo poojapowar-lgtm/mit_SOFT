@@ -64,21 +64,24 @@ const SkillDev = () => {
   return (
     <div className="skill-container">
       <h2 className="innerpage-title">Skill Development Program</h2>
+      <div className="skill-grid">
+        {renderList(section1)}
+        {renderImages(images1)}
 
-      {renderList(section1)}
-      {renderImages(images1)}
+        {renderList(section2)}
+        {renderImages(images2)}
 
-      {renderList(section2)}
-      {renderImages(images2)}
 
-      {renderList(section3)}
 
-      <p className="sub-heading">
-        Key areas covered during the session included:
-      </p>
+        {renderList(section3)}
 
-      {renderList(keyAreas)}
-      {renderImages(images3)}
+
+        <h3 className="innerpage-subtitle">
+          Key areas covered during the session included:
+        </h3>
+        {renderList(keyAreas)}
+        {renderImages(images3)}
+      </div>
     </div>
   );
 };

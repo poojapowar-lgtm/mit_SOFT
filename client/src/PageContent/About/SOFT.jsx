@@ -2,6 +2,31 @@ import React from "react";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 const SOFT = () => {
+  const visionData = [
+    {
+      title: "Vission",
+      image: "/assets/images/home/vision.jpg",
+      paragraphs: [
+        `To be a center of excellence in training, research, outreach, and 
+      consultancy services in Food Science and Technology with emphasis 
+      on value addition of agricultural produce, processing technology 
+      driven conservation of food, nutritional goodness, food security 
+      and safety assurance through stake holder sensitization.`,
+      ],
+    },
+    {
+      title: "Mission",
+      image: "/assets/images/home/mission.jpg",
+      paragraphs: [
+        `The fundamental mission of MIT-SoFT is to emerge out as a global 
+      competitive center (Institute) of excellence to impart graduation, 
+      post-graduation and Doctoral education programs (B. Tech, M. Tech. 
+      and Ph.D.) in the discipline of Food Science and Technology to 
+      satisfy futuristic new generation aspirations.`,
+      ],
+    },
+  ];
+
   return (
     <div className="aboutmit-container">
       <h2 className="innerpage-title">School of Food Technology</h2>
@@ -25,42 +50,38 @@ const SOFT = () => {
         research and development.
       </p>
 
-      <div>
-        <div className="vision-text">
-          <div className="v-header">
-            <span className="vision-icon">
-              <MdKeyboardDoubleArrowRight />
-            </span>
-            <h3 className="v-title">Vission</h3></div>
-          <div className="vision-content">
-            <p>
-              To be a center of excellence in training, research, outreach, and
-              consultancy services in Food Science and Technology with emphasis
-              on value addition of agricultural produce, processing technology
-              driven conservation of food, nutritional goodness, food security
-              and safety assurance through stake holder sensitization.
-            </p>
-          </div>
-        </div>
+      <div className="vision-cards">
+        {visionData.map((item, index) => (
+          <div className="vision-text" key={index}>
+
+            <div
+              className="vision-bg"
+              style={{
+                backgroundImage: `url("${item.image}")`,
+              }}
+            ></div>
+
+            <div className="vision-overlay"></div>
+            <div className="vision-inner">
+                <h3 className="v-title">
+                  {item.title}
+                </h3>
 
 
-        <div className="vision-text">
-          <div className="v-header">
-            <span className="vision-icon">
-              <MdKeyboardDoubleArrowRight />
-            </span>
-            <h3 className="v-title">Mission</h3></div>
-          <div className="vision-content">
-            <p>
-              The fundamental mission of MIT-SoFT is to emerge out as a global
-              competitive center (Institute) of excellence to impart graduation,
-              post-graduation and Doctoral education programs (B. Tech, M. Tech.
-              and Ph.D.) in the discipline of Food Science and Technology to
-              satisfy futuristic new generation aspirations.
-            </p>
+              <div className="vision-content">
+                {item.paragraphs.map((paragraph, i) => (
+                  <p key={i}>
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+
+            </div>
+
           </div>
-        </div>
+        ))}
       </div>
+
     </div>
   );
 };

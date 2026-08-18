@@ -32,9 +32,9 @@
   overflow: hidden;
   position: relative;
 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.6)),
-    url("/public/assets/images/home/banner.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2)),
+    url("/public/assets/images/home/assde19.jpg");
 
   background-size: cover;
   background-position: center;
@@ -67,7 +67,7 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  object-position: top; /* 🔥 better face focus */
+  object-position: top;
   border: 1px solid gray;
 }
 
@@ -82,13 +82,13 @@
 
 .card-right h3 {
   font-family: system-ui;
-  font-size: clamp(16px, 2vw, 22px);
+  font-size: clamp(16px, 2vw, 24px);
   margin-bottom: 4px;
   color: whitesmoke;
 }
 
 .card-right p {
-  font-size: clamp(12px, 1.2vw, 16px);
+  font-size: clamp(12px, 1.2vw, 18px);
   color: goldenrod;
   font-weight: 500;
   margin: 5px 0;

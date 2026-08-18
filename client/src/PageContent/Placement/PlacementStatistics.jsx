@@ -40,24 +40,24 @@ export default function PlacementStatistics() {
             <div className="placement-wrapper">
                 {/* CARDS */}
                 <div className="placement-cards">
-                    <div className="card">
-                        <p><strong>Total Students</strong></p>
-                        <p>{totalOpted}</p>
+                    <div className="scope-card">
+                        <h4 className="placement-heading">Total Students</h4>
+                        <h2 className="placement-count">{totalOpted}</h2>
                     </div>
 
-                    <div className="card">
-                        <p><strong>Placed Students</strong></p>
-                        <p>{totalPlaced}</p>
+                    <div className="scope-card">
+                        <h4 className="placement-heading">Placed Students</h4>
+                        <h2 className="placement-count">{totalPlaced}</h2>
                     </div>
 
-                    <div className="card">
-                        <p><strong>Placement %</strong></p>
-                        <p>{overallPercent}%</p>
+                    <div className="scope-card">
+                        <h4 className="placement-heading">Placement %</h4>
+                        <h2 className="placement-count">{overallPercent}%</h2>
                     </div>
 
-                    <div className="card">
-                        <p><strong>Highest Package</strong></p>
-                        <p>{highestPackage} LPA</p>
+                    <div className="scope-card">
+                        <h4 className="placement-heading">Highest Package</h4>
+                        <h2 className="placement-count">{highestPackage} LPA</h2>
                     </div>
                 </div>
 
@@ -69,12 +69,12 @@ export default function PlacementStatistics() {
                                 {
                                     data: optedData,
                                     label: "Students Opted",
-                                    color: "#1e3a5f",
+                                    color: "#2563eb",
                                 },
                                 {
                                     data: placedData,
                                     label: "Placed Students",
-                                    color: "#9ca3af",
+                                    color: "#16a34a",
                                 },
                             ]}
                             xAxis={[{ data: xLabels, scaleType: "band" }]}

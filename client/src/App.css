@@ -44,6 +44,12 @@ strong {
   font-size: clamp(12px, 1.5vw, 16px);
 }
 
+.page-content-btns {
+  display: flex;
+  gap: clamp(10px, 2vw, 20px);
+  flex-wrap: wrap;
+}
+
 /* Primary Button */
 .btn {
   font-family: system-ui;

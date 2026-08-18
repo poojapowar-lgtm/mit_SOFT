@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ImArrowDown } from "react-icons/im";
 import "./pg_outcomes.css";
 
 const PgOutcomes = () => {
@@ -171,41 +172,62 @@ const PgOutcomes = () => {
             </div>
 
             {/* Content */}
-            <div className="tab-content">
+            <div className="tab-content pg-outcomes">
 
                 {/* Outcomes TAB */}
                 {activeTab === "outcomes" &&
                     outcomesData.map((data, index) => (
                         <div key={index}>
-                            <h3 className="innerpage-subtitle">Outcomes-based approach in B. Tech. (Food Technology)</h3>
-                            {/* <p className="subtitle">{data.subtitle}</p> */}
 
-                            <ul className="page-list">
+                            <h3 className="innerpage-subtitle">
+                                Outcomes-based approach in B. Tech. (Food Technology)
+                            </h3>
+
+                            <div className="pg-outcomes-container">
+
                                 {data.list?.map((item, i) => (
-                                    <li key={i}>
-                                        {item.title ? (
-                                            <>
-                                                <strong>{item.title}:</strong> {item.desc}
-                                            </>
-                                        ) : (
-                                            item.desc
-                                        )}
-                                    </li>
+                                    <div key={i} className="pg-outcomes-item">
+
+                                        {/* Number */}
+                                        <div className="pg-outcomes-number">
+                                            {i + 1}
+                                        </div>
+
+                                        <div className="pg-outcomes-card">
+
+                                            {item.title ? (
+                                                <>
+                                                    <h4>{item.title}</h4>
+                                                    <p>{item.desc}</p>
+                                                </>
+                                            ) : (
+                                                <p>{item.desc}</p>
+                                            )}
+
+                                        </div>
+                                    </div>
                                 ))}
-                            </ul>
+
+                            </div>
+
                         </div>
                     ))}
+
 
                 {/* PSO TAB */}
                 {activeTab === "psos" &&
                     tableData.map((table, index) => (
                         <div key={index}>
+
                             <h2>{table.title}</h2>
+
                             <div className="table-responsive">
                                 <table className="common-table">
+
                                     <thead>
                                         <tr>
                                             <th>Sr. No.</th>
+
                                             {table.headers?.map((head, i) => (
                                                 <th key={i}>{head}</th>
                                             ))}
@@ -218,18 +240,21 @@ const PgOutcomes = () => {
                                                 <td>{i + 1}</td>
 
                                                 <td>
-                                                    {row.outcome.split("-")[0]} <br />
+                                                    {row.outcome.split("-")[0]}
+                                                    <br />
                                                     {row.outcome.split("-")[1]}
                                                 </td>
+
                                                 <td>{row.desc}</td>
                                                 <td>{row.needs}</td>
                                             </tr>
                                         ))}
                                     </tbody>
+
                                 </table>
                             </div>
-                        </div>
 
+                        </div>
                     ))}
             </div>
         </div>

@@ -1,4 +1,10 @@
 /* Leader Section */
+.leader-card {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: clamp(20px, 3vw, 40px);
+}
+
 .leader-section {
   display: flex;
   gap: clamp(20px, 3vw, 40px);
@@ -6,9 +12,10 @@
 }
 
 .leader-image img {
-  width: clamp(200px, 20vw, 300px);
-  height: auto;
-  border-radius: clamp(8px, 2vw, 14px);
+  width: clamp(180px, 20vw, 250px);
+  height: clamp(180px, 20vw, 250px);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .leader-content {
@@ -19,6 +26,7 @@
 .leader-designation {
   color: rgb(124, 89, 1);
   font-style: italic;
+  margin-top: 0;
   font-size: clamp(12px, 1.5vw, 20px);
 }
 

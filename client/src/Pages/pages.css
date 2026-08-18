@@ -7,25 +7,72 @@
 }
 
 /* Left Content */
-.page-content {
+/* .page-content {
   flex: 1;
   background-color: #ffffff;
   padding: clamp(10px, 1.5vw, 20px) clamp(15px, 2.5vw, 40px);
   border-top: 4px solid #722327;
+} */
+
+/* Left Content */
+
+.page-content {
+    position: relative;
+    flex: 1;
+    padding: clamp(10px, 1.5vw, 20px)
+             clamp(15px, 2.5vw, 40px);
+    border-top: 4px solid #722327;
+    background: #fff;
+    overflow: hidden;
+}
+
+.page-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/public/assets/images/home/page_bg3.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    opacity: 0.4; /* reduce/increase this */
+    z-index: 0;
+    pointer-events: none;
+}
+
+.page-content > * {
+    position: relative;
+    z-index: 1;
 }
 
 .innerpage-title {
   color: #722327;
   font-weight: 600;
   font-size: clamp(16px, 2vw, 30px);
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 8px;
 }
 
 .innerpage-title::after {
   content: "";
-  flex: 1;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   height: 1.5px;
-  margin-bottom: 5px;
   background-color: #97c600;
+}
+
+.innerpage-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #97c600;
+  z-index: 2;
 }
 
 .innerpage-title,
@@ -42,6 +89,7 @@
   color: #004d00;
   font-weight: 500;
   font-size: clamp(12px, 2vw, 24px);
+  margin-top: 0;
 }
 
 .names {
@@ -54,9 +102,11 @@
 
 
 /* facilities accordion */
-.accordion-item {
+.accordion-container{
   width: 85%;
   margin: 0 auto;
+  background: white;
+  padding: clamp(10px, 3vw, 20px);
 }
 
 .accordion-title {
@@ -77,9 +127,7 @@
   padding: 0 clamp(12px, 3vw, 20px);
   gap: clamp(6px, 1vw, 12px);
   margin-bottom: clamp(10px, 2vw, 20px);
-  border-radius: clamp(10px, 1.5vw, 14px);
-  background: linear-gradient(to right, #faf3e0, #e6dcb8);
-  border: 1px solid whitesmoke;
+  border-bottom: 1px solid green;
   transition: all 0.3s ease;
 }
 
@@ -92,7 +140,7 @@
 /* Active */
 .faq-header.active {
   background: whitesmoke;
-  border-color: 722327;
+  border: none;
 }
 
 /* Icon */
@@ -124,19 +172,18 @@
   flex: 1;
 }
 
-.accordion-content {
+/* .accordion-content {
   background: #fff;
   border-radius: 10px;
   padding: 16px;
   margin: 10px 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
 
 
 .accordion-content:hover {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-}
+} */
 
 .accordion-content p {
   padding: 0 clamp(12px, 3vw, 20px);
@@ -172,9 +219,8 @@
     padding: clamp(10px, 4vw, 20px) 0;
   }
 
-  .accordion-item {
+  .accordion-container{
     width: 95%;
     margin: 0 auto;
-  }
-
+}
 }
