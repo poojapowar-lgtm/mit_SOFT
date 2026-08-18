@@ -34,7 +34,7 @@
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-    opacity: 0.4; /* reduce/increase this */
+    opacity: 0.24; /* reduce/increase this */
     z-index: 0;
     pointer-events: none;
 }
