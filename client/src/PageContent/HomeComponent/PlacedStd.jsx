@@ -79,6 +79,7 @@ const PlacedStd = () => {
                                                 <img
                                                     src={`http://localhost:5000/uploads/${item.photo}`}
                                                     alt={item.name}
+                                                    title={item.name}
                                                 />
                                             </div>
 

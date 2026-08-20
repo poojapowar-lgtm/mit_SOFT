@@ -2,18 +2,19 @@ import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import InnerBanner from "../Components/inner_banner/InnerBanner";
 import Sidebar from "../Components/sidebar/Sidebar";
+import SEOMeta from "../Components/SEOMeta";
 import "./pages.css";
 
 const Admission = () => {
     const location = useLocation();
 
     const menu = [
-        { name: "Amission Annoucement", path: "annoucement" },
-        { name: "Amission Schedule", path: "schedule" },
+        { name: "Admission Announcement", path: "annoucement" },
+        { name: "Admission Schedule", path: "schedule" },
         { name: "Eligibility", path: "eligibility" },
         { name: "Admission Procedure", path: "procedure" },
         // { name: "Entrance Exams Updates", path: "entrance" },
-        { name: "Fee Sturcture", path: "fee-structure" },
+        { name: "Fee Structure", path: "fee-structure" },
         { name: "Scholarship Details", path: "scholarship" },
         { name: "FAQ's", path: "faq" },
         // { name: "Merit/Selection List", path: "merit-list" },
@@ -25,10 +26,10 @@ const Admission = () => {
 
     // Title mapping
     const titleMap = {
-        "annoucement": "Amission Annoucement",
+        "annoucement": "Admission Announcement",
         "schedule": "Admission Schedule",
         "eligibility": "Eligibility",
-        "procedure": "Amission Procedure",
+        "procedure": "Admission Procedure",
         // "entrance": "Entrance Exams Updates",
         "fee-structure": "Fee Structure",
         "scholarship": "Scholarship Details",
@@ -48,7 +49,7 @@ const Admission = () => {
             location.pathname.includes(key),
         );
 
-        return matchedKey ? titleMap[matchedKey] : "Amission Procedure";
+        return matchedKey ? titleMap[matchedKey] : "Admission Procedure";
     };
 
     const title = getTitle();
@@ -57,6 +58,7 @@ const Admission = () => {
 
     return (
         <>
+            <SEOMeta title={title} path={location.pathname} />
             <InnerBanner bgImage={bgImage} title={title} />
 
             <div className="page-layout">

@@ -1,112 +1,87 @@
-// import "./App.css";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import MainRoutes from "./Routes/MainRoutes";
-// import ScrollToTop from "./Components/ScrollToTop";
-// import Footer from "./Components/Footer/Footer";
-// import Header from "./Components/header/Header";
-
-// function App() {
-//   return (
-//     <BrowserRouter>
-//       <ScrollToTop />
-//       <Routes>
-//         <Route
-//           path="/*"
-//           element={
-//             <div className="App">
-//               <Header />
-//               <MainRoutes />
-//               <Footer />
-//             </div>
-//           }
-//         />
-//       </Routes>
-//     </BrowserRouter>
-//   );
-// }
-
-// export default App;
-
 import "./App.css";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
-import MainRoutes from "./Routes/MainRoutes";
 import ScrollToTop from "./Components/ScrollToTop";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/header/Header";
+import MainRoutes from "./Routes/MainRoutes";
 
-//  Import Admin
-import Dashboard from "./admin/pages/Dashboard";
-import AdminRoute from "./admin/AdminRoute";
-import Login from "./admin/pages/Login";
-import AdminPanel from "./admin/pages/AdminPanel";
-import News from "./admin/pages/News";
-import Events from "./admin/pages/Events";
-import AdminLayout from "./admin/pages/AdminLayout";
-import EnquiryTable from "./admin/pages/EnquiryTable";
-import Members from "./admin/pages/Members";
-import StudentSpeakAdmin from "./admin/pages/StudentSpeakAdmin";
-import Recruiters from "./PageContent/HomeComponent/Recruiters";
-import RecruitersAdmin from "./admin/pages/RecruitersAdmin";
-import FacultyAdmin from "./admin/pages/FacultyAdmin";
-import ResearchAdmin from "./admin/pages/ResearchAdmin";
-import MOUAdmin from "./admin/pages/MOUAdmin";
-import PlacedStudentsAdmin from "./admin/pages/PlacedStudentsAdmin";
-import AlumniStartupAdmin from "./admin/pages/AlumniStartupAdmin";
-import ContactTable from "./admin/pages/ContactTable";
-import Testimonials from "./admin/pages/TestimonialsAdmin";
-import TestimonialsAdmin from "./admin/pages/TestimonialsAdmin";
+// Admin — lazy loaded (not part of public site)
+const Login = lazy(() => import("./admin/pages/Login"));
+const AdminRoute = lazy(() => import("./admin/AdminRoute"));
+const AdminLayout = lazy(() => import("./admin/pages/AdminLayout"));
+const AdminPanel = lazy(() => import("./admin/pages/AdminPanel"));
+const News = lazy(() => import("./admin/pages/News"));
+const Events = lazy(() => import("./admin/pages/Events"));
+const EnquiryTable = lazy(() => import("./admin/pages/EnquiryTable"));
+const Members = lazy(() => import("./admin/pages/Members"));
+const StudentSpeakAdmin = lazy(() => import("./admin/pages/StudentSpeakAdmin"));
+const TestimonialsAdmin = lazy(() => import("./admin/pages/TestimonialsAdmin"));
+const RecruitersAdmin = lazy(() => import("./admin/pages/RecruitersAdmin"));
+const FacultyAdmin = lazy(() => import("./admin/pages/FacultyAdmin"));
+const ResearchAdmin = lazy(() => import("./admin/pages/ResearchAdmin"));
+const MOUAdmin = lazy(() => import("./admin/pages/MOUAdmin"));
+const PlacedStudentsAdmin = lazy(() => import("./admin/pages/PlacedStudentsAdmin"));
+const AlumniStartupAdmin = lazy(() => import("./admin/pages/AlumniStartupAdmin"));
+const ContactTable = lazy(() => import("./admin/pages/ContactTable"));
+
+const Fallback = () => (
+  <div style={{ textAlign: "center", padding: "60px 20px", color: "#006400" }}>
+    Loading...
+  </div>
+);
 
 function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Suspense fallback={<Fallback />}>
+          <Routes>
+            {/* PUBLIC WEBSITE */}
+            <Route
+              path="/*"
+              element={
+                <div className="App">
+                  <Header />
+                  <MainRoutes />
+                  <Footer />
+                </div>
+              }
+            />
 
-      <Routes>
-        {/*  PUBLIC WEBSITE */}
-        <Route
-          path="/*"
-          element={
-            <div className="App">
-              <Header />
-              <MainRoutes />
-              <Footer />
-            </div>
-          }
-        />
+            {/* ADMIN LOGIN */}
+            <Route path="/admin/login" element={<Login />} />
 
-        {/*ADMIN LOGIN (NO HEADER/FOOTER) */}
-        <Route path="/admin/login" element={<Login />} />
-
-        <Route
-          path="/admin"
-          element={
-            <AdminRoute>
-              <AdminLayout />
-            </AdminRoute>
-          }
-        >
-          <Route path="dashboard" element={<AdminPanel />} />
-          <Route path="news" element={<News />} />
-          <Route path="events" element={<Events />} />
-          <Route path="enquiry" element={<EnquiryTable />} />
-          <Route path="members" element={<Members />} />
-          <Route path="student-speak" element={<StudentSpeakAdmin />} />
-          <Route path="testimonials" element={<TestimonialsAdmin />} />
-          <Route path="recruiters" element={<RecruitersAdmin />} />
-          <Route path="faculty" element={<FacultyAdmin />} />
-          <Route path="research" element={<ResearchAdmin />} />
-          <Route path="mou" element={<MOUAdmin />} />
-          <Route path="placed-students" element={<PlacedStudentsAdmin />} />
-          <Route path="alumni-startup" element={<AlumniStartupAdmin />} />
-          <Route path="contact" element={<ContactTable />} />
-        </Route>
-
-      </Routes>
-
-
-
-    </BrowserRouter>
+            <Route
+              path="/admin"
+              element={
+                <AdminRoute>
+                  <AdminLayout />
+                </AdminRoute>
+              }
+            >
+              <Route path="dashboard" element={<AdminPanel />} />
+              <Route path="news" element={<News />} />
+              <Route path="events" element={<Events />} />
+              <Route path="enquiry" element={<EnquiryTable />} />
+              <Route path="members" element={<Members />} />
+              <Route path="student-speak" element={<StudentSpeakAdmin />} />
+              <Route path="testimonials" element={<TestimonialsAdmin />} />
+              <Route path="recruiters" element={<RecruitersAdmin />} />
+              <Route path="faculty" element={<FacultyAdmin />} />
+              <Route path="research" element={<ResearchAdmin />} />
+              <Route path="mou" element={<MOUAdmin />} />
+              <Route path="placed-students" element={<PlacedStudentsAdmin />} />
+              <Route path="alumni-startup" element={<AlumniStartupAdmin />} />
+              <Route path="contact" element={<ContactTable />} />
+            </Route>
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

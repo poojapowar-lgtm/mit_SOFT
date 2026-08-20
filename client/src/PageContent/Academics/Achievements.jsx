@@ -106,7 +106,7 @@ const Achievements = () => {
               {/* CONTENT */}
               <div className="achievement-content">
                 <div className="left">
-                  <img src={item.image} alt="achievement" />
+                  <img src={item.image} alt={item.title} title={item.details?.name || item.title} />
                 </div>
 
                 <div className="right">

@@ -10,11 +10,20 @@ Disallow: /admin/events
 Disallow: /admin/enquiry
 Disallow: /admin/members
 Disallow: /admin/student-speak
+Disallow: /admin/testimonials
 Disallow: /admin/recruiters
 Disallow: /admin/faculty
 Disallow: /admin/research
 Disallow: /admin/mou
 Disallow: /admin/placed-students
 Disallow: /admin/alumni-startup
+Disallow: /admin/contact
+
+# Block query strings and API
+Disallow: /api/
+Disallow: /*?*
+
+# Crawl delay
+Crawl-delay: 10
 
 Sitemap: https://www.mitsoft.edu.in/sitemap.xml

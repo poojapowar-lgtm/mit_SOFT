@@ -30,6 +30,7 @@ const Faculty = () => {
               <img
                 src={`http://localhost:5000/uploads/${item.image}`}
                 alt={item.name}
+                title={item.name}
               />
             </div>
 
@@ -54,12 +55,13 @@ const Faculty = () => {
         <div className="faculty-modal">
           <div className="modal-content">
 
-            <div className="close-btn" onClick={() => setSelectedFaculty(null)}>
+            <div className="page-close-btn" onClick={() => setSelectedFaculty(null)}>
               <IoMdCloseCircle />
             </div>
             <img
               src={`http://localhost:5000/uploads/${selectedFaculty.image}`}
               alt={selectedFaculty.name}
+              title={selectedFaculty.name}
               className="modal-img"
             />
 

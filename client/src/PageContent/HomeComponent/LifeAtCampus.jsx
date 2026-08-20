@@ -30,7 +30,7 @@ const LifeAtCampus = () => {
 
         {/* Right Side Image */}
         <div className="campus-image">
-          <img src="/assets/images/home/banner1.jpg" alt="Campus Life" />
+          <img src="/assets/images/home/banner1.jpg" alt="Campus Life at MIT School of Food Technology" title="Life at MIT School of Food Technology" />
         </div>
       </div>
     </section>

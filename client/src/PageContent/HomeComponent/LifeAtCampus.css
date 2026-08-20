@@ -1,7 +1,7 @@
 .life-campus {
   margin: 0 auto;
   background-color: #f3ecd3;
-   padding: clamp(10px, 1.5vw, 20px) clamp(20px, 4vw, 60px);
+  padding: clamp(10px, 1.5vw, 20px) clamp(20px, 4vw, 60px);
 }
 
 /* Layout */

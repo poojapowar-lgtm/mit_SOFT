@@ -1,5 +1,4 @@
 import React from "react";
-import "./facilities.css";
 
 const Facilities = () => {
     // canteenData
@@ -81,51 +80,36 @@ const Facilities = () => {
         ],
     };
 
-    const campusData = [canteenData, centralData];
+    // const campusData = [canteenData, centralData];
 
     return (
-        <div className="facilities-container">
+        <div>
             <h2 className="innerpage-title">Facilities</h2>
             {/* campusData */}
-            <div className="campus-grid">
-                {campusData.map((facility, index) => (
-                    <div className="facility-card" key={index}>
+            {/* CANTEEN DATA */}
+            <div className="row-lists">
+                <div className="scope-card" key="canteen">
 
-                        <h3 className="innerpage-subtitle">{facility.title}</h3>
+                    <h3 className="innerpage-subtitle">
+                        {canteenData.title}
+                    </h3>
 
-                        {facility.details && <p>{facility.details}</p>}
+                    {canteenData.details && (
+                        <p>{canteenData.details}</p>
+                    )}
 
-                        {facility.sections.map((sec, i) => (
-                            <div key={i} className="facility-section">
+                    {canteenData.sections?.map((sec, i) => (
+                        <div key={i} className="facility-section">
 
-                                {sec.subtitle && (
-                                    <h4 className="facility-subtitle">{sec.subtitle}</h4>
-                                )}
+                            {sec.subtitle && (
+                                <h4 className="facility-subtitle">
+                                    {sec.subtitle}
+                                </h4>
+                            )}
 
-                                {sec.desc && <p>{sec.desc}</p>}
-
-                                {sec.list && (
-                                    <ul className="page-list">
-                                        {sec.list.map((item, j) => (
-                                            <li key={j}>{item}</li>
-                                        ))}
-                                    </ul>
-                                )}
-                            </div>
-                        ))}
-                    </div>
-                ))}
-            </div>
-
-            {/* hostelData */}
-            <div className="facility-card">
-                <h3 className="innerpage-subtitle">{hostelData.title}</h3>
-                {hostelData.details && <p>{hostelData.details}</p>}
-                <div className="campus-grid">
-                    {hostelData.sections.map((sec, i) => (
-                        <div key={i} className="section-card">
-
-                            {sec.subtitle && <h4 className="section-title">{sec.subtitle}</h4>}
+                            {sec.desc && (
+                                <p>{sec.desc}</p>
+                            )}
 
                             {sec.list && (
                                 <ul className="page-list">
@@ -139,9 +123,69 @@ const Facilities = () => {
                     ))}
                 </div>
 
+
+
+                <div className="scope-card" key="central">
+
+                    <h3 className="innerpage-subtitle">
+                        {centralData.title}
+                    </h3>
+
+                    {centralData.details && (
+                        <p>{centralData.details}</p>
+                    )}
+
+                    {centralData.sections?.map((sec, i) => (
+                        <div key={i} className="facility-section">
+
+                            {sec.subtitle && (
+                                <h4 className="facility-subtitle">
+                                    {sec.subtitle}
+                                </h4>
+                            )}
+
+                            {sec.desc && (
+                                <p>{sec.desc}</p>
+                            )}
+
+                            {sec.list && (
+                                <ul className="page-list">
+                                    {sec.list.map((item, j) => (
+                                        <li key={j}>{item}</li>
+                                    ))}
+                                </ul>
+                            )}
+
+                        </div>
+                    ))}
+
+                </div>
+
+
+                {/* hostelData */}
+                <div className="scope-card">
+                    <h3 className="innerpage-subtitle">{hostelData.title}</h3>
+                    {hostelData.details && <p>{hostelData.details}</p>}
+                    <div className="campus-grid">
+                        {hostelData.sections.map((sec, i) => (
+                            <div key={i} className="section-card">
+
+                                {sec.subtitle && <p><strong>{sec.subtitle}</strong></p>}
+
+                                {sec.list && (
+                                    <ul className="page-list">
+                                        {sec.list.map((item, j) => (
+                                            <li key={j}>{item}</li>
+                                        ))}
+                                    </ul>
+                                )}
+
+                            </div>
+                        ))}
+                    </div>
+
+                </div>
             </div>
-
-
         </div>
     );
 };

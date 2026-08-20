@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import InnerBanner from "../Components/inner_banner/InnerBanner";
 import axios from "axios";
+import SEOMeta from "../Components/SEOMeta";
 import "./contact.css";
 
 const ContactUs = () => {
@@ -75,6 +76,7 @@ const ContactUs = () => {
 
     return (
         <>
+            <SEOMeta title="Contact Us" path="/contact" />
             <InnerBanner
                 bgImage="/assets/images/home/inner_bnr.jpg"
                 title="Contact Us"

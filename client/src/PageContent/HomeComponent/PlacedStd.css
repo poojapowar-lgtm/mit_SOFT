@@ -105,22 +105,6 @@
   margin-top: clamp(10px, 2vw, 15px);
 }
 
-.dot {
-  height: clamp(8px, 1vw, 10px);
-  width: clamp(8px, 1vw, 10px);
-  margin: clamp(4px, 1vw, 6px);
-  background: #ccc;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.dot.active {
-  background: #722327;
-  transform: scale(1.1);
-}
-
 /* MOBILE */
 @media (max-width: 480px) {
   .home-placed-std-card {

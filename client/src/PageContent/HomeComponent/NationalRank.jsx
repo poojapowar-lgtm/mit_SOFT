@@ -29,27 +29,32 @@ const NationalRank = () => {
         <div className="rank-logos">
           <img
             src="/assets/images/home/NAAC_Logo.png"
-            alt="Logo 1"
+            alt="NAAC Accreditation Logo - MIT-ADT University"
+            title="NAAC Accreditation"
             className="RLogo"
           />
           <img
             src="/assets/images/home/Ranking1.png"
-            alt="Logo 2"
+            alt="NIRF National Ranking Badge - MIT-ADT University"
+            title="NIRF Ranking"
             className="RLogo"
           />
           <img
             src="/assets/images/home/Ranking2.png"
-            alt="Logo 3"
+            alt="MIT-ADT University National Ranking Recognition"
+            title="National Ranking Recognition"
             className="RLogo"
           />
           <img
             src="/assets/images/home/Ranking3.png"
-            alt="Logo 4"
+            alt="MIT-ADT University Award and Recognition"
+            title="Award and Recognition"
             className="RLogo"
           />
           <img
             src="/assets/images/home/Ranking4.png"
-            alt="Logo 5"
+            alt="MIT-ADT University Excellence Award"
+            title="Excellence Award"
             className="RLogo"
           />
         </div>

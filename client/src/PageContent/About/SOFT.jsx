@@ -32,7 +32,7 @@ const SOFT = () => {
       <h2 className="innerpage-title">School of Food Technology</h2>
 
       <div className="aboutmit-image">
-        <img src="/assets/images/home/banner.jpg" alt="About MIT ADT" />
+        <img src="/assets/images/home/banner.jpg" alt="MIT School of Food Technology - About SoFT" title="About MIT School of Food Technology" />
       </div>
 
       <p>

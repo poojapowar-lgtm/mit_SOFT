@@ -10,9 +10,11 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import "./Footer.css";
+const API_BASE = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
 
 const Footer = () => {
   const [showButton, setShowButton] = useState(false);
+  const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +24,22 @@ const Footer = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const trackVisitor = async () => {
+      try {
+        const res = await fetch(`${API_BASE}/api/visitors/track`, {
+          method: "POST",
+        });
+        const data = await res.json();
+        if (data.success) {
+          setVisitorCount(data.count);
+        }
+      } catch (err) {
+        console.error("Error tracking visitor:", err);
+      }
+    };
+    trackVisitor();
+  }, []);
 
   // Scroll to top
   const scrollToTop = () => {
@@ -36,17 +54,19 @@ const Footer = () => {
           <img
             className="ft-logo1"
             src="/assets/images/home/mit_logo.webp"
-            alt="Logo 1"
+            alt="MIT-ADT University Logo"
+            title="MIT-ADT University"
           />
           <div className="footer-brand">
             <img
               className="ft-logo2"
               src="/assets/images/home/SoFT_Logo.png"
-              alt="Logo 2"
+              alt="MIT School of Food Technology Logo"
+              title="MIT School of Food Technology"
             />
             <div className="footer-title">
               <h1 className="ft-logo-title">MIT-SoFT</h1>
-              <p className="ft-logo-subtitle">School of Food Techonolgy</p>
+              <p className="ft-logo-subtitle">School of Food Technology</p>
             </div>
           </div>
 
@@ -78,7 +98,7 @@ const Footer = () => {
             <li><a href="/admissions/annoucement">Admission Annoucement</a></li>
             <li><a href="/admissions/fee-structure">Fee Structure</a></li>
             <li><a href="/academics/academic-calendar">Academic Calendar</a></li>
-            <li><a href="/contacts">Connect with Us</a></li>
+            <li><a href="/contact">Connect with Us</a></li>
           </ul>
           <h4> Latest Happenings</h4>
           <ul>
@@ -93,7 +113,7 @@ const Footer = () => {
           <h4> Student Centric</h4>
           <ul>
             <li><a href="/campus-life/facilities">Facilities</a></li>
-            <li><a href="Laboratory Facilities">Laboratories</a></li>
+            <li><a href="/academics/lab-facilities">Laboratories</a></li>
             <li><a href="/academics/student-grievance">Student Grievance</a></li>
           </ul>
 
@@ -134,10 +154,12 @@ const Footer = () => {
             className="map"
             title="Map location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.8228655029525!2d74.02029187595625!3d18.49168107005449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9784f39a613%3A0x189ffd59802ec685!2sMIT%20School%20of%20Food%20Technology%2C%20MIT%20ADT%20University%2C%20Pune!5e0!3m2!1sen!2sin!4v1773135364412!5m2!1sen!2sin"
-            allowfullscreen=""
+            allowFullScreen
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
+
+
         </div>
       </div>
 
@@ -149,12 +171,20 @@ const Footer = () => {
       )}
 
       {/* FOOTER BOTTOM */}
-      <div className="footer-bottom">
-        <p className="bottom-text">
-          MIT-SoFT Pune © 2025. All Rights Reserved. Designed & Developed by
-          MIT-ADT Website Department.
+<div className="footer-bottom">
+    <p className="bottom-text">
+        MIT-SoFT Pune © 2025. All Rights Reserved. Designed & Developed by
+        MIT-ADT Website Department.
+    </p>
+
+    <div className="visitor-box">
+        <h4>Site Visitors:</h4>
+
+        <p className="visitor-count">
+            {visitorCount.toString().split("").join(" ")}
         </p>
-      </div>
+    </div>
+</div>
     </footer>
   );
 };

@@ -10,7 +10,7 @@ const Leadership = () => {
       <div className="leader-card">
         <div className="leader-section">
           <div className="leader-image">
-            <img src="/assets/images/home/VD_sir.jpg" alt="Leader 1" />
+            <img src="/assets/images/home/VD_sir.jpg" alt="Prof. Dr. Vishwanath D. Karad - Founder, MIT Group of Institutions" title="Prof. Dr. Vishwanath D. Karad" />
           </div>
 
           <div className="leader-content">
@@ -61,7 +61,7 @@ const Leadership = () => {
       <div className="leader-card">
         <div className="leader-section">
           <div className="leader-image">
-            <img src="/assets/images/home/MK-sir.webp" alt="Leader 2" />
+            <img src="/assets/images/home/MK-sir.webp" alt="Prof. Dr. Mangesh T. Karad - Pro-Chancellor, MIT-ADT University" title="Prof. Dr. Mangesh T. Karad" />
           </div>
 
           <div className="leader-content">

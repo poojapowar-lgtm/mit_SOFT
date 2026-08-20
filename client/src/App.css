@@ -14,15 +14,14 @@
   text-align: center;
 }
 
-/* Paragraph */
-p {
+/* Paragraph — scoped to .App only */
+.App p {
   font-family: system-ui;
-  /* color: #722327; */
   line-height: clamp(20px, 2vw, 26px);
   font-size: clamp(12px, 1.2vw, 16px);
 }
 
-strong {
+.App strong {
   color: #722327;
   font-weight: 600;
   line-height: clamp(20px, 2vw, 26px);
@@ -160,7 +159,7 @@ strong {
 .common-table th,
 .common-table td {
   padding: clamp(4px, 1.2vw, 10px) clamp(8px, 1.2vw, 14px);
-  font-size: clamp(12px, 1.3vw, 15px);
+  font-size: clamp(10.5px, 1.3vw, 15px);
   border: 1px solid gray;
 }
 
@@ -218,9 +217,8 @@ strong {
   word-break: normal;
 }
 @media (max-width: 600px) {
-
   .common-table th,
   .common-table td {
-    padding: 2px 8px;
+    padding: 5px 8px;
   }
 }

@@ -56,7 +56,7 @@ const Procedure = () => {
   ];
 
   return (
-    <div>
+    <div className="internship-section">
       <h2 className="innerpage-title">Admission Procedure</h2>
 
       <div className="timeline">

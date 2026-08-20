@@ -63,8 +63,9 @@ const NoticePage = ({ type, title }) => {
                   href={`http://localhost:5000${item.file_path}`}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label={`View PDF: ${item.title}`}
                 >
-                  {item.link_text || "View File"}
+                  {item.link_text || "View PDF"}
                 </a>
               )}
 

@@ -36,8 +36,9 @@ const Events = () => {
                   target="_blank"
                   rel="noreferrer"
                   className="btn"
+                  aria-label={`View event report: ${event.title}`}
                 >
-                  View Document
+                  View Event Report
                 </a>
               )}
             </div>
@@ -49,7 +50,7 @@ const Events = () => {
                   let paths = [];
                   try { paths = JSON.parse(event.file_path); } catch { paths = [event.file_path]; }
                   return paths.map((p, i) => (
-                    <img key={i} src={`http://localhost:5000${p}`} alt="event" />
+                    <img key={i} src={`http://localhost:5000${p}`} alt={`${event.title} - photo ${i + 1}`} />
                   ));
                 })()}
               </div>

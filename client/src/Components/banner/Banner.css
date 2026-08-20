@@ -9,7 +9,7 @@
   background: url("/public/assets/images/home/banner.jpg") center / cover no-repeat;
   width: 100%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  height: 85vh;
+  height: clamp(280px, 85vh, 900px);
 }
 
 .banner-card {
@@ -33,18 +33,18 @@
 /* Vertical Button */
 .enquiry-btn {
   position: fixed;
-  font-size: clamp(12px, 3vw, 16px);
-  padding: clamp(8px, 2.5vw, 15px);
   right: 0;
   top: 50%;
-  transform: rotate(-90deg) translateY(-50%);
-  transform-origin: right center;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-lr;
+  font-size: 14px;
+  padding: 14px 8px;
   background: red;
   color: white;
   border: none;
   cursor: pointer;
   z-index: 9999;
-  border-radius: 5px 5px 0 0;
+  border-radius: 0 6px 6px 0;
 }
 
 /* Modal Background */
@@ -95,9 +95,9 @@
   color: white;
 }
 
-.enquiry-subtitle{
+.enquiry-subtitle {
   font-weight: 500;
-} 
+}
 
 .enquiry-form {
   padding: 20px;
@@ -126,7 +126,7 @@
 @media (max-width: 768px) {
   .banner-image {
     width: 90%;
-    height: 40vh;
+    height: clamp(200px, 45vw, 350px);
   }
 
   .banner-card {

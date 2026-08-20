@@ -67,7 +67,7 @@ const Syllabus = ({ title, file, description }) => {
           <div className="syllabus-row">
             <h3 className="board-name">Syllabus AY 2026-27 : </h3>
             {/* <p>{description}</p> */}
-            <a href={file} target="_blank" rel="noopener noreferrer" className="btn2">
+            <a href={file} target="_blank" rel="noopener noreferrer" className="btn2" aria-label={`View Syllabus PDF: ${title}`}>
               View Syllabus
             </a>
           </div>
@@ -83,8 +83,9 @@ const Syllabus = ({ title, file, description }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn2"
+                aria-label={`Download ${item.title}`}
               >
-                View Syllabus
+                {item.link.endsWith(".pdf") ? "View PDF" : "Download"}
               </a>
             </div>
           </div>

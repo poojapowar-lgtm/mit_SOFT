@@ -31,18 +31,18 @@ const SkillDev = () => {
   ];
 
   const images1 = [
-    "/assets/images/skills-1.png",
-    "/assets/images/skills-2.png",
+    { src: "/assets/images/skills-1.png", alt: "Pre-Placement Group Discussion Session - MIT SoFT", title: "Pre-Placement Group Discussion" },
+    { src: "/assets/images/skills-2.png", alt: "Professional Skill Development Session - MIT SoFT", title: "Professional Skill Development" },
   ];
 
   const images2 = [
-    "/assets/images/skills-3.png",
-    "/assets/images/skills-4.png",
+    { src: "/assets/images/skills-3.png", alt: "Mock Personal Interview Practice - MIT SoFT", title: "Mock Personal Interview Practice" },
+    { src: "/assets/images/skills-4.png", alt: "Group Discussion Practice for Placement - MIT SoFT", title: "Group Discussion Practice" },
   ];
 
   const images3 = [
-    "/assets/images/skills-5.png",
-    "/assets/images/skills-6.png",
+    { src: "/assets/images/skills-5.png", alt: "Soft Skills and Career Readiness Session - MIT SoFT", title: "Soft Skills and Career Readiness" },
+    { src: "/assets/images/skills-6.png", alt: "Behavioral Skills Training Session - MIT SoFT", title: "Behavioral Skills Training" },
   ];
 
   const renderList = (data) => (
@@ -56,7 +56,7 @@ const SkillDev = () => {
   const renderImages = (imageList) => (
     <div className="image-wrapper">
       {imageList.map((img, i) => (
-        <img key={i} src={img} alt={`Skill ${i + 1}`} />
+        <img key={i} src={img.src} alt={img.alt} title={img.title} />
       ))}
     </div>
   );

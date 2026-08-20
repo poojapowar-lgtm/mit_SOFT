@@ -9,7 +9,7 @@ const PrincipalMSG = () => {
       <div className="leader-card">
         <div className="leader-section">
           <div className="leader-image">
-            <img src="/assets/images/home/principal_mam.jpg" alt="Leader 1" />
+            <img src="/assets/images/home/principal_mam.jpg" alt="Dr. Anjali Bhoite - I/C Principal, MIT School of Food Technology" title="Dr. Anjali Bhoite" />
           </div>
 
           <div className="leader-content">

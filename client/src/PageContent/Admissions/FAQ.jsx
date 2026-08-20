@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { RiArrowDownSLine } from "react-icons/ri";
 
 const FAQ = () => {
@@ -52,32 +51,31 @@ const FAQ = () => {
         <div>
             <h2 className="innerpage-title">FAQ's</h2>
 
-<div className="accordion-container">
-            {FAQdata.map((item, index) => (
-                <div key={index} className="accordion-item">
-                    <div
-                        className={`faq-header ${activeIndex === index ? "active" : ""
-                            }`}
-                        onClick={() => toggleAccordion(index)}
-                    >
-                        <h4 className="accordion-title">{item.title}</h4>
-                        <span className="faq-icon">
-                            {/* <IoIosArrowDropdownCircle /> */}
-                            <RiArrowDownSLine/>
-                        </span>
-                    </div>
-
-                    {activeIndex === index && (
-                        <div className="accordion-content-wrapper">
-                            <div className="accordion-content">
-                                <p>{item.content}</p>
-                            </div>
+            <div className="accordion-container">
+                {FAQdata.map((item, index) => (
+                    <div key={index} className="accordion-item">
+                        <div
+                            className={`faq-header ${activeIndex === index ? "active" : ""
+                                }`}
+                            onClick={() => toggleAccordion(index)}
+                        >
+                            <h4 className="accordion-title">{item.title}</h4>
+                            <span className="faq-icon">
+                                <RiArrowDownSLine />
+                            </span>
                         </div>
 
-                    )}
-                </div>
-            ))}
-        </div>
+                        {activeIndex === index && (
+                            <div className="accordion-content-wrapper">
+                                <div className="accordion-content">
+                                    <p>{item.content}</p>
+                                </div>
+                            </div>
+
+                        )}
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

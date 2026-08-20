@@ -1,5 +1,5 @@
 import React from "react";
-import "./facilities.css";
+import "./sports.css";
 
 const Sports = () => {
     // sportsData
@@ -27,15 +27,15 @@ const Sports = () => {
 
 
     return (
-        <div className="facilities-container">
+        <div >
             <h2 className="innerpage-title">Sports Facilities</h2>
             {/* sportsData */}
-            <div>
-                <div className="facility-images">
+            <div className="sports-container">
+                <div className="sports-images">
                     {sportsData.images.map((img, i) => (
-                        <div className="image-card" key={i}>
+                        <div className="sports-card" key={i}>
                             <img src={img.src} alt={img.name} />
-                            <div className="image-text">
+                            <div className="sports-text">
                                 {img.name}
                             </div>
                         </div>

@@ -262,7 +262,7 @@ const Events = () => {
                       <td><span dangerouslySetInnerHTML={{ __html: item.description?.slice(0, 60) }} /></td>
                       <td>
                         {item.file_path && (
-                          <img src={`http://localhost:5000${item.file_path}`} alt="" className="table-img" />
+                          <img src={`http://localhost:5000${item.file_path}`} alt={item.title} title={item.title} className="table-img" />
                         )}
                       </td>
                       <td>

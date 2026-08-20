@@ -48,7 +48,7 @@ const AboutMIT = () => {
       {/* <h2 className="innerpage-title">About MIT-ADT University</h2> */}
 
       <div className="aboutmit-image">
-        <img src="/assets/images/home/inner_bnr.jpg" alt="About MIT ADT" />
+        <img src="/assets/images/home/inner_bnr.jpg" alt="About MIT-ADT University - MIT School of Food Technology" title="About MIT-ADT University" />
       </div>
 
       <p>

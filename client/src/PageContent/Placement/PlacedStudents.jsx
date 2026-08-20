@@ -62,6 +62,7 @@ const PlacedStudents = () => {
                         <img
                           src={`http://localhost:5000/uploads/${item.photo}`}
                           alt={item.name}
+                          title={item.name}
                           className="student-img"
                           style={{
                             width: "clamp(60px, 8vw, 100px)",

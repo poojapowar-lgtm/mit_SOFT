@@ -44,3 +44,54 @@
   font-size: clamp(16px, 2.5vw, 28px);
   font-weight: 600;
 }
+
+
+/* BREADCRUMB*/
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(6px, 0.8vw, 10px);
+    margin-top: clamp(6px, 0.8vw, 10px);
+    font-family: system-ui, sans-serif;
+    font-size: clamp(11px, 1vw, 14px);
+    text-transform: capitalize;
+}
+
+
+/* Home */
+.breadcrumb-home {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.breadcrumb-home:hover {
+    color: #8cff8c;
+}
+
+
+/* Separator */
+.breadcrumb-separator {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: clamp(12px, 1vw, 15px);
+}
+
+
+/* Current page */
+.breadcrumb-current {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+}
+
+
+/* Mobile */
+@media (max-width: 480px) {
+    .breadcrumb {
+        font-size: 11px;
+        gap: 5px;
+        margin-top: 5px;
+    }
+}

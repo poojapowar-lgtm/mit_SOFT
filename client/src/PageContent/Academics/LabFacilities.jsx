@@ -87,7 +87,7 @@ const LabFacilities = () => {
                         <h3 className="innerpage-subtitle">{lab.title}</h3>
 
                         <div className="lab-img">
-                            <img src={lab.image} alt={lab.title} />
+                            <img src={lab.image} alt={lab.title} title={lab.title} />
                         </div>
 
                         <button className="btn" onClick={() => setSelectedLab(lab)}>
@@ -105,7 +105,7 @@ const LabFacilities = () => {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <IoMdCloseCircle
-                            className="close-btn"
+                            className="page-close-btn"
                             onClick={() => setSelectedLab(null)}
                         />
 
@@ -114,6 +114,7 @@ const LabFacilities = () => {
                             <img
                                 src={selectedLab.image}
                                 alt={selectedLab.title}
+                                title={selectedLab.title}
                                 className="lab-modal-img"
                             />   </div>
 

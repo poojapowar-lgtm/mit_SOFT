@@ -51,6 +51,11 @@
   height: clamp(50px, 9vw, 75px);
 }
 
+.visitor-count {
+  font-size: clamp(12px, 1.5vw, 20px);
+  margin: 0;
+}
+
 /* Social Icons */
 .footer-social {
   display: flex;
@@ -150,8 +155,11 @@
 /* BOTTOM */
 .footer-bottom {
   width: 100%;
-  display: block;
-  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  gap: clamp(25px, 5vw, 80px);
+  padding: clamp(12px, 1.5vw, 20px) 0;
 }
 
 .bottom-text {
@@ -159,12 +167,55 @@
   font-size: clamp(10px, 1.2vw, 15px);
 }
 
+.visitor-box {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.visitor-box h4 {
+  font-family: system-ui;
+  font-size: clamp(12px, 3vw, 16px);
+  color: wheat;
+}
+
+.visitor-count {
+  margin: 0;
+  padding: 2px 5px;
+  border-radius: 6px;
+  background: whitesmoke !important;
+  color: #470004;
+  font-size: clamp(14px, 1.5vw, 20px);
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+  .footer-bottom {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .bottom-text {
+    text-align: center;
+  }
+
+  .visitor-box {
+    justify-content: center;
+  }
+}
+
 .back-to-top {
   position: fixed;
   bottom: clamp(20px, 3vw, 40px);
-  right: 8px;
-  width: clamp(30px, 4vw, 50px);
-  height: clamp(30px, 4vw, 50px);
+  right: 20px;
+  width: clamp(30px, 4vw, 45px);
+  height: clamp(30px, 4vw, 45px);
   border-radius: 50%;
   background: #0066ff;
   color: white;
@@ -174,9 +225,9 @@
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  font-size: clamp(18px, 1.5vw, 24px);
+  font-size: clamp(16px, 1.5vw, 22px);
   transition: 0.3s ease;
-  z-index: 999;
+  z-index: 998;
 }
 
 .back-to-top:hover {

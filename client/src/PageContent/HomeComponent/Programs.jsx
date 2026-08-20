@@ -48,7 +48,7 @@ const Programs = () => {
               className="program-cards"
               key={index}
             >
-              <img src={program.image} alt={program.title} />
+              <img src={program.image} alt={program.title} title={program.title} />
 
               <div className="pg-card">
                 <h3 className="pg-title">{program.title}</h3>

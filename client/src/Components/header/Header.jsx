@@ -26,9 +26,9 @@ const Header = () => {
 
       {/* Left Logo Section */}
       <div className="logo-section">
-        <img src="/assets/images/home/mit_logo_black.webp" alt="Logo 1" className="logo1" />
+        <img src="/assets/images/home/mit_logo_black.webp" alt="MIT-ADT University Logo" title="MIT-ADT University" className="logo1" />
         <div className="logo2-section">
-          <img src="/assets/images/home/SoFT_Logo.png" alt="Logo 2" className="logo2" />
+          <img src="/assets/images/home/SoFT_Logo.png" alt="MIT School of Food Technology Logo" title="MIT School of Food Technology" className="logo2" />
           <div className="logo-text">
             <h1 className="logo-title">School of <br/>Food Technology</h1>
             {/* <p className="logo-subtitle">(SoFT)</p> */}

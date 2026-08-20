@@ -4,7 +4,7 @@
     margin: 0 auto;
     display: flex;
     gap: clamp(15px, 2.5vw, 40px);
-    padding: clamp(10px, 2vw, 20px);
+    padding: clamp(25px, 2.5vw, 60px);
 }
 
 /* Equal sections */
@@ -12,10 +12,10 @@
 .happenings {
     flex: 1;
     min-width: 0;
-    background: #ffffff;
+     background: linear-gradient(135deg,
+      #ffffff 0%,
+      #f9fbf3 100%);
     padding: 16px;
-    border-radius: 10px;
-    border-top: 5px solid #722327;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
@@ -68,14 +68,27 @@
 }
 
 /* Notice Card */
+
 .notice-card {
-    background: whitesmoke;
     display: flex;
+    align-items: center;
     gap: clamp(12px, 2vw, 18px);
-    padding: clamp(5px, 1.2vw, 10px);
+
     margin: clamp(10px, 1.2vw, 15px);
+    padding: clamp(8px, 1.2vw, 12px) clamp(10px, 1.5vw, 20px);
+
     border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+
+    background: linear-gradient(
+        90deg,
+        #eef6d8 0%,
+        #f5f9e8 45%,
+        #ffffff 100%
+    );
+
+    border: 1px solid #ffffff;
+    border-left: 4px solid #97c600;
+
     transition: all 0.3s ease;
     cursor: pointer;
 }

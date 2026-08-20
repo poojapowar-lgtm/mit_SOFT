@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IoIosArrowDropdownCircle } from "react-icons/io";
+import { RiArrowDownSLine } from "react-icons/ri";
 
 
 const PlacementCell = () => {
@@ -239,7 +239,7 @@ const PlacementCell = () => {
                         >
                             <h4 className="accordion-title">{item.title}</h4>
                             <span className="faq-icon">
-                                <IoIosArrowDropdownCircle />
+                                <RiArrowDownSLine />
                             </span>
                         </div>
 

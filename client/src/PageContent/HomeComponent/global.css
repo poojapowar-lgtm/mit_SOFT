@@ -17,8 +17,7 @@
 .global-card {
   max-width: clamp(180px, 15vw, 260px);
   flex: 1 1 clamp(160px, 25%, 220px);
-  padding: clamp(12px, 3vw, 20px);
-  border-radius: 18px;
+  padding: clamp(10px, 3vw, 18px) clamp(5px, 1.2vw, 8px);
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
@@ -73,7 +72,7 @@
   font-size: clamp(14px, 1.5vw, 20px);
   font-weight: 600;
   color: #722327;
-  margin-top: clamp(10px, 1.5vw, 14px);
+  margin: clamp(5px, 1.5vw, 10px);
   transition: color 0.3s ease;
 }
 

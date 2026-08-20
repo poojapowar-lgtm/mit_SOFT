@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet, useLocation, useParams } from "react-router-dom";
 import InnerBanner from "../Components/inner_banner/InnerBanner";
 import Sidebar from "../Components/sidebar/Sidebar";
+import SEOMeta from "../Components/SEOMeta";
 import "./pages.css";
 
 const Programs = () => {
@@ -46,6 +47,7 @@ const Programs = () => {
 
   return (
     <>
+      <SEOMeta title={title} path={location.pathname} />
       <InnerBanner bgImage={bgImage} title={title} />
 
       <div className="page-layout">

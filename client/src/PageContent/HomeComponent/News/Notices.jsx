@@ -117,8 +117,9 @@ const Notices = () => {
                                             target="_blank"
                                             rel="noreferrer"
                                             className="notice-link"
+                                            aria-label={`View PDF: ${item.title}`}
                                         >
-                                            {item.link_text || "View File"}
+                                            {item.link_text || "View PDF"}
                                         </a>
                                     )}
 

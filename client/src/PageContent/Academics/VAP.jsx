@@ -47,7 +47,7 @@ const VAP = () => {
                     }}
                 >
                     {images.map((img, index) => (
-                        <img src={img} key={index} alt="Leader" />
+                        <img src={img} key={index} alt={`Village Adoption Program 2022 - activity ${index + 1}`} title="Village Adoption Program 2022 - MIT SoFT" />
                     ))}
                 </div>
 

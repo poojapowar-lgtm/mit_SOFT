@@ -23,11 +23,4 @@
   .image-wrapper {
     flex-direction: column;
   }
-
-  .image-wrapper img {
-    width: 50%;
-    height: clamp(200px, 15vw, 280px);
-    object-fit: cover;
-    border-radius: 10px;
-  }
 }
