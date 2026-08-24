@@ -6,9 +6,14 @@ const multer = require("multer");
 
 // ================= STORAGE =================
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, "uploads/testimonials/"),
+  destination: (req, file, cb) =>
+    cb(null, "uploads/testimonials/"),
+
   filename: (req, file, cb) =>
-    cb(null, Date.now() + "-" + file.originalname.replace(/\s/g, "")),
+    cb(
+      null,
+      Date.now() + "-" + file.originalname.replace(/\s/g, "")
+    ),
 });
 
 const upload = multer({ storage }).single("video");
@@ -32,7 +37,8 @@ const generateText = (input) => {
 
 // ================= CREATE =================
 router.post("/", auth, upload, (req, res) => {
-  let { title, video_url, alt_tag } = req.body;
+  let { title, video_url } = req.body;
+
   let video_path = null;
 
   if (req.file) {
@@ -45,21 +51,25 @@ router.post("/", auth, upload, (req, res) => {
 
   const source = video_path || video_url;
 
-  // Auto-generate if empty
+  // Auto-generate title if empty
   if (!title) {
     title = generateText(source);
   }
 
-  if (!alt_tag) {
-    alt_tag = generateText(source);
-  }
+  // IMPORTANT:
+  // alt_tag is NOT stored because testimonials table
+  // does not contain an alt_tag column.
 
   db.query(
-    `INSERT INTO testimonials (title, video_path, video_url, alt_tag)
-     VALUES (?, ?, ?, ?)`,
-    [title || null, video_path, video_url || null, alt_tag || null],
+    `INSERT INTO testimonials (title, video_path, video_url)
+     VALUES (?, ?, ?)`,
+    [title || null, video_path, video_url || null],
     (err) => {
-      if (err) return res.status(500).send(err.message);
+      if (err) {
+        console.error("CREATE TESTIMONIAL ERROR:", err);
+        return res.status(500).send(err.message);
+      }
+
       res.send("Testimonial Added Successfully");
     }
   );
@@ -70,7 +80,11 @@ router.get("/", (req, res) => {
   db.query(
     "SELECT * FROM testimonials ORDER BY id DESC",
     (err, result) => {
-      if (err) return res.status(500).send(err.message);
+      if (err) {
+        console.error("GET TESTIMONIALS ERROR:", err);
+        return res.status(500).send(err.message);
+      }
+
       res.json(result);
     }
   );
@@ -78,7 +92,8 @@ router.get("/", (req, res) => {
 
 // ================= UPDATE =================
 router.put("/:id", auth, upload, (req, res) => {
-  let { title, video_url, alt_tag } = req.body;
+  let { title, video_url } = req.body;
+
   let video_path = req.body.video_path || null;
 
   if (req.file) {
@@ -91,21 +106,31 @@ router.put("/:id", auth, upload, (req, res) => {
 
   const source = video_path || video_url;
 
+  // Auto-generate title if empty
   if (!title) {
     title = generateText(source);
   }
 
-  if (!alt_tag) {
-    alt_tag = generateText(source);
-  }
+  // IMPORTANT:
+  // alt_tag is NOT updated because the table
+  // does not contain an alt_tag column.
 
   db.query(
     `UPDATE testimonials
-     SET title=?, video_path=?, video_url=?, alt_tag=?
+     SET title=?, video_path=?, video_url=?
      WHERE id=?`,
-    [title || null, video_path, video_url || null, alt_tag || null, req.params.id],
+    [
+      title || null,
+      video_path,
+      video_url || null,
+      req.params.id,
+    ],
     (err) => {
-      if (err) return res.status(500).send(err.message);
+      if (err) {
+        console.error("UPDATE TESTIMONIAL ERROR:", err);
+        return res.status(500).send(err.message);
+      }
+
       res.send("Testimonial Updated Successfully");
     }
   );
@@ -117,7 +142,11 @@ router.delete("/:id", auth, (req, res) => {
     "DELETE FROM testimonials WHERE id=?",
     [req.params.id],
     (err) => {
-      if (err) return res.status(500).send(err.message);
+      if (err) {
+        console.error("DELETE TESTIMONIAL ERROR:", err);
+        return res.status(500).send(err.message);
+      }
+
       res.send("Deleted Successfully");
     }
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import "../../Pages/board_body.css";
 
 const BoardResearch = () => {
   const ResearchBoardData = [
@@ -46,7 +47,7 @@ const BoardResearch = () => {
         {ResearchBoardData.map((item, index) => (
           <div className="board-card" key={index}>
             <h3 className="board-name">{item.title}</h3>
-            <p style={{margin:"5px 0"}}><strong>{item.name}</strong></p>
+            <p style={{ margin: "5px 0" }}><strong>{item.name}</strong></p>
             <p className="board-desg">{item.desgination}</p>
           </div>
         ))}

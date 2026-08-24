@@ -229,14 +229,16 @@ form label {
   color: #444;
 }
 
-form input,
-form textarea {
+form label input,
+form label textarea {
+  display: block;
   width: 90%;
   padding: 8px 10px;
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 14px;
+  box-sizing: border-box;
 }
 
 form textarea {

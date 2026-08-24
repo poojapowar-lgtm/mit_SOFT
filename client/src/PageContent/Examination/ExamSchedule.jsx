@@ -1,4 +1,5 @@
 import React from "react";
+import "../../PageContent/HomeComponent/News/news.css";
 
 const ExamSchedule = () => {
     const examSchedule = [

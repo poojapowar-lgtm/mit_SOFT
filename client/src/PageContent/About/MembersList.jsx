@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./board_body.css"
+import "../../Pages/board_body.css";
 import axios from "axios";
 
 const MembersList = ({ type, title }) => {
@@ -9,17 +9,17 @@ const MembersList = ({ type, title }) => {
     fetchMembers();
   }, [type]);
 
-const fetchMembers = async () => {
-  try {
-    const res = await axios.get(
-      `http://localhost:5000/api/members?type=${type}`
-    );
+  const fetchMembers = async () => {
+    try {
+      const res = await axios.get(
+        `http://localhost:5000/api/members?type=${type}`
+      );
 
-    setMembers(res.data.reverse()); // reverse once here
-  } catch (err) {
-    console.error(err);
-  }
-};
+      setMembers(res.data.reverse()); // reverse once here
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <>

@@ -1,6 +1,5 @@
 import React from "react";
 import { ImArrowDown } from "react-icons/im";
-import "./internship.css";
 
 const stepsData = [
     {

@@ -5,7 +5,6 @@ const AboutMIT = () => {
   const visionData = [
     {
       title: "Vision",
-      image: "/assets/images/home/vision.jpg",
       paragraphs: [
         `MIT Art, Design and Technology University aspires to be the 
       University of Eminence by amalgamating Art, Design, Science and 
@@ -16,7 +15,6 @@ const AboutMIT = () => {
     },
     {
       title: "Mission",
-      image: "/assets/images/home/mission.jpg",
       paragraphs: [
         `The mission of MIT Art, Design and Technology University is to 
       provide impetus to faculty, learners and staff by developing their 
@@ -43,8 +41,8 @@ const AboutMIT = () => {
   return (
     <div className="aboutmit-container">
       <div className="title-line">
-  <h2 className="innerpage-title">About Us</h2>
-</div>
+        <h2 className="innerpage-title">About Us</h2>
+      </div>
       {/* <h2 className="innerpage-title">About MIT-ADT University</h2> */}
 
       <div className="aboutmit-image">
@@ -88,28 +86,16 @@ const AboutMIT = () => {
           {visionData.map((item, index) => (
             <div className="vision-text" key={index}>
 
-              <div
-                className="vision-bg"
-                style={{
-                  backgroundImage: `url("${item.image}")`,
-                }}
-              ></div>
+              <h3 className="v-title">
+                {item.title}
+              </h3>
 
-              <div className="vision-overlay"></div>
-
-              <div className="vision-inner">
-                <h3 className="v-title">
-                  {item.title}
-                </h3>
-
-                <div className="vision-content">
-                  {item.paragraphs.map((paragraph, i) => (
-                    <p key={i}>
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-
+              <div className="vision-content">
+                {item.paragraphs.map((paragraph, i) => (
+                  <p key={i}>
+                    {paragraph}
+                  </p>
+                ))}
               </div>
 
             </div>

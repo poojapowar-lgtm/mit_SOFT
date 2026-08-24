@@ -3,6 +3,7 @@ import ContactUs from "../Pages/ContactUs";
 
 
 
+
 export const ContactRoute = (
   <Route path="contact" element={<ContactUs />} />
 );

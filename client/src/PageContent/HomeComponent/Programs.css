@@ -15,7 +15,7 @@
   display: flex;
   width: max-content;
   animation: scroll 25s linear infinite;
-  gap: clamp(15px, 3vw, 30px);
+  gap: clamp(15px, 3vw, 40px);
 }
 
 .programs-slider:hover .programs-track {
@@ -24,10 +24,10 @@
 
 /* Card */
 .program-cards {
-  width: clamp(220px, 30vw, 400px);
+  width: clamp(220px, 30vw, 380px);
   background: #722327;
   color: white;
-  border-radius: clamp(10px, 2vw, 16px);
+  border-radius: clamp(10px, 2vw, 14px);
   overflow: hidden;
   flex-shrink: 0;
   text-decoration: none;

@@ -10,7 +10,6 @@ const TestimonialsAdmin = () => {
     video: null,
     existingVideo: "",
     video_url: "",
-    alt_tag: "",
   });
 
   const [preview, setPreview] = useState(null);
@@ -19,9 +18,9 @@ const TestimonialsAdmin = () => {
 
   const token = localStorage.getItem("token");
 
-  // META GENERATOR
-  const generateMeta = (input) => {
-    if (!input) return { title: "", alt_tag: "" };
+  // ================= META / TITLE GENERATOR =================
+  const generateTitle = (input) => {
+    if (!input) return "";
 
     let name = input;
 
@@ -29,26 +28,23 @@ const TestimonialsAdmin = () => {
       name = input.split("/").pop();
     }
 
-    const clean = name
+    return name
       .replace(/^\d+-/, "")
       .split(".")[0]
       .replace(/[-_]/g, " ")
       .replace(/\b\w/g, (c) => c.toUpperCase());
-
-    return {
-      title: clean,
-      alt_tag: `Video testimonial of ${clean}`,
-    };
   };
 
-  // FETCH
+  // ================= FETCH =================
   const fetchData = async () => {
     try {
       const res = await axios.get(
         "http://localhost:5000/api/testimonials"
       );
+
       setList(res.data);
-    } catch {
+    } catch (error) {
+      console.error(error);
       setMsg("Error loading testimonials");
     }
   };
@@ -57,75 +53,77 @@ const TestimonialsAdmin = () => {
     fetchData();
   }, []);
 
-  // INPUT
+  // ================= INPUT =================
   const handleChange = (e) => {
     const { name, value } = e.target;
 
     if (name === "video_url") {
-      const meta = generateMeta(value);
-
       setForm((prev) => ({
         ...prev,
         video_url: value,
-        title: prev.title || meta.title,
-        alt_tag: prev.alt_tag || meta.alt_tag,
+        title: prev.title || generateTitle(value),
       }));
 
       setPreview(value);
     } else {
-      setForm({ ...form, [name]: value });
+      setForm((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
     }
   };
 
-  // FILE
+  // ================= VIDEO FILE =================
   const handleVideoChange = (e) => {
     const file = e.target.files[0];
-    if (!file) return;
 
-    const meta = generateMeta(file.name);
+    if (!file) return;
 
     setForm((prev) => ({
       ...prev,
       video: file,
-      title: prev.title || meta.title,
-      alt_tag: prev.alt_tag || meta.alt_tag,
+      title: prev.title || generateTitle(file.name),
     }));
 
     setPreview(URL.createObjectURL(file));
   };
 
+  // ================= REMOVE VIDEO =================
   const removeVideo = () => {
     setForm((prev) => ({
       ...prev,
       video: null,
       video_url: "",
+      existingVideo: "",
     }));
+
     setPreview(null);
   };
 
-  // SUBMIT
+  // ================= SUBMIT =================
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     let finalTitle = form.title;
-    let finalAlt = form.alt_tag;
 
-    if (!finalTitle || !finalAlt) {
+    // Generate title automatically if empty
+    if (!finalTitle) {
       const source =
         form.video?.name ||
         form.video_url ||
         form.existingVideo;
 
-      const meta = generateMeta(source);
-
-      finalTitle = finalTitle || meta.title;
-      finalAlt = finalAlt || meta.alt_tag;
+      finalTitle = generateTitle(source);
     }
 
     const fd = new FormData();
+
     fd.append("title", finalTitle);
     fd.append("video_url", form.video_url || "");
-    fd.append("alt_tag", finalAlt);
+
+    // IMPORTANT:
+    // Do NOT append alt_tag because the database
+    // testimonials table does not have this column.
 
     if (form.video) {
       fd.append("video", form.video);
@@ -138,197 +136,303 @@ const TestimonialsAdmin = () => {
         await axios.put(
           `http://localhost:5000/api/testimonials/${editingId}`,
           fd,
-          { headers: { Authorization: token } }
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
         );
+
         setMsg("Updated successfully");
       } else {
         await axios.post(
           "http://localhost:5000/api/testimonials",
           fd,
-          { headers: { Authorization: token } }
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
         );
+
         setMsg("Added successfully");
       }
 
       resetForm();
       fetchData();
     } catch (err) {
-      setMsg("Error: " + (err.response?.data || err.message));
+      console.error(err);
+
+      setMsg(
+        "Error: " +
+        (err.response?.data || err.message)
+      );
     }
   };
 
-  // RESET
+  // ================= RESET =================
   const resetForm = () => {
     setForm({
       title: "",
       video: null,
       existingVideo: "",
       video_url: "",
-      alt_tag: "",
     });
+
     setPreview(null);
     setEditingId(null);
   };
 
-  // EDIT
+  // ================= EDIT =================
   const handleEdit = (item) => {
     setForm({
       title: item.title || "",
       video: null,
       existingVideo: item.video_path || "",
       video_url: item.video_url || "",
-      alt_tag: "",
     });
 
     if (item.video_url) {
       setPreview(item.video_url);
     } else if (item.video_path) {
-      setPreview(`http://localhost:5000${item.video_path}`);
+      setPreview(
+        `http://localhost:5000${item.video_path}`
+      );
+    } else {
+      setPreview(null);
     }
 
     setEditingId(item.id);
   };
 
-  // DELETE
+  // ================= DELETE =================
   const handleDelete = async (id) => {
-    if (!window.confirm("Delete this testimonial?")) return;
+    if (!window.confirm("Delete this testimonial?")) {
+      return;
+    }
 
-    await axios.delete(
-      `http://localhost:5000/api/testimonials/${id}`,
-      { headers: { Authorization: token } }
-    );
+    try {
+      await axios.delete(
+        `http://localhost:5000/api/testimonials/${id}`,
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
 
-    fetchData();
+      setMsg("Deleted successfully");
+      fetchData();
+    } catch (error) {
+      console.error(error);
+
+      setMsg(
+        "Error: " +
+        (error.response?.data || error.message)
+      );
+    }
   };
 
   return (
-    <div className="admin-container">
-      {msg && <div className="admin-alert">{msg}</div>}
+    <div className="admin-page">
 
-      <div className="admin-page">
-        <div className="admin-grid">
-          {/* FORM */}
-          <div className="admin-card">
-            <h3 className="card-title">
-              {editingId ? "Edit Testimonial" : "Add Testimonial"}
-            </h3>
+      {msg && (
+        <div className="admin-alert">
+          {msg}
+        </div>
+      )}
 
-            <form onSubmit={handleSubmit}>
-              <label>
-                Title
-                <input
-                  name="title"
-                  value={form.title}
-                  onChange={handleChange}
-                />
-              </label>
+      <div className="admin-grid">
 
-              <label>
-                Video URL
-                <input
-                  name="video_url"
-                  value={form.video_url}
-                  onChange={handleChange}
-                />
-              </label>
+        {/* ================= FORM ================= */}
+        <div className="admin-card">
 
-              <label>
-                Upload Video
-                <input
-                  type="file"
-                  accept="video/*"
-                  onChange={handleVideoChange}
-                />
-              </label>
+          <h3 className="card-title">
+            {editingId
+              ? "Edit Testimonial"
+              : "Add Testimonial"}
+          </h3>
 
-              {/* PREVIEW */}
-              {preview && (
-                <div style={{ margin: "10px 0", position: "relative" }}>
-                  {form.video_url ? (
-                    <iframe
-                      src={preview}
-                      width="100%"
-                      height="200"
-                      title={form.title}
-                    />
-                  ) : (
-                    <video src={preview} controls width="100%" />
-                  )}
+          <form onSubmit={handleSubmit}>
 
-                  <IoClose
-                    onClick={removeVideo}
+            {/* TITLE */}
+            <label>
+              Title
+
+              <input
+                name="title"
+                value={form.title}
+                onChange={handleChange}
+                required
+              />
+            </label>
+
+            {/* VIDEO URL */}
+            <label>
+              Video URL
+
+              <input
+                name="video_url"
+                value={form.video_url}
+                onChange={handleChange}
+                placeholder="Enter video URL"
+              />
+            </label>
+
+            {/* VIDEO UPLOAD */}
+            <label>
+              Upload Video
+
+              <input
+                type="file"
+                accept="video/*"
+                onChange={handleVideoChange}
+              />
+            </label>
+
+            {/* VIDEO PREVIEW */}
+            {preview && (
+              <div
+                style={{
+                  margin: "10px 0",
+                  position: "relative",
+                }}
+              >
+                {form.video_url ? (
+                  <iframe
+                    src={preview}
+                    width="100%"
+                    height="200"
+                    title={
+                      form.title ||
+                      "Video testimonial"
+                    }
                     style={{
-                      position: "absolute",
-                      top: 0,
-                      right: 0,
-                      background: "#722327",
-                      color: "#fff",
-                      borderRadius: "50%",
-                      cursor: "pointer",
+                      border: "none",
                     }}
                   />
-                </div>
-              )}
+                ) : (
+                  <video
+                    src={preview}
+                    controls
+                    width="100%"
+                    style={{
+                      maxHeight: "220px",
+                    }}
+                  />
+                )}
 
-              <button className="form-btn" type="submit">
-                {editingId ? "Update" : "Add"}
-              </button>
-            </form>
-          </div>
-
-          {/* TABLE */}
-          <div className="admin-card">
-            <h3 className="card-title">All Testimonials</h3>
-
-            {list.length === 0 ? (
-              <p>No testimonials found</p>
-            ) : (
-              <div className="admin-table-wrapper">
-                <table className="admin-table">
-                  <thead>
-                    <tr>
-                      <th>Title</th>
-                      <th>Video</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    {list.map((item) => (
-                      <tr key={item.id}>
-                        <td>{item.title}</td>
-
-                        <td>
-                          <a
-                            href={
-                              item.video_url
-                                ? item.video_url
-                                : `http://localhost:5000${item.video_path}`
-                            }
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            View Video
-                          </a>
-                        </td>
-
-                        <td>
-                          <button onClick={() => handleEdit(item)}>
-                            Edit
-                          </button>
-                          <button onClick={() => handleDelete(item.id)}>
-                            Delete
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                <IoClose
+                  onClick={removeVideo}
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                    background: "#722327",
+                    color: "#fff",
+                    borderRadius: "50%",
+                    cursor: "pointer",
+                  }}
+                />
               </div>
             )}
-          </div>
+
+            {/* SUBMIT */}
+            <button
+              className="form-btn"
+              type="submit"
+            >
+              {editingId
+                ? "Update Testimonial"
+                : "Add Testimonial"}
+            </button>
+
+          </form>
+
         </div>
+
+        {/* ================= TABLE ================= */}
+        <div className="admin-card">
+
+          <h3 className="card-title">
+            All Testimonials
+          </h3>
+
+          {list.length === 0 ? (
+            <p>No testimonials found</p>
+          ) : (
+            <div className="admin-table-wrapper">
+
+              <table className="admin-table">
+
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Video</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+
+                  {list.map((item) => (
+                    <tr key={item.id}>
+
+                      {/* TITLE */}
+                      <td>
+                        {item.title}
+                      </td>
+
+                      {/* VIDEO */}
+                      <td>
+                        <a
+                          href={
+                            item.video_url
+                              ? item.video_url
+                              : `http://localhost:5000${item.video_path}`
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          View Video
+                        </a>
+                      </td>
+
+                      {/* ACTION */}
+                      <td>
+
+                        <button
+                          onClick={() =>
+                            handleEdit(item)
+                          }
+                        >
+                          Edit
+                        </button>
+
+                        <button
+                          onClick={() =>
+                            handleDelete(item.id)
+                          }
+                        >
+                          Delete
+                        </button>
+
+                      </td>
+
+                    </tr>
+                  ))}
+
+                </tbody>
+
+              </table>
+
+            </div>
+          )}
+
+        </div>
+
       </div>
+
     </div>
   );
 };

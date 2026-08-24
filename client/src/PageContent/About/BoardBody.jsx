@@ -1,5 +1,4 @@
 import React from "react";
-import "./board_body.css";
 
 const boardData = [
   {

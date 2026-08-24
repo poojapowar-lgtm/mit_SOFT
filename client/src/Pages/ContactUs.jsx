@@ -3,6 +3,8 @@ import InnerBanner from "../Components/inner_banner/InnerBanner";
 import axios from "axios";
 import SEOMeta from "../Components/SEOMeta";
 import "./contact.css";
+import "./pages.css";
+import "./board_body.css";
 
 const ContactUs = () => {
     const boardData = [

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../../PageContent/HomeComponent/News/news.css";
 import axios from "axios";
 
 const NoticePage = ({ type, title }) => {

@@ -19,10 +19,6 @@
   flex: 1;
 }
 
-.row-lists {
-  display: flex;
-  gap: clamp(20px, 4vw, 60px);
-}
 
 .row-lists>div {
   flex: 1;
@@ -106,57 +102,3 @@
   }
 }
 
-.row-lists {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 100%;
-}
-
-
-.scope-card {
-  position: relative;
-  padding: clamp(12px, 1.5vw, 24px) clamp(20px, 3vw, 45px);
-  width: 100%;
-  box-sizing: border-box;
-  background: linear-gradient(135deg,
-      #ffffff 0%,
-      #f9fbf3 100%);
-  border: 1px solid rgba(151, 198, 0, 0.18);
-  /* Green border on TOP */
-  border-left: clamp(3px, 0.35vw, 5px) solid #97c600;
-  border-radius: clamp(12px, 1.5vw, 24px);
-  box-shadow:
-    0 clamp(4px, 0.6vw, 10px) clamp(15px, 2vw, 30px) rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-/* Decorative element */
-.scope-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: clamp(80px, 12vw, 180px);
-  height: clamp(80px, 12vw, 180px);
-  background: rgba(151, 198, 0, 0.06);
-  border-radius: 0 0 0 100%;
-  pointer-events: none;
-}
-
-/* Hover effect */
-.scope-card:hover {
-  transform: translateY(clamp(-3px, -0.3vw, -2px));
-  box-shadow:
-    0 clamp(8px, 1vw, 14px) clamp(20px, 2.5vw, 40px) rgba(0, 0, 0, 0.12);
-}
-
-/* Tablet / Mobile */
-@media (max-width: 768px) {
-  .row-lists {
-    grid-template-columns: 1fr;
-  }
-
-}

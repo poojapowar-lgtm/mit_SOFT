@@ -21,24 +21,21 @@
 .slide {
   min-width: 100%;
   display: flex;
-  gap: clamp(15px, 3vw, 30px);
+  gap: clamp(15px, 3vw, 40px);
 }
 
 /* Card */
 .home-placed-std-card {
   flex: 1;
   border-radius: clamp(8px, 1vw, 14px);
-  border-left: clamp(2px, 0.4vw, 4px) solid green;
   overflow: hidden;
   position: relative;
-
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.2)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)),
     url("/public/assets/images/home/assde19.jpg");
 
   background-size: cover;
   background-position: center;
-
   height: clamp(180px, 25vw, 220px);
   display: flex;
   transition: 0.3s;
@@ -54,8 +51,8 @@
 
 /* LEFT IMAGE */
 .card-left {
-  width: clamp(100px, 12vw, 180px);
-  height: clamp(100px, 12vw, 180px);
+  width: clamp(100px, 12vw, 200px);
+  height: clamp(100px, 12vw, 200px);
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -82,7 +79,7 @@
 
 .card-right h3 {
   font-family: system-ui;
-  font-size: clamp(16px, 2vw, 24px);
+  font-size: clamp(16px, 2vw, 25px);
   margin-bottom: 4px;
   color: whitesmoke;
 }

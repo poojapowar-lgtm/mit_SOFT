@@ -12,9 +12,9 @@
 .happenings {
     flex: 1;
     min-width: 0;
-     background: linear-gradient(135deg,
-      #ffffff 0%,
-      #f9fbf3 100%);
+    background: linear-gradient(135deg,
+            #ffffff 0%,
+            #f9fbf3 100%);
     padding: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
@@ -51,9 +51,9 @@
 
 /* Notices List */
 .notices-list {
-    height: clamp(250px, 35vw, 400px);
+    height: clamp(220px, 25vw, 340px);
     overflow-y: auto;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
     padding-right: 5px;
 }
 
@@ -73,22 +73,15 @@
     display: flex;
     align-items: center;
     gap: clamp(12px, 2vw, 18px);
-
     margin: clamp(10px, 1.2vw, 15px);
     padding: clamp(8px, 1.2vw, 12px) clamp(10px, 1.5vw, 20px);
-
     border-radius: 10px;
-
-    background: linear-gradient(
-        90deg,
-        #eef6d8 0%,
-        #f5f9e8 45%,
-        #ffffff 100%
-    );
-
+    background: linear-gradient(90deg,
+            #eef6d8 0%,
+            #f5f9e8 45%,
+            #ffffff 100%);
     border: 1px solid #ffffff;
     border-left: 4px solid #97c600;
-
     transition: all 0.3s ease;
     cursor: pointer;
 }
@@ -159,13 +152,12 @@
 /* Happenings Section */
 .happenings-scroll {
     overflow: hidden;
-    border-radius: 12px;
 }
 
 /* Scroll Track */
 .happenings-track {
     display: flex;
-    gap: clamp(14px, 2vw, 22px);
+    gap: clamp(14px, 2vw, 25px);
     animation: scrollX 20s linear infinite;
 }
 
@@ -173,7 +165,6 @@
 .happening-card {
     position: relative;
     min-width: max-content;
-    border-radius: 12px;
     overflow: hidden;
     transition: 0.3s ease;
 }
@@ -181,7 +172,7 @@
 /* Image */
 .happening-card img {
     width: 100%;
-    height: clamp(250px, 80vh, 400px);
+    height: clamp(220px, 25vw, 340px);
     object-fit: cover;
     transition: transform 0.5s ease;
 }
