@@ -1,5 +1,6 @@
 .innerbanner-container {
   width: 100%;
+  height: clamp(220px, 45vw, 800px);
   display: flex;
   justify-content: center;
   padding: clamp(10px, 1.2vw, 20px) clamp(20px, 5vw, 100px);
@@ -8,12 +9,10 @@
 }
 
 .innerbanner-image {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   border-radius: clamp(8px, 1.2vw, 16px);
   position: relative;
   width: 100%;
-  /* max-width: 1660px; */
-  height: clamp(250px, 40vw, 500px);
 }
 
 .innerbanner-image img {
@@ -29,7 +28,7 @@
   left: clamp(10px, 3vw, 30px);
   background: #97c600;
   padding: clamp(12px, 2vw, 25px) clamp(14px, 2.5vw, 30px);
-  max-width:500px;
+  max-width: 500px;
   border-bottom-left-radius: clamp(12px, 3vw, 30px);
   box-shadow: 0 clamp(2px, 0.5vw, 4px) clamp(8px, 2vw, 15px) rgba(0, 0, 0, 0.2);
 }
@@ -41,57 +40,57 @@
   line-height: clamp(22px, 3vw, 40px);
   color: #002b47;
   margin: 0;
-  font-size: clamp(16px, 2.5vw, 28px);
+  font-size: clamp(12px, 2.5vw, 28px);
   font-weight: 500;
 }
 
 
 /* BREADCRUMB*/
 .breadcrumb {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: clamp(6px, 0.8vw, 10px);
-    margin-top: clamp(6px, 0.8vw, 10px);
-    font-family: system-ui, sans-serif;
-    font-size: clamp(11px, 1vw, 14px);
-    text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(6px, 0.8vw, 10px);
+  margin-top: clamp(6px, 0.8vw, 10px);
+  font-family: system-ui, sans-serif;
+  font-size: clamp(11px, 1vw, 14px);
+  text-transform: capitalize;
 }
 
 
 /* Home */
 .breadcrumb-home {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.25s ease;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease;
 }
 
 .breadcrumb-home:hover {
-    color: #8cff8c;
+  color: #8cff8c;
 }
 
 
 /* Separator */
 .breadcrumb-separator {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: clamp(12px, 1vw, 15px);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(12px, 1vw, 15px);
 }
 
 
 /* Current page */
 .breadcrumb-current {
-    color: rgba(255, 255, 255, 0.85);
-    font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
 }
 
 
 /* Mobile */
 @media (max-width: 480px) {
-    .breadcrumb {
-        font-size: 11px;
-        gap: 5px;
-        margin-top: 5px;
-    }
+  .breadcrumb {
+    font-size: 11px;
+    gap: 5px;
+    margin-top: 5px;
+  }
 }
