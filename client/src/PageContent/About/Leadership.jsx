@@ -16,10 +16,10 @@ const Leadership = () => {
           <div className="leader-content">
             {/* <p>Our true source of information</p> */}
             <h3 className="innerpage-subtitle">Hon. Prof. Dr. Vishwanath D. Karad</h3>
-            <p className="leader-designation">
+            <h4 className="leader-designation">
               Founder, MAEER’S MIT Group of Institutions, Pune
               President, MIT - Art Design and Technology University
-            </p>
+            </h4>
             <p>
               Our truest source of inspiration, Hon'ble Dr. Vishwanath D. Karad, the
               founding father of MIT Group of Institutions, is a renowned
@@ -66,9 +66,9 @@ const Leadership = () => {
 
           <div className="leader-content">
             <h3 className="innerpage-subtitle">Hon. Prof. Dr. Mangesh T. Karad</h3>
-            <p className="leader-designation">
+            <h4 className="leader-designation">
               Pro-Chancellor & Executive President, MIT - Art Design and Technology University
-            </p>
+            </h4>
             <p>Dear Students,</p>
             <p>
               Today's world economy is driven by innovation led entrepreneurship. The

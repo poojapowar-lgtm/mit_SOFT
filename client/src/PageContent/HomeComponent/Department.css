@@ -1,5 +1,6 @@
 .department-section {
-  padding: clamp(20px, 4vw, 30px) clamp(15px, 6vw, 75px);
+  text-align: center;
+  padding: clamp(25px, 4vw, 45vw) clamp(20px, 5vw, 100px);
   background: #f3ecd3;
 }
 
@@ -12,24 +13,26 @@
 
 /* Buttons take space normally */
 .scroll-btn {
-  background: #008a00;
-  color: white;
+  /* background: #008a00; */
+  color: #722327;
   border: none;
   padding: clamp(4px, 2vw, 8px) clamp(5px, 2vw, 10px);
   cursor: pointer;
-  font-size: clamp(14px, 2vw, 18px);
+  font-size: clamp(16px, 2vw, 22px);
   border-radius: 50%;
-  flex-shrink: 0; /* prevent shrinking */
+  flex-shrink: 0;
+  /* prevent shrinking */
 }
 
 /* Container */
 .department-container {
   display: flex;
-  gap: clamp(15px, 3vw, 25px);
+  gap: clamp(15px, 3vw, 40px);
   overflow-x: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  flex: 1; /* take remaining space */
+  flex: 1;
+  /* take remaining space */
 }
 
 .department-container::-webkit-scrollbar {
@@ -44,7 +47,7 @@
 
 /* Image */
 .department-card img {
-  width: 100%;
+  width: 95%;
   height: clamp(230px, 40vw, 300px);
   object-fit: cover;
   border-radius: 50%;
@@ -52,9 +55,11 @@
 
 /* Text */
 .dep-name {
+  font-family: math;
   color: #008a00;
-  font-size: clamp(14px, 2.5vw, 18px);
-  margin-top: clamp(8px, 2vw, 12px);
+  letter-spacing: 0.8px;
+  font-size: clamp(16px, 2.5vw, 20px);
+  margin: clamp(10px, 2vw, 12px) 0 0 0;
 }
 
 /* MOBILE: show only ONE card */

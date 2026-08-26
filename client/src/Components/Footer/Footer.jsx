@@ -3,12 +3,6 @@ import { FaArrowUp } from "react-icons/fa";
 import { SocialIcon } from "react-social-icons";
 import { useState, useEffect } from "react";
 import socialIconsData from "../socialIconsData";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaTwitter,
-} from "react-icons/fa";
 import "./Footer.css";
 const API_BASE = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
 
@@ -85,6 +79,7 @@ const Footer = () => {
             ))}
           </div>
         </div>
+        
       </div>
       <div className="footer-links-container">
         <div className="footer-links">
@@ -171,20 +166,20 @@ const Footer = () => {
       )}
 
       {/* FOOTER BOTTOM */}
-<div className="footer-bottom">
-    <p className="bottom-text">
-        MIT-SoFT Pune © 2025. All Rights Reserved. Designed & Developed by
-        MIT-ADT Website Department.
-    </p>
-
-    <div className="visitor-box">
-        <h4>Site Visitors:</h4>
-
-        <p className="visitor-count">
-            {visitorCount.toString().split("").join(" ")}
+      <div className="footer-bottom">
+        <p className="bottom-text">
+          MIT-SoFT Pune © 2025. All Rights Reserved. Designed & Developed by
+          MIT-ADT Website Department.
         </p>
-    </div>
-</div>
+
+        <div className="visitor-box">
+          <h4> Site Visitors:</h4>
+
+          <p className="visitor-count">
+            {visitorCount.toString().split("").join(" ")}
+          </p>
+        </div>
+      </div>
     </footer>
   );
 };

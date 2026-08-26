@@ -24,10 +24,11 @@
 
 
 .leader-designation {
-  color: rgb(124, 89, 1);
+  font-size: clamp(12px, 1.2vw, 16px);
+  color: rgb(128, 93, 5);
+  font-weight: 500;
   font-style: italic;
   margin-top: 0;
-  font-size: clamp(12px, 1.5vw, 20px);
 }
 
 .leader-message {

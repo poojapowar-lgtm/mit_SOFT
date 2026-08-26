@@ -3,16 +3,13 @@
 .recruiters-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* 6 per row */
-  gap: clamp(10px, 1.5vw, 20px);
+  gap: clamp(15px, 1.5vw, 40px);
+  padding: clamp(15px, 2vw, 40px);
   align-items: center;
 }
 
 /* Card */
 .recruiter-card {
-  background: #ffffff;
-  padding: clamp(10px, 1vw, 16px);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
   transition: all 0.3s ease;
 }
 

@@ -5,6 +5,8 @@ import {
     TbPlayerTrackNextFilled,
 } from "react-icons/tb";
 import "./StudentSpeak.css";
+import "../HomeComponent/PlacedStd.css";
+
 
 const StudentSpeak = () => {
     const [data, setData] = useState([]);
@@ -80,25 +82,25 @@ const StudentSpeak = () => {
 
                                     {/* IMAGE */}
                                     <div className="speak-left">
-                        <img
-                            src={
-                                item.image
-                                    ? `http://localhost:5000/uploads/${item.image}`
-                                    : "/default-user.png"
-                            }
-                            alt={item.image_alt || item.name}
-                            title={item.image_title || item.name}
-                        />
+                                        <img
+                                            src={
+                                                item.image
+                                                    ? `http://localhost:5000/uploads/${item.image}`
+                                                    : "/default-user.png"
+                                            }
+                                            alt={item.image_alt || item.name}
+                                            title={item.image_title || item.name}
+                                        />
                                     </div>
 
                                     {/* CONTENT */}
                                     <div className="speak-right">
-                                        <h3 className="speak-name">{item.name}</h3>
+                                        <h3 className="student-name">{item.name}</h3>
                                         <ul className="speak-list">
                                             <li>{item.degree_specialization || ""}</li>
                                             <li>{item.year_of_passing || ""}</li>
-                                            <li><b>Designation:</b> {item.designation || ""}</li>
-                                            <li><b>Company:</b> {item.company || ""}</li>
+                                            <li><strong>Designation :</strong> {item.designation || ""}</li>
+                                            <li><strong>Company :</strong> {item.company || ""}</li>
                                         </ul>
                                     </div>
 

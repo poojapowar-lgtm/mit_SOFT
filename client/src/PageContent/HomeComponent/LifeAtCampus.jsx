@@ -29,8 +29,41 @@ const LifeAtCampus = () => {
         </div>
 
         {/* Right Side Image */}
-        <div className="campus-image">
+        {/* <div className="campus-image">
           <img src="/assets/images/home/banner1.jpg" alt="Campus Life at MIT School of Food Technology" title="Life at MIT School of Food Technology" />
+        </div> */}
+        <div className="campus-image-grid">
+          <div className="campus-img campus-img-1">
+            <img
+              src="/assets/images/home/soft1.jpg"
+              alt="Campus Life at MIT School of Food Technology"
+              title="Life at MIT School of Food Technology"
+            />
+          </div>
+
+          <div className="campus-img campus-img-2">
+            <img
+              src="/assets/images/home/soft2.webp"
+              alt="MIT School of Food Technology Campus"
+              title="MIT School of Food Technology Campus"
+            />
+          </div>
+
+          <div className="campus-img campus-img-3">
+            <img
+              src="/assets/images/home/soft3.jfif"
+              alt="Student Life at MIT School of Food Technology"
+              title="Student Life at MIT School of Food Technology"
+            />
+          </div>
+
+          <div className="campus-img campus-img-4">
+            <img
+              src="/assets/images/home/soft4.jfif"
+              alt="Facilities at MIT School of Food Technology"
+              title="Facilities at MIT School of Food Technology"
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -1,86 +1,123 @@
 import React from "react";
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import "./about_mit.css";
+import {
+  FaEye,
+  FaLeaf,
+  FaBullseye,
+} from "react-icons/fa6";
 
 const SOFT = () => {
   const visionData = [
     {
       title: "Vission",
-      image: "/assets/images/home/vision.jpg",
       paragraphs: [
-        `To be a center of excellence in training, research, outreach, and 
-      consultancy services in Food Science and Technology with emphasis 
-      on value addition of agricultural produce, processing technology 
-      driven conservation of food, nutritional goodness, food security 
+        `To be a center of excellence in training, research, outreach, and  
+      consultancy services in Food Science and Technology with emphasis  
+      on value addition of agricultural produce, processing technology  
+      driven conservation of food, nutritional goodness, food security  
       and safety assurance through stake holder sensitization.`,
       ],
     },
     {
       title: "Mission",
-      image: "/assets/images/home/mission.jpg",
       paragraphs: [
-        `The fundamental mission of MIT-SoFT is to emerge out as a global 
-      competitive center (Institute) of excellence to impart graduation, 
-      post-graduation and Doctoral education programs (B. Tech, M. Tech. 
-      and Ph.D.) in the discipline of Food Science and Technology to 
+        `The fundamental mission of MIT-SoFT is to emerge out as a global  
+      competitive center (Institute) of excellence to impart graduation,  
+      post-graduation and Doctoral education programs (B. Tech, M. Tech.  
+      and Ph.D.) in the discipline of Food Science and Technology to  
       satisfy futuristic new generation aspirations.`,
       ],
     },
   ];
 
+
+
   return (
     <div className="aboutmit-container">
       <h2 className="innerpage-title">School of Food Technology</h2>
 
-      <div className="aboutmit-image">
-        <img src="/assets/images/home/banner.jpg" alt="MIT School of Food Technology - About SoFT" title="About MIT School of Food Technology" />
+      <div className="aboutsoft-content">
+
+        {/* Left - Image */}
+        <div className="aboutsoft-image">
+          <img
+            src="/assets/images/home/soft1.jpg"
+            alt="MIT School of Food Technology - About SoFT"
+            title="About MIT School of Food Technology"
+          />
+        </div>
+
+        {/* Right - Content */}
+        <div className="aboutsoft-text">
+
+          <p>
+            The institute has a mandate to develop need base and global competitive
+            students' entrepreneurship. The three-phase higher education system
+            comprising Graduation (B. Tech), Post-graduation (M. Tech) and Ph. D.
+            Tech. (Food Tech) is one of its kind in the private education domain of
+            Food Science and Technology discipline.
+          </p>
+
+          <p>
+            Lot of career opportunities in the Government sector like Food and Drug
+            Administration, Food Corporation of India, Food Safety and Standards
+            Authority of India etc., as well as techno-commercial opportunities in
+            public and private sectors such as manufacturing, quality control and
+            research and development.
+          </p>
+
+        </div>
+
       </div>
 
-      <p>
-        The institute has a mandate to develop need base and global competitive
-        students' entrepreneurship. The three-phase higher education system
-        comprising Graduation (B. Tech), Post-graduation (M. Tech) and Ph. D.
-        Tech. (Food Tech) is one of its kind in the private education domain of
-        Food Science and Technology discipline.
-      </p>
-      <p>
-        Lot of career opportunities in the Government sector like Food and Drug
-        Administration, Food Corporation of India, Food Safety and Standards
-        Authority of India etc., as well as techno-commercial opportunities in
-        public and private sectors such as manufacturing, quality control and
-        research and development.
-      </p>
+      <section className="vision-mission-section">
+        <div className="vm-container">
 
-      <div className="vision-cards">
-        {visionData.map((item, index) => (
-          <div className="vision-text" key={index}>
+          {/* VISION */}
+          <div className="vision-card">
 
-            <div
-              className="vision-bg"
-              style={{
-                backgroundImage: `url("${item.image}")`,
-              }}
-            ></div>
+            {/* Content */}
+            <div className="vision-main-content">
 
-            <div className="vision-overlay"></div>
-            <div className="vision-inner">
-                <h3 className="v-title">
-                  {item.title}
-                </h3>
+              <div className="vm-heading">
+                <h2>{visionData[0].title}</h2>
+                <span></span>
+              </div>
 
-
-              <div className="vision-content">
-                {item.paragraphs.map((paragraph, i) => (
-                  <p key={i}>
-                    {paragraph}
-                  </p>
+              <div className="vision-paragraph">
+                {visionData[0].paragraphs.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
                 ))}
               </div>
 
             </div>
 
           </div>
-        ))}
-      </div>
+
+
+          {/* MISSION */}
+          <div className="mission-card">
+
+
+            {/* Mission Content */}
+            <div className="mission-main-content">
+
+              <div className="vm-heading">
+                <h2>{visionData[1].title}</h2>
+                <span></span>
+              </div>
+
+              <div className="mission-content">
+                {visionData[1].paragraphs.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
 
     </div>
   );

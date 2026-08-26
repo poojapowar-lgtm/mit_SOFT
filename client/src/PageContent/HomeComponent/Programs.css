@@ -1,5 +1,6 @@
 .programs-section {
-  padding: clamp(20px, 4vw, 30px) clamp(20px, 6vw, 80px);
+   text-align: center;
+  padding: clamp(25px, 4vw, 45vw) clamp(20px, 5vw, 100px);
   background: #F3ECD3;
   overflow: hidden;
 }
@@ -15,6 +16,7 @@
   display: flex;
   width: max-content;
   animation: scroll 25s linear infinite;
+  padding:clamp(15px, 1.2vw, 20px) 0;
   gap: clamp(15px, 3vw, 40px);
 }
 
@@ -27,7 +29,6 @@
   width: clamp(220px, 30vw, 380px);
   background: #722327;
   color: white;
-  border-radius: clamp(10px, 2vw, 14px);
   overflow: hidden;
   flex-shrink: 0;
   text-decoration: none;
@@ -42,8 +43,8 @@
 
 
 .pg-title {
-  margin: clamp(10px, 2vw, 15px);
-  font-size: clamp(16px, 2vw, 25px);
-  font-weight: 500;
+  margin: clamp(7px, 1.2vw, 15px);
+  font-size: clamp(12px, 2vw, 22px);
+  font-weight: 450;
   text-align: center;
 }

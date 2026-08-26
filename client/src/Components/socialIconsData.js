@@ -10,7 +10,7 @@ const socialIconsData = [
     bgColor: "#1877F2",
   },
   {
-    url: "youtube.com/c/MITADTUniversityPune",
+    url: "https://www.youtube.com/@MITADTUwebsite",
     network: "youtube",
     bgColor: "#FF0000",
   },

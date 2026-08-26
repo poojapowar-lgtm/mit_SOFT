@@ -56,7 +56,7 @@ const PlacedStd = () => {
 
     return (
         <div className="placed-section">
-            <h2 className="title">Our Placed Students</h2>
+            {/* <h2 className="title">Our Placed Students</h2> */}
 
             <div className="slider-wrapper">
                 <div className="slider-track" ref={trackRef}>
@@ -84,9 +84,9 @@ const PlacedStd = () => {
                                             </div>
 
                                             <div className="card-right">
-                                                <h3>{item.name}</h3>
-                                                <p>{item.discipline}</p>
-                                                <p>{item.organization}</p>
+                                                <h3 className="student-name">{item.name}</h3>
+                                                <p className="student-info">{item.discipline}</p>
+                                                <p className="student-info">{item.organization}</p>
                                             </div>
                                         </div>
                                     </div>

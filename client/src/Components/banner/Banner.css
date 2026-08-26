@@ -9,13 +9,13 @@
   background: url("/public/assets/images/home/banner.jpg") center / cover no-repeat;
   width: 100%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  height: clamp(280px, 85vh, 900px);
+  height: clamp(220px, 45vw, 800px);
 }
 
 .banner-card {
   position: absolute;
-  bottom: clamp(10px, 4vw, 30px);
-  left: clamp(10px, 4vw, 30px);
+  bottom: clamp(15px, 4vw, 50px);
+  left: clamp(20px, 5vw, 100px);
   padding: clamp(10px, 2vw, 20px) clamp(15px, 2vw, 30px);
   max-width: clamp(250px, 80vw, 400px);
   border-bottom-left-radius: clamp(15px, 4vw, 30px);
@@ -23,11 +23,11 @@
 }
 
 .banner-title {
-  font-family: system-ui;
+  font-family: math;
   color: #002B47;
   margin: 0;
-  font-size: clamp(16px, 2vw, 28px);
-  font-weight: 600;
+  font-size: clamp(14px, 2vw, 28px);
+  font-weight: 500;
 }
 
 /* Vertical Button */
@@ -37,8 +37,8 @@
   top: 50%;
   transform: translateY(-50%) rotate(180deg);
   writing-mode: vertical-lr;
-  font-size: 14px;
-  padding: 14px 8px;
+  font-size: clamp(12px, 2vw, 18px);
+  padding: clamp(10px, 2vw, 20px) clamp(5px, 2vw, 10px);
   background: red;
   color: white;
   border: none;
@@ -124,18 +124,12 @@
 
 
 @media (max-width: 768px) {
-  .banner-image {
-    width: 90%;
-    height: clamp(200px, 45vw, 350px);
-  }
-
   .banner-card {
     max-width: 90%;
   }
 
   .enquiry-modal {
     justify-content: center;
-    /* center on small screens */
   }
 
   .enquiry-content {

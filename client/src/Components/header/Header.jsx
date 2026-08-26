@@ -4,7 +4,8 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { SocialIcon } from "react-social-icons";
+import socialIconsData from "../socialIconsData";
 import { navMenus, subMenus } from "./navMenus";
 import "./Header.css";
 
@@ -30,8 +31,7 @@ const Header = () => {
         <div className="logo2-section">
           <img src="/assets/images/home/SoFT_Logo.png" alt="MIT School of Food Technology Logo" title="MIT School of Food Technology" className="logo2" />
           <div className="logo-text">
-            <h1 className="logo-title">School of <br/>Food Technology</h1>
-            {/* <p className="logo-subtitle">(SoFT)</p> */}
+            <h1 className="logo-title">School of <br />Food Technology</h1>
           </div>
         </div>
       </div>
@@ -123,22 +123,6 @@ const Header = () => {
           ))}
         </ul>
 
-        {/* <ul className="mobile-sub-navbar">
-          {subMenus.map((item) => (
-            <li style={{ color: "#004d00"}} key={item.key}>
-              <span onClick={() => toggleDropdown(item.key)}>
-                {item.title} <IoMdArrowDropdown className={openDropdown === item.key ? "rotated" : ""} />
-              </span>
-              {item.columns && (
-                <ul className={`mobile-dropdown ${openDropdown === item.key ? "open" : ""}`}>
-                  {item.columns.map((sub, index) => (
-                    <li key={index}><Link to={sub.to} onClick={closeMenu}>{sub.name}</Link></li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul> */}
         <ul className="mobile-sub-navbar">
           {subMenus.map((item) => (
             <li style={{ color: "#004d00" }} key={item.key}>
@@ -173,6 +157,25 @@ const Header = () => {
             </li>
           ))}
         </ul>
+
+        <div className="address">
+          <p><b>Address:</b><br/>MIT-ADT Campus, Rajbaugh, Solapur – Pune Highway Near Bharat
+            Petrol Pump, Loni-Kalbhor, Maharashtra – 412201</p>
+
+          <div className="footer-social">
+            <div className="footer-social-icons">
+              {socialIconsData.map(({ url, network, bgColor }, index) => (
+                <SocialIcon
+                  key={index}
+                  className="foot-social-icons"
+                  url={url}
+                  network={network}
+                  bgColor={bgColor}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
 
       </div>
 

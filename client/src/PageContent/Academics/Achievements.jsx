@@ -55,31 +55,39 @@ const studentData = [
     ],
   },
 ]
+
 const Achievements = () => {
   const [active, setActive] = useState("faculty");
 
   const data = active === "faculty" ? facultyData : studentData;
 
+  const tabs = [
+    {
+      id: "faculty",
+      label: "Faculty Achievement",
+    },
+    {
+      id: "student",
+      label: "Student Achievement",
+    },
+  ];
+
   return (
     <div>
-       <h2 className="innerpage-title">Achievements</h2>
-  
+      <h2 className="innerpage-title">Achievements</h2>
+
 
       {/* BUTTONS */}
-      <div className="btn-group">
-        <button
-          className={`facultybutton ${active === "faculty" ? "active" : ""}`}
-          onClick={() => setActive("faculty")}
-        >
-          Faculty Achievement
-        </button>
-
-        <button
-          className={`studentbutton ${active === "student" ? "active" : ""}`}
-          onClick={() => setActive("student")}
-        >
-          Student Achievement
-        </button>
+      <div className="tab-buttons">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            className={`btn ${active === tab.id ? "active" : ""}`}
+            onClick={() => setActive(tab.id)}
+          >
+            {tab.label}
+          </button>
+        ))}
       </div>
 
       {/* LOOP */}

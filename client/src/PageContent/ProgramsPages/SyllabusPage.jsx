@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import "../../Pages/board_body.css";
 import Syllabus from "../ProgramsMenus/Syllabus";
 
 const SyllabusPage = () => {

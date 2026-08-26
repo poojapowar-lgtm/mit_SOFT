@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: clamp(10px, 4vw, 20px) clamp(15px, 6vw, 60px);
+  padding: clamp(10px, 4vw, 20px) clamp(20px, 5vw, 100px);
   flex-wrap: wrap;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .logo1 {
-  height: clamp(35px, 4.5vw, 70px);
+  height: clamp(25px, 4.5vw, 65px);
 }
 
 .logo2 {
@@ -29,15 +29,16 @@
 }
 
 .logo-title {
-  font-family: system-ui;
+  font-family: math;
   margin: 0;
   color: #722327;
-  font-size: clamp(20px, 2vw, 35px);
+  font-size: clamp(20px, 2vw, 38px);
   font-weight: 800;
+  letter-spacing: 0.5px;
 }
 
 .logo-subtitle {
-  font-family: system-ui;
+  font-family: math;
   margin: 0;
   color: #722327;
   font-size: clamp(10.5px, 1.2vw, 20px);
@@ -74,43 +75,46 @@
 
 .main-navbar {
   gap: clamp(15px, 2vw, 35px);
-  background: linear-gradient(to left, white 90%, rgba(255,255,255,0));
-  padding: clamp(5px, 1.5vw, 10px) ;
+  background: linear-gradient(to left, white 90%, rgba(255, 255, 255, 0));
+  padding: clamp(5px, 1.5vw, 10px);
 }
 
 .sub-navbar li span.nav-item,
 .main-navbar li span.nav-item {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   display: flex;
   align-items: center;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .sub-navbar li span.nav-item {
-  font-size: clamp(10px, 1.2vw, 16px);
+  font-size: clamp(9px, 1.2vw, 14px);
   color: #002b47;
 }
 
 
 /* Direct link only */
 .sub-navbar li a.nav-link {
-  font-size: clamp(10px, 1.2vw, 16px);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: clamp(9px, 1.2vw, 14px);
   color: #002b47;
-    font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
 }
 
 .sub-navbar li a,
 .main-navbar li a {
   color: white;
-  font-size: clamp(9.5px, 1.2vw, 15.5px);
+  font-size: clamp(9px, 1.2vw, 14px);
   text-decoration: none;
 }
 
 
 /* MAIN NAV */
 .main-navbar li span.nav-item {
-  font-size: clamp(11px, 1vw, 18px);
+  font-size: clamp(12px, 1.2vw, 16px);
   color: #004d00;
+  font-weight: 500;
 }
 
 /* DROPDOWN ICONS */
@@ -172,9 +176,31 @@
   display: none;
 }
 
+.address {
+  text-align: center;
+  margin-top: 30px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
-/* ================= MOBILE ================= */
+
+
+
+/*MOBILE  */
 @media (max-width: 768px) {
+  .close-btn {
+    display: flex;
+    position: absolute;
+    top: clamp(10px, 1.5vw, 18px);
+    right: clamp(10px, 1.5vw, 18px);
+    font-size: clamp(16px, 2vw, 30px);
+    color: #722327;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
 
   .header {
     justify-content: center;
@@ -198,7 +224,7 @@
     position: fixed;
     top: 5px;
     left: 8px;
-    font-size: 24px;
+    font-size: 20px;
     color: #722327;
     cursor: pointer;
     z-index: 1100;
@@ -252,8 +278,8 @@
     display: flex;
     justify-content: space-between;
     padding: 10px 5px;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 500;
     text-transform: uppercase;
     cursor: pointer;
   }
@@ -261,8 +287,8 @@
   .mobile-main-navbar a,
   .mobile-sub-navbar a {
     padding: 10px 5px;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 500;
     text-transform: uppercase;
     text-decoration: none;
     color: #004d00;
@@ -284,7 +310,7 @@
 
   .mobile-dropdown a {
     padding: 8px 15px;
-    font-size: 12px;
+    font-size: 10px;
     color: #333;
   }
 
@@ -300,5 +326,27 @@
     inset: 0;
     background: rgba(0, 0, 0, 0.4);
     z-index: 1000;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-inline: 20px;
+  }
+
+  .logo2-section {
+    order: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo1 {
+    order: 2;
   }
 }

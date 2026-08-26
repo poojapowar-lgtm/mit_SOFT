@@ -1,25 +1,18 @@
 .facilities-section {
-  padding: clamp(20px, 4vw, 30px) clamp(20px, 6vw, 80px);
+  text-align: center;
+  padding: clamp(25px, 4vw, 45vw) clamp(20px, 5vw, 100px);
 }
 
-/* Heading */
-.facilities-heading {
-  text-align: center;
-  font-size: clamp(22px, 3vw, 40px);
-  margin-bottom: clamp(20px, 4vw, 40px);
-  color: #722327;
-}
 
 /* Image Container */
 .facility-image-container {
-  border: 5px solid white;
+  border: 1px solid white;
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
   position: relative;
   margin: 0 auto;
-  width: clamp(90%, 70vw, 65%);
-  height: clamp(250px, 45vw, 550px);
+  height: clamp(250px, 45vw, 600px);
   overflow: hidden;
-  border-radius: clamp(10px, 2vw, 20px);
+  /* border-radius: clamp(10px, 2vw, 20px); */
 }
 
 .facility-image-container img {
@@ -32,17 +25,18 @@
 
 /* Overlay */
 .facility-overlay {
+  text-align: left;
   position: absolute;
   bottom: clamp(10px, 2vw, 30px);
   left: 0;
   background: #97c600;
   border-radius: 0 clamp(40px, 6vw, 100px) clamp(40px, 6vw, 100px) 0;
   padding: clamp(10px, 2vw, 15px) clamp(15px, 3vw, 30px);
-  max-width: clamp(250px, 60%, 500px);
+  max-width: clamp(300px, 60%, 700px);
 }
 
 .facility-title {
-  font-size: clamp(14px, 2vw, 20px);
+  font-size: clamp(14px, 2vw, 24px);
   margin: 5px;
   font-weight: 500;
   color: #002b47;
@@ -57,8 +51,8 @@
 /* Arrow */
 .arrow-icon {
   padding: clamp(2.5px, 1vw, 5px);
-  width: clamp(12px, 1.2vw, 15px);
-  height: clamp(12px, 1.2vw, 15px);
+  width: clamp(12px, 1.2vw, 25px);
+  height: clamp(12px, 1.2vw, 25px);
   border-radius: 50%;
   background-color: #002b47;
   color: white;
@@ -67,7 +61,7 @@
 /* Text */
 .facility-text {
   color: white;
-  max-width: 500px;
+  max-width: 700px;
   line-height: 1.6;
   margin: 0;
 }

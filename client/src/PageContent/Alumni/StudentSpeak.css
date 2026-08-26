@@ -18,8 +18,6 @@
   gap: clamp(20px, 3vw, 45px);
 }
 
-
-/* CARD */
 .speak-card {
   position: relative;
   width: 100%;
@@ -32,53 +30,44 @@
     box-shadow 0.3s ease;
 }
 
-
-/* HOVER */
 .speak-card:hover {
   transform: translateY(-5px);
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.11);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.11);
 }
 
 
-/* TOP PROFILE SECTION */
+/* TOP PROFILE */
 .speak-top {
   display: flex;
   align-items: center;
-  gap: clamp(15px, 2vw, 25px);
-  padding:
-    clamp(10px, 1.2vw, 20px) clamp(15px, 1.5vw, 22px);
-
+  gap: clamp(12px, 2vw, 25px);
+  padding: clamp(12px, 1.5vw, 20px) clamp(10px, 1.5vw, 22px);
   background-image: url("/public/assets/images/home/speak1.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   position: relative;
 }
 
 
-/* IMAGE */
+/* PROFILE IMAGE */
 .speak-left {
   flex-shrink: 0;
   position: relative;
 }
 
 .speak-left img {
-  width: clamp(105px, 11vw, 145px);
-  height: clamp(105px, 11vw, 145px);
+  width: clamp(100px, 11vw, 145px);
+  height: clamp(100px, 11vw, 145px);
   display: block;
   border-radius: 50%;
   object-fit: cover;
   object-position: top;
-  border: 4px solid #ffffff;
-  outline: 2px solid #e5e5e5;
-  box-shadow:
-    0 5px 15px rgba(0, 0, 0, 0.12);
+  border: 2px solid #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease;
 }
 
-
-/* IMAGE HOVER */
 .speak-card:hover .speak-left img {
   transform: scale(1.04);
 }
@@ -92,62 +81,50 @@
   flex-direction: column;
 }
 
-
 /* LIST */
 .speak-list {
   list-style: none;
   padding: 0;
-  margin: 0;
-}
-
-/* LIST ITEMS */
-.speak-name {
-  font-family: system-ui;
-  color: rgb(112, 83, 9);
-  margin: clamp(12px, 1vw, 15px) 0;
-  font-size: clamp(14px, 2vw, 20px);
-  font-style: italic;
+  margin: clamp(10px, 1vw, 15px) 0;
 }
 
 .speak-list li {
-  font-size: clamp(12px, 1vw, 15px);
-  line-height: 1.55;
+  font-size: clamp(9.5px, 1.2vw, 14px);
+  color: rgb(128, 93, 5);
+  font-style: italic;
+  font-weight: 550;
   margin-bottom: clamp(3px, 0.4vw, 6px);
 }
 
-
-/* LABEL */
 .speak-list li strong {
   color: #722327;
   font-weight: 700;
 }
 
 
-/* MESSAGE AREA */
+/* MESSAGE */
 .speak-message {
   font-family: system-ui;
   position: relative;
-  box-shadow:
-    0 3px 12px rgba(0, 0, 0, 0.07);
   margin: 0;
   padding:
     clamp(15px, 1.5vw, 22px) clamp(20px, 2.2vw, 30px) clamp(20px, 2vw, 26px);
   border-top: 1px solid #eeeeee;
   color: #333333;
-  font-size: clamp(11px, 1vw, 15px);
+  font-size: clamp(12px, 1vw, 15px);
   line-height: 1.75;
   text-align: left;
   background: #fafafa;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
 }
 
 
-/* QUOTE MARK */
+/* QUOTE */
 .speak-message::before {
   content: "“";
   position: absolute;
   left: clamp(7px, 1vw, 14px);
   top: clamp(8px, 0.8vw, 12px);
-  font-family: Georgia, serif;
   font-size: clamp(28px, 3vw, 42px);
   line-height: 1;
   color: #008000;
@@ -157,7 +134,7 @@
 
 /* READ MORE */
 .read-more {
-  font-family: Georgia, serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: inline-block;
   margin-left: clamp(5px, 0.5vw, 8px);
   padding: 0;
@@ -168,8 +145,7 @@
   font-weight: 700;
   cursor: pointer;
   line-height: inherit;
-  transition:
-    color 0.25s ease;
+  transition: color 0.25s ease;
 }
 
 .read-more:hover {
@@ -177,19 +153,17 @@
   text-decoration: underline;
 }
 
-/* NAVIGATION BUTTONS  */
+
+/* NAVIGATION */
 .nav-buttons {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  margin-left: auto;
-  margin-right: 0;
-  gap: clamp(6px, 1vw, 10px);
   margin-top: clamp(15px, 2vw, 25px);
+  gap: clamp(6px, 1vw, 10px);
 }
 
-/* NAV BUTTON  */
 .nav-buttons button {
   width: clamp(30px, 4vw, 40px);
   height: clamp(30px, 4vw, 40px);
@@ -200,30 +174,26 @@
   padding: 0;
   border: none;
   border-radius: 50%;
-  background:
-    linear-gradient(135deg,
+  background: linear-gradient(135deg,
       #7fc47f,
       #7dc47d);
   color: #ffffff;
   cursor: pointer;
   font-size: clamp(12px, 1.5vw, 16px);
+
   transition:
     transform 0.3s ease,
     background 0.3s ease;
 }
 
-
-/* BUTTON HOVER  */
 .nav-buttons button:hover {
-  background:
-    linear-gradient(135deg,
+  background: linear-gradient(135deg,
       #722327,
       #a83232);
+
   transform: scale(1.1);
 }
 
-
-/* BUTTON ACTIVE  */
 .nav-buttons button:active {
   transform: scale(0.95);
 }
@@ -237,7 +207,6 @@
   align-items: center;
 }
 
-
 .dot {
   width: clamp(4.5px, 0.65vw, 7px);
   height: clamp(4.5px, 0.65vw, 7px);
@@ -246,10 +215,8 @@
   border-radius: 50%;
   background: #d3d3d3;
   cursor: pointer;
-  transition:
-    all 0.3s ease;
+  transition: all 0.3s ease;
 }
-
 
 .dot.active {
   width: clamp(6px, 0.85vw, 9px);
@@ -258,92 +225,20 @@
   transform: scale(1.1);
 }
 
-
 .dot:hover {
   background: #008000;
 }
 
 
-/* TABLET */
-@media (max-width: 900px) {
-  .speak-slider {
-    gap: 20px;
-  }
 
-  .speak-top {
-    gap: 15px;
-  }
+/* Mobile: change 2 columns → 1 column */
 
-  .speak-left img {
-    width: clamp(90px, 14vw, 120px);
-    height: clamp(90px, 14vw, 120px);
-  }
-}
-
-
-/* MOBILE */
 @media (max-width: 768px) {
   .speak-slider {
     grid-template-columns: 1fr;
-    gap: clamp(15px, 4vw, 25px);
   }
-
-  .speak-top {
-    padding: clamp(16px, 4vw, 22px);
-    gap: clamp(12px, 4vw, 20px);
-  }
-
-  .speak-left img {
-    width: clamp(85px, 22vw, 115px);
-    height: clamp(85px, 22vw, 115px);
-  }
-
 
   .nav-buttons {
-    position: static;
-    width: 100%;
     justify-content: center;
-    margin-top: 18px;
-    padding: 0;
   }
-
-  .nav-buttons button {
-    width: 34px;
-    height: 34px;
-  }
-
-}
-
-
-/* SMALL MOBILE */
-@media (max-width: 480px) {
-  .speak-top {
-    align-items: flex-start;
-  }
-
-  .speak-left img {
-    width: clamp(75px, 22vw, 95px);
-    height: clamp(75px, 22vw, 95px);
-  }
-
-  .speak-list li {
-    font-size: clamp(11px, 3.2vw, 14px);
-  }
-
-  .speak-list li:first-child {
-    font-size: clamp(12px, 4vw, 15px);
-  }
-
-
-  .nav-buttons {
-    margin-top: 15px;
-    gap: 8px;
-  }
-
-  .nav-buttons button {
-    width: 32px;
-    height: 32px;
-    font-size: 13px;
-  }
-
 }

@@ -1,7 +1,7 @@
 .footer {
   background: #470004;
   color: white;
-  padding: clamp(10px, 2vw, 25px) clamp(20px, 5vw, 80px);
+  padding: clamp(10px, 2vw, 25px) clamp(20px, 5vw, 100px);
 }
 
 /* Top Section */
@@ -13,7 +13,7 @@
 
 .footer-logos {
   display: flex;
-  gap: clamp(15px, 3vw, 50px);
+  gap: clamp(25px, 3vw, 50px);
   align-items: center;
 }
 
@@ -30,21 +30,21 @@
 
 .ft-logo-title {
   color: white;
-  font-family: system-ui;
+  font-family: math;
   font-size: clamp(20px, 3vw, 33px);
   font-weight: 800;
   margin: 0;
 }
 
 .ft-logo-subtitle {
-  font-family: system-ui;
+  font-family: math;
   font-size: clamp(12px, 1.5vw, 20px);
   margin: 0 0 5px 0;
   color: white;
 }
 
 .ft-logo1 {
-  height: clamp(45px, 8vw, 67px);
+  height: clamp(35px, 8vw, 65px);
 }
 
 .ft-logo2 {
@@ -99,8 +99,8 @@
 }
 
 .footer-links h4 {
-  font-family: system-ui;
-  font-size: clamp(12px, 3vw, 16px);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: clamp(10.5px, 2.5vw, 15px);
   color: #97c600;
 }
 
@@ -111,9 +111,9 @@
 }
 
 .footer-links li {
-  font-family: system-ui;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: clamp(5px, 1vw, 10px);
-  font-size: clamp(12px, 3vw, 16px);
+   font-size: clamp(10.5px, 2.5vw, 14.5px);
   cursor: pointer;
   transition: 0.3s;
 }
@@ -157,14 +157,13 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content:flex-start;
+  justify-content: flex-start;
   gap: clamp(25px, 5vw, 80px);
   padding: clamp(12px, 1.5vw, 20px) 0;
 }
 
 .bottom-text {
   color: wheat;
-  font-size: clamp(10px, 1.2vw, 15px);
 }
 
 .visitor-box {
@@ -192,23 +191,6 @@
 }
 
 
-/* Mobile */
-@media (max-width: 600px) {
-  .footer-bottom {
-    flex-direction: column-reverse;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .bottom-text {
-    text-align: center;
-  }
-
-  .visitor-box {
-    justify-content: center;
-  }
-}
 
 .back-to-top {
   position: fixed;
@@ -235,7 +217,23 @@
   background: #004ec2;
 }
 
+
 @media (max-width: 576px) {
+  .footer-bottom {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .bottom-text {
+    text-align: center;
+  }
+
+  .visitor-box {
+    justify-content: center;
+  }
+
   .footer-top {
     display: flex;
     flex-direction: column;
@@ -248,7 +246,6 @@
 
   .footer-social {
     order: 2;
-    /* comes below logos */
     justify-content: center;
     margin-top: 10px;
   }
@@ -267,7 +264,6 @@
 
   .map {
     grid-column: span 2;
-    /* map full width below */
     max-width: 100%;
   }
 

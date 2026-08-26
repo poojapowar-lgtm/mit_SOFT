@@ -38,7 +38,7 @@ const Programs = () => {
 
   return (
     <section className="programs-section">
-      <h2 className="title">Our Programs</h2>
+      <h2 className="title">Our Academic Programs</h2>
 
       <div className="programs-slider">
         <div className="programs-track">

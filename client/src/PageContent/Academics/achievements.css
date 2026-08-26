@@ -1,39 +1,15 @@
-/* BUTTONS */
-.btn-group {
-  display: flex;
-  justify-content: center;
-  gap: clamp(10px, 2vw, 20px);
-  margin-bottom: clamp(20px, 3vw, 40px);
-}
-
-.btn-group button {
-  padding: clamp(8px, 1vw, 14px) clamp(16px, 2vw, 30px);
-  border: none;
-  border-radius: 30px;
-  border: 1px solid #008a00;
-  cursor: pointer;
-  font-size: clamp(14px, 1.2vw, 16px);
-  transition: all 0.3s ease;
-}
-
-.btn-group button.active {
-  background: linear-gradient(135deg, #056d05, #00a86b);
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(16, 77, 4, 0.4);
-}
-
-.btn-group button:hover {
-  transform: translateY(-2px);
-}
-
 /* CARD */
 .achievement-card {
-  background: white;
+  width: 90%;
   padding: clamp(12px, 2vw, 24px);
-  border-radius: clamp(10px, 1.2vw, 18px);
-  margin: clamp(15px, 2vw, 30px) auto;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+  margin: clamp(15px, 4vw, 50px) auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-image: url("/public/assets/images/home/rank11.png");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 /* HOVER */
@@ -54,8 +30,8 @@
 
 /* IMAGE */
 .left img {
-  width: 100%;
-  max-width: 500px;
+  max-width: 400px;
+  height: clamp(180px, 35vw, 250px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -63,6 +39,11 @@
 @media (max-width: 480px) {
   .achievement-content {
     flex-direction: column;
+    gap: 0;
+  }
+
+  .achievement-card {
+    width: 100%;
   }
 
   .right ul li {

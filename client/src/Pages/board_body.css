@@ -29,9 +29,11 @@
 }
 
 .board-name {
-    font-size: clamp(14px, 1.5vw, 20px);
+    font-family: math;
+    letter-spacing: 0.5px;
+    font-size: clamp(12px, 1.5vw, 18px);
     font-weight: 600;
-    margin-bottom: 0px;
+    margin-bottom:clamp(5px, 1.5vw, 10px) ;
     color: #722327;
 }
 

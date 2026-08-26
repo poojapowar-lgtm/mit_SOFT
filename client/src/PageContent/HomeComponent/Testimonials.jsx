@@ -2,16 +2,12 @@ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import "./testimonials.css";
 
-import {
-  TbPlayerTrackPrevFilled,
-  TbPlayerTrackNextFilled,
-} from "react-icons/tb";
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
   const sliderRef = useRef(null);
 
-  // 🔥 SCROLL
+  //  SCROLL
   const scrollLeft = () => {
     sliderRef.current.scrollBy({ left: -320, behavior: "smooth" });
   };
@@ -20,7 +16,7 @@ const Testimonials = () => {
     sliderRef.current.scrollBy({ left: 320, behavior: "smooth" });
   };
 
-  // 🔥 YOUTUBE EMBED FIX
+  //  YOUTUBE EMBED FIX
   const getEmbedUrl = (url) => {
     if (!url) return null;
 
@@ -43,7 +39,7 @@ const Testimonials = () => {
     <section className="testimonials">
 
       <div className="testimonials-wrapper">
-              <h2 className="title"> Testimonials</h2>
+        <h2 className="title"> Faculty & Student Testimonials</h2>
         <div className="testimonials-slider">
           {/*  ADD REF HERE */}
           <div className="testimonials-track" ref={sliderRef}>
@@ -70,25 +66,15 @@ const Testimonials = () => {
                   )}
                 </div>
 
-                <div className="testimonials-info">
-                  <h3 className="dep-name" style={{ color: "goldenrod", marginTop: "0" }}>
+                {/* <div className="testimonials-info">
+                  <h3 className="testimonials-name">
                     {item.title || "Video Testimonial"}
                   </h3>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>
         </div>
-
-        {/* NAV BUTTONS */}
-        {/* <div className="nav-buttons">
-          <button onClick={scrollLeft}>
-            <TbPlayerTrackPrevFilled />
-          </button>
-          <button onClick={scrollRight}>
-            <TbPlayerTrackNextFilled />
-          </button>
-        </div> */}
       </div>
     </section>
   );

@@ -17,7 +17,7 @@ const Recruiters = () => {
 
   return (
     <section className="recruiters">
-      <h2 className="title">Our Recruiters</h2>
+      <h2 className="title">Our Recruiters & Successful Placements</h2>
 
       <div className="logo-slider">
         <div className="logo-track">

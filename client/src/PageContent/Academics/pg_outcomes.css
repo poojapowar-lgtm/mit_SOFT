@@ -97,17 +97,6 @@
   }
 }
 
-/* 📱 Small Mobile */
-@media (max-width: 480px) {
-  .innerpage-title {
-    text-align: center;
-  }
-
-  .btn {
-    font-size: 12px;
-  }
-}
-
 .pg-outcomes-container {
   position: relative;
   width: 100%;
@@ -147,7 +136,7 @@
   justify-content: center;
   background: #97c600;
   color: #ffffff;
-  font-size: clamp(14px, 1.3vw, 18px);
+  font-size: clamp(12px, 1.3vw, 18px);
   font-weight: 700;
   border-radius: 50%;
   z-index: 2;

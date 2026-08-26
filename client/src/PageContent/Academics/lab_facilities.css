@@ -2,7 +2,7 @@
 .lab-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(15px, 2vw, 30px);
+  gap: clamp(15px, 4vw, 50px);
 }
 
 /* CARD */
@@ -15,7 +15,7 @@
   justify-content: center;
   width: 100%;
   min-height: clamp(180px, 20vw, 260px);
-  padding: clamp(20px, 2.5vw, 35px);
+  padding: clamp(10px, 1.5vw, 25px);
   background: linear-gradient(
     145deg,
     #ffffff 0%,

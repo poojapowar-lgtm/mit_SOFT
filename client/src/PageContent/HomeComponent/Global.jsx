@@ -7,10 +7,7 @@ const Global = () => {
       icon: "/assets/images/icons/hunger.png",
       title: "Zero Hunger",
     },
-    {
-      icon: "/assets/images/icons/heart.png",
-      title: "Good health & well being",
-    },
+
     {
       icon: "/assets/images/icons/global-warming.png",
       title: "Climate Change",
@@ -19,7 +16,11 @@ const Global = () => {
       icon: "/assets/images/icons/responsible-consumption.png",
       title: "Responsible Consumption & Production",
     },
-     {
+    {
+      icon: "/assets/images/icons/heart.png",
+      title: "Good health & well being",
+    },
+    {
       icon: "/assets/images/icons/ecosystem.png",
       title: "Life on Land",
     },

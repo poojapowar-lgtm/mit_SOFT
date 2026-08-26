@@ -15,9 +15,9 @@ const PrincipalMSG = () => {
           <div className="leader-content">
             {/* <p>From Principal's Desk</p> */}
             <h3 className="innerpage-subtitle">Dr. Anjali Bhoite</h3>
-            <p className="leader-designation">
+            <h4 className="leader-designation">
               Chairman, I/C Principal MIT School of Food Technology
-            </p>
+            </h4>
             <p>
               MIT School of Food Technology is one of the well-recognized academic
               institutions imparting education in the Food Technology dornain. It was
