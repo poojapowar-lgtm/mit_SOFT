@@ -48,9 +48,19 @@ const Events = () => {
               <div className="event-images">
                 {(() => {
                   let paths = [];
-                  try { paths = JSON.parse(event.file_path); } catch { paths = [event.file_path]; }
+
+                  try {
+                    paths = JSON.parse(event.file_path);
+                  } catch {
+                    paths = [event.file_path];
+                  }
+
                   return paths.map((p, i) => (
-                    <img key={i} src={`http://localhost:5000${p}`} alt={`${event.title} - photo ${i + 1}`} />
+                    <img
+                      key={i}
+                      src={`http://localhost:5000${p}`}
+                      alt={event.title}
+                    />
                   ));
                 })()}
               </div>
