@@ -1,7 +1,7 @@
 .national-rank {
-  padding: clamp(25px, 4vw, 45vw) clamp(20px, 5vw, 100px);
+  padding: clamp(25px, 4vw, 45vw) clamp(20px, 4.5vw, 100px);
   background-color: white;
-  background-image: url("/public/assets/images/home/rank11.png");
+  background-image: url("/public/assets/images/home/rank20.png");
   background-size: cover;
   background-position:top;
   background-repeat: no-repeat;
@@ -36,7 +36,8 @@
 
 /* Logo */
 .RLogo {
-  width: clamp(90px, 20vw, 220px);
+  width: clamp(85px, 15vw, 220px);
+  background-color: white;
   height: auto;
   object-fit: contain;
   opacity: 0.92;

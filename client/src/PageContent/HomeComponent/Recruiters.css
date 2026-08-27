@@ -1,6 +1,6 @@
 /* SECTION */
 .recruiters {
-  padding: clamp(25px, 4vw, 45vw) clamp(20px, 5vw, 100px);
+  padding: clamp(25px, 4vw, 45vw) clamp(20px, 4.5vw, 100px);
   text-align: center;
   background: linear-gradient(135deg, #ffffff, #f8f8f8);
 }
@@ -27,7 +27,7 @@
 } */
 /* LOGO IMAGE */
 .logo-card img {
-  height: clamp(50px, 8vw, 80px);
+  height: clamp(35px, 5vw, 75px);
   width: auto;
   object-fit: contain;
   transition: all 0.4s ease;

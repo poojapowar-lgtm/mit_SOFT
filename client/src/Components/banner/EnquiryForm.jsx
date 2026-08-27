@@ -41,8 +41,7 @@ const EnquiryForm = ({ onClose }) => {
       {/* 
       ONLY CLOSE BUTTON */}
       <IoMdCloseCircle
-        className="close-btn"
-        style={{ color: "white" }}
+        className="enquiry-close-btn"
         onClick={onClose}
       />
 

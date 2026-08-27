@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: clamp(10px, 4vw, 20px) clamp(20px, 5vw, 100px);
+  padding: clamp(10px, 4vw, 20px) clamp(20px, 4.5vw, 100px);
   flex-wrap: wrap;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .logo1 {
-  height: clamp(25px, 4.5vw, 65px);
+  height: clamp(25px, 4vw, 65px);
 }
 
 .logo2 {
@@ -32,7 +32,7 @@
   font-family: math;
   margin: 0;
   color: #722327;
-  font-size: clamp(20px, 2vw, 38px);
+  font-size: clamp(20px, 2.5vw, 38px);
   font-weight: 800;
   letter-spacing: 0.5px;
 }
@@ -70,11 +70,11 @@
 }
 
 .sub-navbar {
-  gap: clamp(10px, 2vw, 25px);
+  gap: clamp(10px, 1.5vw, 25px);
 }
 
 .main-navbar {
-  gap: clamp(15px, 2vw, 35px);
+  gap: clamp(15px, 1.5vw, 35px);
   background: linear-gradient(to left, white 90%, rgba(255, 255, 255, 0));
   padding: clamp(5px, 1.5vw, 10px);
 }
@@ -188,18 +188,6 @@
 
 /*MOBILE  */
 @media (max-width: 768px) {
-  .close-btn {
-    display: flex;
-    position: absolute;
-    top: clamp(10px, 1.5vw, 18px);
-    right: clamp(10px, 1.5vw, 18px);
-    font-size: clamp(16px, 2vw, 30px);
-    color: #722327;
-    background: #fff;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 1000;
-  }
 
 
   .header {

@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   gap: clamp(10px, 2vw, 50px);
-  padding: clamp(10px, 4vw, 20px) clamp(20px, 5vw, 100px);
+  padding: clamp(10px, 4vw, 20px) clamp(20px, 4.5vw, 100px);
 }
 
 
@@ -168,20 +168,27 @@
 
 
 /* CLOSE BUTTON - TOP RIGHT PERFECT */
+.close-btn,
+.enquiry-close-btn,
 .page-close-btn {
-  position: absolute;
-  top: clamp(8px, 1vw, 12px);
-  right: clamp(8px, 1vw, 12px);
-  font-size: clamp(20px, 3vw, 25px);
-  color: #722327;
-  background: none;
-  cursor: pointer;
-  z-index: 10;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  top: clamp(10px, 1.5vw, 15px);
+  right: clamp(10px, 1.5vw, 15px);
+  font-size: clamp(15px, 2vw, 25px);
+  color: #722327;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
 }
 
+.page-close-btn {
+  background: none;
+}
+
+.close-btn:hover,
+.enquiry-close-btn:hover,
 .page-close-btn:hover {
   color: green !important;
   background: white;
@@ -212,7 +219,7 @@
 
 .scope-card {
   position: relative;
-  padding: clamp(10px, 1.5vw, 24px) clamp(15px, 3vw, 45px);
+  padding: 0 clamp(15px, 3vw, 40px);
   width: 100%;
   box-sizing: border-box;
   background: linear-gradient(135deg,
@@ -298,7 +305,7 @@
 /* CARD */
 .internship-card {
   width: 45%;
-  padding: clamp(5px, 1vw, 10px) clamp(15px, 2.5vw, 25px);
+  padding: clamp(5px, 1vw, 10px) 0;
   background: transparent;
   border: none;
   box-shadow: none;
@@ -430,7 +437,7 @@
   font-family: math;
   color: #004d00;
   font-weight: 500;
-  font-size: clamp(12px, 2vw, 22px);
+  font-size: clamp(11px, 2vw, 20px);
   margin: 5px;
 }
 

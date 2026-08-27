@@ -2,7 +2,7 @@
 .placed-section {
   text-align: center;
   background: linear-gradient(135deg, #ffffff, #f8f8f8);
-  padding: 0 clamp(25px, 5vw, 80px) clamp(20px, 4vw, 45vw) clamp(20px, 5vw, 80px);
+  padding: 0 clamp(25px, 4.5vw, 80px) clamp(20px, 4vw, 45vw) clamp(20px, 4.5vw, 80px);
 }
 
 /* Wrapper */
@@ -39,7 +39,7 @@
     url("/public/assets/images/home/rank1.jpg");
   background-size: cover;
   background-position: center;
-  height: clamp(180px, 25vw, 220px);
+  height: clamp(150px, 15vw, 210px);
   display: flex;
   border: 1px solid rgb(230, 183, 64);
   transition: 0.3s;

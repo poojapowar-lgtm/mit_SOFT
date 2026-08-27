@@ -1,7 +1,7 @@
 /* SLIDER WRAPPER */
 .speak-slider-wrapper {
   width: 100%;
-  margin-bottom: clamp(25px, 3vw, 35px);
+  margin-bottom: clamp(15px, 3vw, 35px);
   padding: clamp(25px, 3vw, 35px) 0;
   display: flex;
   flex-direction: column;
@@ -221,7 +221,7 @@
 .dot.active {
   width: clamp(6px, 0.85vw, 9px);
   height: clamp(6px, 0.85vw, 9px);
-  background: #7c6a6b;
+  background: rgb(128, 93, 5);
   transform: scale(1.1);
 }
 
@@ -232,13 +232,8 @@
 
 
 /* Mobile: change 2 columns → 1 column */
-
 @media (max-width: 768px) {
   .speak-slider {
     grid-template-columns: 1fr;
-  }
-
-  .nav-buttons {
-    justify-content: center;
   }
 }

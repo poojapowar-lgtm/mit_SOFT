@@ -35,7 +35,6 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: clamp(20px, 2vw, 26px);
   font-size: clamp(10.5px, 1.2vw, 14.5px);
-
   line-height: 1.8;
 }
 
@@ -44,21 +43,19 @@
   color: #722327;
   font-weight: 500;
   line-height: clamp(20px, 2vw, 26px);
-  font-size: clamp(11.5px, 1.2vw, 16px);
+  font-size: clamp(11.5px, 1.2vw, 17px);
 }
 
 
 /* List */
 .page-list {
-  line-height: clamp(20px, 2vw, 26px);
-  font-size: clamp(12px, 1.2vw, 16px);
   text-align: left;
 }
 
 .page-list li {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: clamp(24px, 2.2vw, 30px);
-  font-size: clamp(12px, 1.5vw, 16px);
+  font-size: clamp(10.5px, 1.2vw, 14.5px);
 }
 
 .page-content-btns {
@@ -123,7 +120,7 @@
   border-collapse: collapse;
   min-width: clamp(400px, 40vw, 800px);
   background: #fff;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   border: 1px solid #ddd;

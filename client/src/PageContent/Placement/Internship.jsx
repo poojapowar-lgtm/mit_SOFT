@@ -95,12 +95,14 @@ const Internship = () => {
                             </ul>
                         </div>
 
-                        {/* Arrow (not after last item) */}
-                        {index !== stepsData.length - 1 && (
-                            <div className="arrow">
+
+                        {/* Arrow - not after last item */}
+                        {/* {index !== stepsData.length - 1 && (
+
+                        )} */}
+                                                    <div className="arrow">
                                 <ImArrowDown />
                             </div>
-                        )}
                     </div>
                 ))}
             </div>

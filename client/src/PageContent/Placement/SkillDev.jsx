@@ -54,7 +54,7 @@ const SkillDev = () => {
   );
 
   const renderImages = (imageList) => (
-    <div className="image-wrapper">
+    <div className="skill-image-wrapper">
       {imageList.map((img, i) => (
         <img key={i} src={img.src} alt={img.alt} title={img.title} />
       ))}

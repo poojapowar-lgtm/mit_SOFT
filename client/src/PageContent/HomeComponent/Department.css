@@ -1,6 +1,6 @@
 .department-section {
   text-align: center;
-  padding: clamp(25px, 4vw, 45vw) clamp(20px, 5vw, 100px);
+  padding: clamp(25px, 4vw, 45vw) clamp(20px, 4.5vw, 100px);
   background: #f3ecd3;
 }
 
@@ -48,7 +48,7 @@
 /* Image */
 .department-card img {
   width: 95%;
-  height: clamp(230px, 40vw, 300px);
+  height: clamp(220px, 25vw, 300px);
   object-fit: cover;
   border-radius: 50%;
 }
@@ -58,7 +58,7 @@
   font-family: math;
   color: #008a00;
   letter-spacing: 0.8px;
-  font-size: clamp(16px, 2.5vw, 20px);
+  font-size: clamp(16px, 2vw, 22px);
   margin: clamp(10px, 2vw, 12px) 0 0 0;
 }
 

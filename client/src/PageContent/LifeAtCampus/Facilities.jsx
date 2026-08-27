@@ -210,7 +210,7 @@ const Facilities = () => {
 
                 {/* libraryData */}
                 <div className="scope-card">
-                    <h3 className="innerpage-subtitle">{hostelData.title}</h3>
+                    <h3 className="innerpage-subtitle">{libraryData.title}</h3>
                     {libraryData.details && <p>{libraryData.details}</p>}
                     <div className="campus-grid">
                         {libraryData.sections.map((sec, i) => (

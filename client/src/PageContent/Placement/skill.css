@@ -1,26 +1,25 @@
-.skill-grid{
+.skill-grid {
   background: white;
   padding: clamp(8px, 1.5vw, 15px);
 }
 
 /* IMAGES */
-.image-wrapper {
+.skill-image-wrapper {
   display: flex;
   justify-content: center;
-      align-items: center;
-  gap: clamp(8px, 1.5vw, 15px);
+  align-items: center;
+  gap: clamp(15px, 2vw, 30px);
   margin: clamp(8px, 1.5vw, 15px) auto;
 }
 
-.image-wrapper img {
-  /* width: 100%; */
-  height: clamp(200px, 15vw, 280px);
+.skill-image-wrapper img {
+  height: clamp(180px, 15vw, 250px);
   object-fit: cover;
   border-radius: 10px;
 }
 
 @media (max-width: 768px) {
-  .image-wrapper {
+  .skill-image-wrapper {
     flex-direction: column;
   }
 }

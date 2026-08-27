@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../Pages/board_body.css";
 import { RiArrowDownSLine } from "react-icons/ri";
 
 
