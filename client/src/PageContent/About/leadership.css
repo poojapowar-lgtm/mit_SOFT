@@ -12,8 +12,8 @@
 }
 
 .leader-image img {
-  width: clamp(180px, 20vw, 250px);
-  height: clamp(180px, 20vw, 250px);
+  width: clamp(140px, 15vw, 240px);
+  height: clamp(140px, 15vw, 240px);
   border-radius: 50%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }

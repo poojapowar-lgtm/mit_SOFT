@@ -1,8 +1,11 @@
-import React from "react";
+import React, {  useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import EnquiryForm from "../EnquiryForm";
 import "./inner_banner.css";
 
 const InnerBanner = ({ title, bgImage }) => {
+    const [showForm, setShowForm] = useState(false);
+
     const location = useLocation();
 
     const pathNames = location.pathname
@@ -45,6 +48,25 @@ const InnerBanner = ({ title, bgImage }) => {
 
                     </div>
 
+
+                    {/* Vertical Button */}
+                    {!showForm && (
+                        <button
+                            className="enquiry-btn"
+                            onClick={() => setShowForm(true)}
+                        >
+                            Enquiry
+                        </button>
+                    )}
+
+                    {/* Popup Form */}
+                    {showForm && (
+                        <div className="enquiry-modal">
+                            <div className="enquiry-content">
+                                <EnquiryForm onClose={() => setShowForm(false)} />
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

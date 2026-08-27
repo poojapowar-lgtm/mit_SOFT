@@ -167,34 +167,6 @@
 }
 
 
-/* CLOSE BUTTON - TOP RIGHT PERFECT */
-.close-btn,
-.enquiry-close-btn,
-.page-close-btn {
-  display: flex;
-  position: absolute;
-  top: clamp(10px, 1.5vw, 15px);
-  right: clamp(10px, 1.5vw, 15px);
-  font-size: clamp(15px, 2vw, 25px);
-  color: #722327;
-  background: #fff;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.page-close-btn {
-  background: none;
-}
-
-.close-btn:hover,
-.enquiry-close-btn:hover,
-.page-close-btn:hover {
-  color: green !important;
-  background: white;
-  transform: scale(1.1);
-}
-
 
 @media (max-width: 768px) {
   .page-layout {

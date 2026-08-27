@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 import axios from "axios";
-import "./Banner.css";
+import "./enquiry.css";
 
 const EnquiryForm = ({ onClose }) => {
 

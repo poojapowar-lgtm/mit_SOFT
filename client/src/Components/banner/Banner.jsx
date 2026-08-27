@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Banner.css";
-import EnquiryForm from "./EnquiryForm";
+import EnquiryForm from "../EnquiryForm";
 
 const bannerData = [
   {

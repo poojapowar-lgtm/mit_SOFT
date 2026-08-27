@@ -1,0 +1,109 @@
+/* Vertical Button */
+.enquiry-btn {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-lr;
+  font-size: clamp(12px, 1.5vw, 18px);
+  padding: clamp(10px, 1vw, 20px) clamp(5px, 0.5vw, 10px);
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  border-radius: 0 6px 6px 0;
+}
+
+/* Modal Background */
+.enquiry-modal {
+  position: fixed;
+  border: 1px solid #97c600;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Add this fix */
+.enquiry-modal:empty {
+  display: none;
+}
+
+/* Modal Box */
+.enquiry-content {
+  background: #fff;
+  border-radius: 15px 0 0 15px;
+  position: relative;
+  width: clamp(240px, 85vw, 340px);
+}
+
+
+/* enquiry */
+.enquiry-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.enquiry-top {
+  background: #722327;
+  border-top-left-radius: 15px;
+  padding: clamp(8px, 2.5vw, 20px);
+}
+
+.enquiry-title,
+.enquiry-subtitle {
+  font-family: system-ui;
+  text-align: center;
+  margin: 0px;
+  color: white;
+}
+
+.enquiry-subtitle {
+  font-weight: 500;
+}
+
+.enquiry-form {
+  padding: 20px;
+}
+
+.enquiry-form label {
+  margin: 0px;
+  color: rgb(92, 90, 90);
+  font-size: clamp(8px, 2.5vw, 12px);
+  font-weight: 600;
+}
+
+.enquiry-form input,
+.enquiry-form select {
+  width: 95%;
+  padding: clamp(8px, 2.5vw, 12px);
+  margin: 10px auto;
+  border: 2px solid rgb(236, 234, 234);
+  border-radius: 6px;
+}
+
+.enquiry-form select {
+  width: 100%;
+}
+
+
+
+@media (max-width: 768px) {
+  .banner-card {
+    max-width: 90%;
+  }
+
+  .enquiry-modal {
+    justify-content: center;
+  }
+
+  .enquiry-content {
+    border-radius: 15px;
+  }
+
+}
