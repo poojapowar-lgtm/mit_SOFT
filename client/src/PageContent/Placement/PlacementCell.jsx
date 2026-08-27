@@ -262,9 +262,30 @@ const PlacementCell = () => {
                 {CoOrdinator.map((item, index) => (
                     <div className="board-card" key={index}>
                         <h3 className="board-name">{item.name}</h3>
-                        <p style={{ margin: "5px 0" }}><strong>{item.desgination}</strong></p>
-                        <p className="board-desg">{item.mail}</p>
-                        <p className="board-desg">{item.contact}</p>
+
+                        <p style={{ margin: "5px 0" }}>
+                            <strong>{item.desgination}</strong>
+                        </p>
+
+                        {/* Email */}
+                        <p className="board-desg">
+                            <a
+                                href={`mailto:${item.mail}`}
+                                className="board-link"
+                            >
+                                {item.mail}
+                            </a>
+                        </p>
+
+                        {/* Phone */}
+                        <p className="board-desg">
+                            <a
+                                href={`tel:${item.contact}`}
+                                className="board-link"
+                            >
+                                {item.contact}
+                            </a>
+                        </p>
                     </div>
                 ))}
             </div>

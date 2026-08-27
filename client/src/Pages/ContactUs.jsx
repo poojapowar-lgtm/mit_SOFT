@@ -31,50 +31,50 @@ const ContactUs = () => {
         },
     ];
 
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        mobile: "",
-        course: "",
-    });
+    // const [formData, setFormData] = useState({
+    //     name: "",
+    //     email: "",
+    //     mobile: "",
+    //     course: "",
+    // });
 
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
-    };
+    // const handleChange = (e) => {
+    //     setFormData({
+    //         ...formData,
+    //         [e.target.name]: e.target.value,
+    //     });
+    // };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
 
-        setLoading(true);
+    //     setLoading(true);
 
-        try {
-            const res = await axios.post(
-                "http://localhost:5000/api/contact",
-                formData
-            );
+    //     try {
+    //         const res = await axios.post(
+    //             "http://localhost:5000/api/contact",
+    //             formData
+    //         );
 
-            alert(res.data);
+    //         alert(res.data);
 
-            // Reset form
-            setFormData({
-                name: "",
-                email: "",
-                mobile: "",
-                course: "",
-            });
+    //         // Reset form
+    //         setFormData({
+    //             name: "",
+    //             email: "",
+    //             mobile: "",
+    //             course: "",
+    //         });
 
-        } catch (err) {
-            console.error(err);
-            alert("Submission failed ❌");
-        } finally {
-            setLoading(false);
-        }
-    };
+    //     } catch (err) {
+    //         console.error(err);
+    //         alert("Submission failed ❌");
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
 
     return (
         <>
@@ -96,10 +96,38 @@ const ContactUs = () => {
                             {boardData.map((item, index) => (
                                 <div className="board-card" key={index}>
                                     <h3 className="board-name">{item.title}</h3>
-                                    <p
-                                        className="board-desg"
-                                        dangerouslySetInnerHTML={{ __html: item.desc }}
-                                    ></p>
+
+                                    {item.title.includes("Email") ? (
+                                        <p className="board-desg">
+                                            <a href={`mailto:${item.desc}`} className="board-link">
+                                                {item.desc}
+                                            </a>
+                                        </p>
+                                    ) : item.title.includes("Virtual Number") ? (
+                                        <p className="board-desg">
+                                            <a
+                                                href={`tel:${item.desc.replace(/\s/g, "")}`}
+                                                className="board-link"
+                                            >
+                                                {item.desc}
+                                            </a>
+                                        </p>
+                                    ) : item.title.includes("Official Website") ? (
+                                        <p className="board-desg">
+                                            <a
+                                                href={`https://${item.desc}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="board-link"
+                                            >
+                                                {item.desc}
+                                            </a>
+                                        </p>
+                                    ) : (
+                                        <p className="board-desg">
+                                            {item.desc}
+                                        </p>
+                                    )}
                                 </div>
                             ))}
                         </div>

@@ -58,6 +58,18 @@
     margin: 5px 0;
 }
 
+.board-link {
+    color: blue;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.board-link:hover {
+    color: #0b6b43;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 /* Mobile: 1 card per row */
 @media (max-width: 600px) {
     .board-body-container {
